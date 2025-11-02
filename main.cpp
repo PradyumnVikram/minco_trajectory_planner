@@ -2,6 +2,8 @@
 #include <vector>
 #include <Eigen/Dense>
 
+#include <fstream>
+
 #include "geo_utils.hpp"
 #include "gcopter.hpp"
 #include "minco.hpp"
@@ -67,7 +69,7 @@ int main()
     penaltyWeights << 300.0, 1.0, 0.5, 0.5, 0.1;
 
     Eigen::VectorXd physicalParams(6); // flatness parameters: [mass, g, drag_hor, drag_ver, parasitic, speed_smooth]
-    physicalParams << 1.0, 9.81, 0.0, 0.0, 0.0, 1.0;
+    physicalParams << 500.0, 9.81, 0.0, 0.0, 0.0, 1.0;
 
     // Create GCOPTER SFC object and setup
     gcopter::GCOPTER_PolytopeSFC sfc;
