@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/azidozide/projects/MINCO/source_minco/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/my_program.dir/all
+all: CMakeFiles/MINCO_Imp.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/my_program.dir/clean
+clean: CMakeFiles/MINCO_Imp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/my_program.dir
+# Target rules for target CMakeFiles/MINCO_Imp.dir
 
 # All Build rule for target.
-CMakeFiles/my_program.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/azidozide/projects/MINCO/source_minco/build/CMakeFiles --progress-num=1,2 "Built target my_program"
-.PHONY : CMakeFiles/my_program.dir/all
+CMakeFiles/MINCO_Imp.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/azidozide/projects/MINCO/source_minco/build/CMakeFiles --progress-num=1,2 "Built target MINCO_Imp"
+.PHONY : CMakeFiles/MINCO_Imp.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/my_program.dir/rule: cmake_check_build_system
+CMakeFiles/MINCO_Imp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/azidozide/projects/MINCO/source_minco/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_program.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MINCO_Imp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/azidozide/projects/MINCO/source_minco/build/CMakeFiles 0
-.PHONY : CMakeFiles/my_program.dir/rule
+.PHONY : CMakeFiles/MINCO_Imp.dir/rule
 
 # Convenience name for target.
-my_program: CMakeFiles/my_program.dir/rule
-.PHONY : my_program
+MINCO_Imp: CMakeFiles/MINCO_Imp.dir/rule
+.PHONY : MINCO_Imp
 
 # clean rule for target.
-CMakeFiles/my_program.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/clean
-.PHONY : CMakeFiles/my_program.dir/clean
+CMakeFiles/MINCO_Imp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/clean
+.PHONY : CMakeFiles/MINCO_Imp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

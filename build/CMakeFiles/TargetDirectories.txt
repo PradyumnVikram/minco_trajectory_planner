@@ -1,3 +1,3 @@
-/home/azidozide/projects/MINCO/source_minco/build/CMakeFiles/my_program.dir
+/home/azidozide/projects/MINCO/source_minco/build/CMakeFiles/MINCO_Imp.dir
 /home/azidozide/projects/MINCO/source_minco/build/CMakeFiles/edit_cache.dir
 /home/azidozide/projects/MINCO/source_minco/build/CMakeFiles/rebuild_cache.dir

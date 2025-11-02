@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_program
+# Target rules for targets named MINCO_Imp
 
 # Build rule for target.
-my_program: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_program
-.PHONY : my_program
+MINCO_Imp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MINCO_Imp
+.PHONY : MINCO_Imp
 
 # fast build rule for target.
-my_program/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/build
-.PHONY : my_program/fast
+MINCO_Imp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/build
+.PHONY : MINCO_Imp/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MINCO_Imp.dir/build.make CMakeFiles/MINCO_Imp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... my_program"
+	@echo "... MINCO_Imp"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

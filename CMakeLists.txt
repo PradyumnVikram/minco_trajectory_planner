@@ -12,10 +12,10 @@ find_package(Eigen3 REQUIRED)
 message(STATUS "Eigen: ${EIGEN3_INCLUDE_DIR}")
 
 # Add your source files
-add_executable(my_program
+add_executable(MINCO_Imp
     main.cpp
     # Add other .cpp files here
 )
 
 # Link Eigen to your executable
-target_include_directories(my_program PRIVATE ${EIGEN3_INCLUDE_DIR})
+target_include_directories(MINCO_Imp PRIVATE ${EIGEN3_INCLUDE_DIR})

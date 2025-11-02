@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/azidozide/projects/MINCO/source_minco/build",
-  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -std=gnu++17 -o CMakeFiles/my_program.dir/main.cpp.o -c /home/azidozide/projects/MINCO/source_minco/main.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -std=gnu++17 -o CMakeFiles/MINCO_Imp.dir/main.cpp.o -c /home/azidozide/projects/MINCO/source_minco/main.cpp",
   "file": "/home/azidozide/projects/MINCO/source_minco/main.cpp"
 }
 ]

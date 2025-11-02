@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/MINCO_Imp.dir/main.cpp.o -o MINCO_Imp 
