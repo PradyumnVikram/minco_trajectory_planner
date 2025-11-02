@@ -89,11 +89,11 @@ int main()
     double smoothingFactor = 0.2;    // mu for smoothed L1
     int integralResolution = 6;      // samples per segment for penalties (higher -> stronger enforcement)
 
-    Eigen::VectorXd magnitudeBounds(5); // [v_max, omg_max, theta_max, thrust_min, thrust_max]
-    magnitudeBounds << 4.0, 10.0, 0.5, -7.0, 7.0;
+    Eigen::VectorXd magnitudeBounds(6); // [v_max, omg_max, theta_max, thrust_min, thrust_max]
+    magnitudeBounds << 1.0, 10.0, 0.5, -2.0, 2.0, 6.0;
 
-    Eigen::VectorXd penaltyWeights(5);  // [pos_w, vel_w, omg_w, theta_w, thrust_w]
-    penaltyWeights << 0.5, 0.5, 0.5, 0.5, 0.1;
+    Eigen::VectorXd penaltyWeights(6);  // [pos_w, vel_w, omg_w, theta_w, thrust_w]
+    penaltyWeights << 0.5, 0.5, 0.5, 0.5, 0.1, 1.0;
 
     Eigen::VectorXd physicalParams(6); // flatness parameters: [mass, g, drag_hor, drag_ver, parasitic, speed_smooth]
     physicalParams << 0.5, 9.81, 0.0, 0.0, 0.0, 1.0;
