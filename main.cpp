@@ -1,6 +1,8 @@
+//#g++ -I/home/azidozide/cpp_libraries/eigen-3.4.1/ main.cpp -o main && "/home/azidozide/projects/MINCO/source_minco/"main
 #include <iostream>
 #include <vector>
 #include <Eigen/Dense>
+#include<chrono>
 
 #include <fstream>
 
@@ -34,8 +36,33 @@ Eigen::Matrix<double, 6, 4> boxToH(const Eigen::Vector3d &center, const Eigen::V
     return H;
 }
 
+double* return_pos(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
+    double* pos_coord = (double* )malloc(3*sizeof(double));
+    for(int i=0; i<3; i++){
+    pos_coord[i] = coeff_matrix(i, 0) + time*coeff_matrix(i, 1) + time*time*coeff_matrix(i, 2) + time*time*time*coeff_matrix(i, 3) + time*time*time*time*coeff_matrix(i, 4) + time*time*time*time*time*coeff_matrix(i, 5);
+    }
+    return pos_coord;
+}
+
+double* return_vel(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
+    double* vel_coord = (double* )malloc(3*sizeof(double));
+    for(int i=0; i<3; i++){
+    vel_coord[i] = coeff_matrix(i, 1) + 2*time*coeff_matrix(i, 2) + 3*time*time*coeff_matrix(i, 3) + 4*time*time*time*coeff_matrix(i, 4) + 5*time*time*time*time*coeff_matrix(i, 5);
+    }
+    return vel_coord;
+}
+
+double* return_acc(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
+    double* acc_coord = (double* )malloc(3*sizeof(double));
+    for(int i=0; i<3; i++){
+    acc_coord[i] = 2*coeff_matrix(i, 2) + 6*time*coeff_matrix(i, 3) + 12*time*time*coeff_matrix(i, 4) + 20*time*time*time*coeff_matrix(i, 5);
+    }
+    return acc_coord;
+}
+
 int main()
 {
+    auto start_time = std::chrono::high_resolution_clock::now();
     // boundaries (P, V, A)
     Eigen::Matrix3d headPVA, tailPVA;
     headPVA.setZero();
@@ -63,13 +90,13 @@ int main()
     int integralResolution = 6;      // samples per segment for penalties (higher -> stronger enforcement)
 
     Eigen::VectorXd magnitudeBounds(5); // [v_max, omg_max, theta_max, thrust_min, thrust_max]
-    magnitudeBounds << 4.0, 10.0, 0.5, -10.0, 30.0;
+    magnitudeBounds << 4.0, 10.0, 0.5, -7.0, 7.0;
 
     Eigen::VectorXd penaltyWeights(5);  // [pos_w, vel_w, omg_w, theta_w, thrust_w]
     penaltyWeights << 300.0, 1.0, 0.5, 0.5, 0.1;
 
     Eigen::VectorXd physicalParams(6); // flatness parameters: [mass, g, drag_hor, drag_ver, parasitic, speed_smooth]
-    physicalParams << 500.0, 9.81, 0.0, 0.0, 0.0, 1.0;
+    physicalParams << 0.5, 9.81, 0.0, 0.0, 0.0, 1.0;
 
     // Create GCOPTER SFC object and setup
     gcopter::GCOPTER_PolytopeSFC sfc;
@@ -118,12 +145,43 @@ int main()
         cout << "No inner points (single segment trajectory).\n";
     }
 
+    fstream fout_csv;
+    fout_csv.open("trajectory.csv", ios::out | ios::app);
+    double time_stamp = 0.0;
+    double duration;
+    double increment = 0.001;
+    double* position = (double* )malloc(3*sizeof(double));
+    double* velocity = (double* )malloc(3*sizeof(double));
+    double* acceleration = (double* )malloc(3*sizeof(double));
     // Per-segment coefficient matrices (Piece<D>::getCoeffMat()): 3 x (D+1)
     for (int seg = 0; seg < pieceNum; ++seg) {
         const auto &cMat = traj[seg].getCoeffMat(); // 3 x (D+1)
         cout << "Segment " << seg << " duration: " << traj[seg].getDuration() << "\n";
         cout << "Segment " << seg << " coeffs (cols = a0..a" << cMat.cols()-1 << "):\n" << cMat << "\n\n";
     }
+
+    int seg = 0;
+    const auto &cMat = traj[seg].getCoeffMat();
+    duration += traj[seg].getDuration();
+
+    while(seg<pieceNum){
+        if(time_stamp>duration){
+            seg += 1;
+            const auto &cMat = traj[seg].getCoeffMat();
+            duration += traj[seg].getDuration();
+        }
+        
+        position = return_pos(time_stamp, cMat);
+        velocity = return_vel(time_stamp, cMat);
+        acceleration = return_acc(time_stamp, cMat);
+        fout_csv<<time_stamp<<","<<position[0]<<","<<position[1]<<","<<position[2]<<","<<velocity[0]<<","<<velocity[1]<<","<<velocity[2]<<","<<acceleration[0]<<","<<acceleration[1]<<","<<acceleration[2]<<"\n";
+        time_stamp += increment;
+    }
+    fout_csv.close();
+    auto end_time = std::chrono::high_resolution_clock::now();
+
+    auto duration_ = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+    std::cout << "Execution time: " << duration_.count() << " microseconds" << std::endl;
 
     return 0;
 }
