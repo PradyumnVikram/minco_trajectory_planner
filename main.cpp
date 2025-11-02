@@ -39,7 +39,7 @@ Eigen::Matrix<double, 6, 4> boxToH(const Eigen::Vector3d &center, const Eigen::V
 double* return_pos(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
     double* pos_coord = (double* )malloc(3*sizeof(double));
     for(int i=0; i<3; i++){
-    pos_coord[i] = coeff_matrix(i, 0) + time*coeff_matrix(i, 1) + time*time*coeff_matrix(i, 2) + time*time*time*coeff_matrix(i, 3) + time*time*time*time*coeff_matrix(i, 4) + time*time*time*time*time*coeff_matrix(i, 5);
+    pos_coord[i] = coeff_matrix(i, 5) + time*coeff_matrix(i, 4) + time*time*coeff_matrix(i, 3) + time*time*time*coeff_matrix(i, 2) + time*time*time*time*coeff_matrix(i, 1) + time*time*time*time*time*coeff_matrix(i, 0);
     }
     return pos_coord;
 }
@@ -47,7 +47,7 @@ double* return_pos(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix)
 double* return_vel(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
     double* vel_coord = (double* )malloc(3*sizeof(double));
     for(int i=0; i<3; i++){
-    vel_coord[i] = coeff_matrix(i, 1) + 2*time*coeff_matrix(i, 2) + 3*time*time*coeff_matrix(i, 3) + 4*time*time*time*coeff_matrix(i, 4) + 5*time*time*time*time*coeff_matrix(i, 5);
+    vel_coord[i] = coeff_matrix(i, 4) + 2*time*coeff_matrix(i, 3) + 3*time*time*coeff_matrix(i, 2) + 4*time*time*time*coeff_matrix(i, 1) + 5*time*time*time*time*coeff_matrix(i, 0);
     }
     return vel_coord;
 }
@@ -55,7 +55,7 @@ double* return_vel(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix)
 double* return_acc(double time, const Eigen::Matrix<double, 3, 6> &coeff_matrix){
     double* acc_coord = (double* )malloc(3*sizeof(double));
     for(int i=0; i<3; i++){
-    acc_coord[i] = 2*coeff_matrix(i, 2) + 6*time*coeff_matrix(i, 3) + 12*time*time*coeff_matrix(i, 4) + 20*time*time*time*coeff_matrix(i, 5);
+    acc_coord[i] = 2*coeff_matrix(i, 3) + 6*time*coeff_matrix(i, 2) + 12*time*time*coeff_matrix(i, 1) + 20*time*time*time*coeff_matrix(i, 0);
     }
     return acc_coord;
 }
@@ -93,7 +93,7 @@ int main()
     magnitudeBounds << 4.0, 10.0, 0.5, -7.0, 7.0;
 
     Eigen::VectorXd penaltyWeights(5);  // [pos_w, vel_w, omg_w, theta_w, thrust_w]
-    penaltyWeights << 300.0, 1.0, 0.5, 0.5, 0.1;
+    penaltyWeights << 0.5, 0.5, 0.5, 0.5, 0.1;
 
     Eigen::VectorXd physicalParams(6); // flatness parameters: [mass, g, drag_hor, drag_ver, parasitic, speed_smooth]
     physicalParams << 0.5, 9.81, 0.0, 0.0, 0.0, 1.0;
@@ -149,6 +149,8 @@ int main()
     fout_csv.open("trajectory.csv", ios::out | ios::app);
     double time_stamp = 0.0;
     double duration;
+    double accumulated_stamps = 0.0;
+    double prev_time_stamp = 0.0;
     double increment = 0.001;
     double* position = (double* )malloc(3*sizeof(double));
     double* velocity = (double* )malloc(3*sizeof(double));
@@ -168,13 +170,16 @@ int main()
         if(time_stamp>duration){
             seg += 1;
             const auto &cMat = traj[seg].getCoeffMat();
+            if(seg==pieceNum){break;};
+            prev_time_stamp = accumulated_stamps;
+            accumulated_stamps += time_stamp-increment-prev_time_stamp;
             duration += traj[seg].getDuration();
         }
-        
-        position = return_pos(time_stamp, cMat);
-        velocity = return_vel(time_stamp, cMat);
-        acceleration = return_acc(time_stamp, cMat);
-        fout_csv<<time_stamp<<","<<position[0]<<","<<position[1]<<","<<position[2]<<","<<velocity[0]<<","<<velocity[1]<<","<<velocity[2]<<","<<acceleration[0]<<","<<acceleration[1]<<","<<acceleration[2]<<"\n";
+        cout<<time_stamp-accumulated_stamps<<" segment: "<<seg<<" "<<return_pos(time_stamp-accumulated_stamps, cMat)[0]<<" "<<return_pos(time_stamp-accumulated_stamps, traj[17].getCoeffMat())[0]<<endl;
+        position = return_pos(time_stamp-accumulated_stamps, cMat);
+        velocity = return_vel(time_stamp-accumulated_stamps, cMat);
+        acceleration = return_acc(time_stamp-accumulated_stamps, cMat);
+        fout_csv<<time_stamp<<","<<return_pos(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[0]<<","<<return_pos(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[1]<<","<<return_pos(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[2]<<","<<return_vel(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[0]<<","<<return_vel(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[1]<<","<<return_vel(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[2]<<","<<return_acc(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[0]<<","<<return_acc(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[1]<<","<<return_acc(time_stamp-accumulated_stamps, traj[seg].getCoeffMat())[2]<<"\n";
         time_stamp += increment;
     }
     fout_csv.close();
