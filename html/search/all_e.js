@@ -5,7 +5,7 @@ var searchData=
   ['plane_217',['Plane',['../classquickhull_1_1Plane.html#a849e5e70b8a26b33922cec3e79e426a7',1,'quickhull::Plane::Plane()=default'],['../classquickhull_1_1Plane.html#a1748db3b6f4405406c01b794daa7aeba',1,'quickhull::Plane::Plane(const Vector3&lt; T &gt; &amp;N, const Vector3&lt; T &gt; &amp;P)'],['../classquickhull_1_1Plane.html',1,'quickhull::Plane&lt; T &gt;']]],
   ['plane_5fdown_218',['plane_down',['../namespacesdlp.html#a469ad2a176343762184e7492fa1c060f',1,'sdlp']]],
   ['planpath_219',['planPath',['../namespacesfc__gen.html#ae7fcf4a3915c3accd11648441f3c152f',1,'sfc_gen']]],
-  ['platform_5fid_220',['PLATFORM_ID',['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp'],['../CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c']]],
+  ['platform_5fid_220',['PLATFORM_ID',['../CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['polyconv_221',['polyConv',['../namespaceRootFinder.html#a150515ee790a616d218c2362aea5213b',1,'RootFinder']]],
   ['polyderi_222',['polyDeri',['../namespaceRootFinderPriv.html#a7b329e758302ff5d645af61b4b7880f0',1,'RootFinderPriv']]],
   ['polyeval_223',['polyEval',['../namespaceRootFinderPriv.html#a3f2de0be38d6aad448ada8f927262b0e',1,'RootFinderPriv']]],
@@ -21,5 +21,5 @@ var searchData=
   ['proc_5fevaluate_233',['proc_evaluate',['../structlbfgs_1_1callback__data__t.html#a1b7f7b7a68c919bfa96fc230a69edb27',1,'lbfgs::callback_data_t']]],
   ['proc_5fprogress_234',['proc_progress',['../structlbfgs_1_1callback__data__t.html#a12869f2a1029e004d5a4052ab0a5f99b',1,'lbfgs::callback_data_t']]],
   ['proc_5fstepbound_235',['proc_stepbound',['../structlbfgs_1_1callback__data__t.html#ab2bf04e1f5b6022202ed40a52e1de989',1,'lbfgs::callback_data_t']]],
-  ['propogategrad_236',['propogateGrad',['../classminco_1_1MINCO__S4NU.html#ab50389bfdc8db029202350cc383eacf3',1,'minco::MINCO_S4NU::propogateGrad()'],['../classminco_1_1MINCO__S3NU.html#a4fcad10b30cabccfb98bc576c7255ffb',1,'minco::MINCO_S3NU::propogateGrad()'],['../classminco_1_1MINCO__S2NU.html#a602c365915b7c68c6f1e29db74f63375',1,'minco::MINCO_S2NU::propogateGrad()']]]
+  ['propogategrad_236',['propogateGrad',['../classminco_1_1MINCO__S3NU.html#a4fcad10b30cabccfb98bc576c7255ffb',1,'minco::MINCO_S3NU::propogateGrad()'],['../classminco_1_1MINCO__S2NU.html#a602c365915b7c68c6f1e29db74f63375',1,'minco::MINCO_S2NU::propogateGrad()']]]
 ];

@@ -1,0 +1,45 @@
+\hypertarget{firi_8hpp}{}\doxysection{firi.\+hpp File Reference}
+\label{firi_8hpp}\index{firi.hpp@{firi.hpp}}
+{\ttfamily \#include \char`\"{}lbfgs.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdlp.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for firi.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{firi_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{firi_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacefiri}{firi}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacefiri_a1f6cf694147e237e0512bacb2b14d000}{firi\+::chol3d}} (const Eigen\+::\+Matrix3d \&A, Eigen\+::\+Matrix3d \&L)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a00331807691f47a297a6650809016670}{firi\+::smoothed\+L1}} (const double \&mu, const double \&x, double \&f, double \&df)
+\item 
+double \mbox{\hyperlink{namespacefiri_a5e0c216d85047cfa364e0f837846416e}{firi\+::cost\+MVIE}} (void $\ast$data, const Eigen\+::\+Vector\+Xd \&x, Eigen\+::\+Vector\+Xd \&grad)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7}{firi\+::max\+Vol\+Ins\+Ellipsoid}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Matrix3d \&R, Eigen\+::\+Vector3d \&p, Eigen\+::\+Vector3d \&r)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a04353d1ae36c841d88802bc0d82e7091}{firi\+::firi}} (const Eigen\+::\+Matrix\+X4d \&bd, const Eigen\+::\+Matrix3\+Xd \&pc, const Eigen\+::\+Vector3d \&a, const Eigen\+::\+Vector3d \&b, Eigen\+::\+Matrix\+X4d \&h\+Poly, const int iterations=4, const double epsilon=1.\+0e-\/6)
+\end{DoxyCompactItemize}

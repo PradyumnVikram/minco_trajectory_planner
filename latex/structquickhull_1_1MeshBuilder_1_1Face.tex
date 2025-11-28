@@ -1,0 +1,144 @@
+\hypertarget{structquickhull_1_1MeshBuilder_1_1Face}{}\doxysection{quickhull\+::Mesh\+Builder$<$ T $>$\+::Face Struct Reference}
+\label{structquickhull_1_1MeshBuilder_1_1Face}\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+
+
+{\ttfamily \#include $<$quickhull.\+hpp$>$}
+
+
+
+Collaboration diagram for quickhull\+::Mesh\+Builder$<$ T $>$\+::Face\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{structquickhull_1_1MeshBuilder_1_1Face__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_a0cc6bd92e9e56592613a4376c3bab0c0}{Face}} ()
+\item 
+void \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_a4993d97beba19392c00fcc19353d098f}{disable}} ()
+\item 
+bool \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_a5ce6f99ee3649888defa8f3214e9c4a6}{is\+Disabled}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_a91d96735873c036558306db5448ca6ff}{m\+\_\+he}}
+\item 
+\mbox{\hyperlink{classquickhull_1_1Plane}{Plane}}$<$ T $>$ \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_ab92770cedd8f58ed6a44e56b04aa0d2d}{m\+\_\+P}}
+\item 
+T \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_aaa4d93609ff57160e813e6bebcd15ddd}{m\+\_\+most\+Distant\+Point\+Dist}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_ab4716d5bd1dc131e8ff9d08f9a14117f}{m\+\_\+most\+Distant\+Point}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_abe5ce0be063c4060a166ece91c8a433b}{m\+\_\+visibility\+Checked\+On\+Iteration}}
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_a8a31d5925d9d35f413c41022e05c9e73}{m\+\_\+is\+Visible\+Face\+On\+Current\+Iteration}}\+: 1
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_af4b80c6fcac338950cbf4777dfed9a14}{m\+\_\+in\+Face\+Stack}}\+: 1
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_ae6ffd551b175e8268fc6d6a7357c1413}{m\+\_\+horizon\+Edges\+On\+Current\+Iteration}}\+: 3
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ size\+\_\+t $>$ $>$ \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face_ad6e577119e698441d74e7ade014ace2a}{m\+\_\+points\+On\+Positive\+Side}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_a0cc6bd92e9e56592613a4376c3bab0c0}\label{structquickhull_1_1MeshBuilder_1_1Face_a0cc6bd92e9e56592613a4376c3bab0c0}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!Face@{Face}}
+\index{Face@{Face}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{Face()}{Face()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_a4993d97beba19392c00fcc19353d098f}\label{structquickhull_1_1MeshBuilder_1_1Face_a4993d97beba19392c00fcc19353d098f}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!disable@{disable}}
+\index{disable@{disable}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_a5ce6f99ee3649888defa8f3214e9c4a6}\label{structquickhull_1_1MeshBuilder_1_1Face_a5ce6f99ee3649888defa8f3214e9c4a6}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_a91d96735873c036558306db5448ca6ff}\label{structquickhull_1_1MeshBuilder_1_1Face_a91d96735873c036558306db5448ca6ff}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_he@{m\_he}}
+\index{m\_he@{m\_he}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_he}{m\_he}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+he}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_ae6ffd551b175e8268fc6d6a7357c1413}\label{structquickhull_1_1MeshBuilder_1_1Face_ae6ffd551b175e8268fc6d6a7357c1413}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_horizonEdgesOnCurrentIteration@{m\_horizonEdgesOnCurrentIteration}}
+\index{m\_horizonEdgesOnCurrentIteration@{m\_horizonEdgesOnCurrentIteration}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_horizonEdgesOnCurrentIteration}{m\_horizonEdgesOnCurrentIteration}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::uint8\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+horizon\+Edges\+On\+Current\+Iteration}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_af4b80c6fcac338950cbf4777dfed9a14}\label{structquickhull_1_1MeshBuilder_1_1Face_af4b80c6fcac338950cbf4777dfed9a14}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_inFaceStack@{m\_inFaceStack}}
+\index{m\_inFaceStack@{m\_inFaceStack}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_inFaceStack}{m\_inFaceStack}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::uint8\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+in\+Face\+Stack}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_a8a31d5925d9d35f413c41022e05c9e73}\label{structquickhull_1_1MeshBuilder_1_1Face_a8a31d5925d9d35f413c41022e05c9e73}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_isVisibleFaceOnCurrentIteration@{m\_isVisibleFaceOnCurrentIteration}}
+\index{m\_isVisibleFaceOnCurrentIteration@{m\_isVisibleFaceOnCurrentIteration}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_isVisibleFaceOnCurrentIteration}{m\_isVisibleFaceOnCurrentIteration}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::uint8\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+is\+Visible\+Face\+On\+Current\+Iteration}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_ab4716d5bd1dc131e8ff9d08f9a14117f}\label{structquickhull_1_1MeshBuilder_1_1Face_ab4716d5bd1dc131e8ff9d08f9a14117f}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_mostDistantPoint@{m\_mostDistantPoint}}
+\index{m\_mostDistantPoint@{m\_mostDistantPoint}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_mostDistantPoint}{m\_mostDistantPoint}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+most\+Distant\+Point}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_aaa4d93609ff57160e813e6bebcd15ddd}\label{structquickhull_1_1MeshBuilder_1_1Face_aaa4d93609ff57160e813e6bebcd15ddd}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_mostDistantPointDist@{m\_mostDistantPointDist}}
+\index{m\_mostDistantPointDist@{m\_mostDistantPointDist}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_mostDistantPointDist}{m\_mostDistantPointDist}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+most\+Distant\+Point\+Dist}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_ab92770cedd8f58ed6a44e56b04aa0d2d}\label{structquickhull_1_1MeshBuilder_1_1Face_ab92770cedd8f58ed6a44e56b04aa0d2d}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_P@{m\_P}}
+\index{m\_P@{m\_P}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_P}{m\_P}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1Plane}{Plane}}$<$T$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+P}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_ad6e577119e698441d74e7ade014ace2a}\label{structquickhull_1_1MeshBuilder_1_1Face_ad6e577119e698441d74e7ade014ace2a}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_pointsOnPositiveSide@{m\_pointsOnPositiveSide}}
+\index{m\_pointsOnPositiveSide@{m\_pointsOnPositiveSide}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_pointsOnPositiveSide}{m\_pointsOnPositiveSide}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unique\+\_\+ptr$<$std\+::vector$<$size\+\_\+t$>$ $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+points\+On\+Positive\+Side}
+
+\mbox{\Hypertarget{structquickhull_1_1MeshBuilder_1_1Face_abe5ce0be063c4060a166ece91c8a433b}\label{structquickhull_1_1MeshBuilder_1_1Face_abe5ce0be063c4060a166ece91c8a433b}} 
+\index{quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}!m\_visibilityCheckedOnIteration@{m\_visibilityCheckedOnIteration}}
+\index{m\_visibilityCheckedOnIteration@{m\_visibilityCheckedOnIteration}!quickhull::MeshBuilder$<$ T $>$::Face@{quickhull::MeshBuilder$<$ T $>$::Face}}
+\doxysubsubsection{\texorpdfstring{m\_visibilityCheckedOnIteration}{m\_visibilityCheckedOnIteration}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::Face\+::m\+\_\+visibility\+Checked\+On\+Iteration}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{quickhull_8hpp}{quickhull.\+hpp}}\end{DoxyCompactItemize}

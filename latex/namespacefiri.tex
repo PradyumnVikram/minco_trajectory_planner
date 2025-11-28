@@ -1,0 +1,112 @@
+\hypertarget{namespacefiri}{}\doxysection{firi Namespace Reference}
+\label{namespacefiri}\index{firi@{firi}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacefiri_a1f6cf694147e237e0512bacb2b14d000}{chol3d}} (const Eigen\+::\+Matrix3d \&A, Eigen\+::\+Matrix3d \&L)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a00331807691f47a297a6650809016670}{smoothed\+L1}} (const double \&mu, const double \&x, double \&f, double \&df)
+\item 
+double \mbox{\hyperlink{namespacefiri_a5e0c216d85047cfa364e0f837846416e}{cost\+MVIE}} (void $\ast$data, const Eigen\+::\+Vector\+Xd \&x, Eigen\+::\+Vector\+Xd \&grad)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7}{max\+Vol\+Ins\+Ellipsoid}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Matrix3d \&R, Eigen\+::\+Vector3d \&p, Eigen\+::\+Vector3d \&r)
+\item 
+bool \mbox{\hyperlink{namespacefiri_a04353d1ae36c841d88802bc0d82e7091}{firi}} (const Eigen\+::\+Matrix\+X4d \&bd, const Eigen\+::\+Matrix3\+Xd \&pc, const Eigen\+::\+Vector3d \&a, const Eigen\+::\+Vector3d \&b, Eigen\+::\+Matrix\+X4d \&h\+Poly, const int iterations=4, const double epsilon=1.\+0e-\/6)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefiri_a1f6cf694147e237e0512bacb2b14d000}\label{namespacefiri_a1f6cf694147e237e0512bacb2b14d000}} 
+\index{firi@{firi}!chol3d@{chol3d}}
+\index{chol3d@{chol3d}!firi@{firi}}
+\doxysubsubsection{\texorpdfstring{chol3d()}{chol3d()}}
+{\footnotesize\ttfamily void firi\+::chol3d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{A,  }\item[{Eigen\+::\+Matrix3d \&}]{L }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a1f6cf694147e237e0512bacb2b14d000_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefiri_a5e0c216d85047cfa364e0f837846416e}\label{namespacefiri_a5e0c216d85047cfa364e0f837846416e}} 
+\index{firi@{firi}!costMVIE@{costMVIE}}
+\index{costMVIE@{costMVIE}!firi@{firi}}
+\doxysubsubsection{\texorpdfstring{costMVIE()}{costMVIE()}}
+{\footnotesize\ttfamily double firi\+::cost\+MVIE (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{x,  }\item[{Eigen\+::\+Vector\+Xd \&}]{grad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{namespacefiri_a5e0c216d85047cfa364e0f837846416e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a5e0c216d85047cfa364e0f837846416e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefiri_a04353d1ae36c841d88802bc0d82e7091}\label{namespacefiri_a04353d1ae36c841d88802bc0d82e7091}} 
+\index{firi@{firi}!firi@{firi}}
+\index{firi@{firi}!firi@{firi}}
+\doxysubsubsection{\texorpdfstring{firi()}{firi()}}
+{\footnotesize\ttfamily bool firi\+::firi (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{bd,  }\item[{const Eigen\+::\+Matrix3\+Xd \&}]{pc,  }\item[{const Eigen\+::\+Vector3d \&}]{a,  }\item[{const Eigen\+::\+Vector3d \&}]{b,  }\item[{Eigen\+::\+Matrix\+X4d \&}]{h\+Poly,  }\item[{const int}]{iterations = {\ttfamily 4},  }\item[{const double}]{epsilon = {\ttfamily 1.0e-\/6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a04353d1ae36c841d88802bc0d82e7091_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{namespacefiri_a04353d1ae36c841d88802bc0d82e7091_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7}\label{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7}} 
+\index{firi@{firi}!maxVolInsEllipsoid@{maxVolInsEllipsoid}}
+\index{maxVolInsEllipsoid@{maxVolInsEllipsoid}!firi@{firi}}
+\doxysubsubsection{\texorpdfstring{maxVolInsEllipsoid()}{maxVolInsEllipsoid()}}
+{\footnotesize\ttfamily bool firi\+::max\+Vol\+Ins\+Ellipsoid (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly,  }\item[{Eigen\+::\+Matrix3d \&}]{R,  }\item[{Eigen\+::\+Vector3d \&}]{p,  }\item[{Eigen\+::\+Vector3d \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a2ffa3ba07ac59883d228b9681723e8b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefiri_a00331807691f47a297a6650809016670}\label{namespacefiri_a00331807691f47a297a6650809016670}} 
+\index{firi@{firi}!smoothedL1@{smoothedL1}}
+\index{smoothedL1@{smoothedL1}!firi@{firi}}
+\doxysubsubsection{\texorpdfstring{smoothedL1()}{smoothedL1()}}
+{\footnotesize\ttfamily bool firi\+::smoothed\+L1 (\begin{DoxyParamCaption}\item[{const double \&}]{mu,  }\item[{const double \&}]{x,  }\item[{double \&}]{f,  }\item[{double \&}]{df }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefiri_a00331807691f47a297a6650809016670_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,77 @@
+\hypertarget{sdlp_8hpp}{}\doxysection{sdlp.\+hpp File Reference}
+\label{sdlp_8hpp}\index{sdlp.hpp@{sdlp.hpp}}
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+Include dependency graph for sdlp.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{sdlp_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{sdlp_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesdlp}{sdlp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{namespacesdlp_a7338a97a0efb80fa94f99040fed10532ac9947b2266fbf3160f6bd6149dee4808}{sdlp\+::\+MINIMUM}} = 0
+, \mbox{\hyperlink{namespacesdlp_a7338a97a0efb80fa94f99040fed10532a9b2425f8a7ba4d3c860e1c0ac8985ae5}{sdlp\+::\+INFEASIBLE}}
+, \mbox{\hyperlink{namespacesdlp_a7338a97a0efb80fa94f99040fed10532ad94545cbeda721ff47ac88d672d22eec}{sdlp\+::\+UNBOUNDED}}
+, \mbox{\hyperlink{namespacesdlp_a7338a97a0efb80fa94f99040fed10532a1a8e51419489057605f303f6b73a63b3}{sdlp\+::\+AMBIGUOUS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespacesdlp_ae33bef24257da9e83af6138fcef7b302}{sdlp\+::dot2}} (const double a\mbox{[}2\mbox{]}, const double b\mbox{[}2\mbox{]})
+\item 
+double \mbox{\hyperlink{namespacesdlp_ad371d395b5feb29fcbd34ee2da9f93c5}{sdlp\+::cross2}} (const double a\mbox{[}2\mbox{]}, const double b\mbox{[}2\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespacesdlp_abc3aa283c150c8b3d0fd98795acb2ad1}{sdlp\+::unit2}} (const double a\mbox{[}2\mbox{]}, double b\mbox{[}2\mbox{]})
+\item 
+{\footnotesize template$<$int d$>$ }\\bool \mbox{\hyperlink{namespacesdlp_aa5332f200f899c8de99ca0485fe4fd99}{sdlp\+::unit}} (double $\ast$a)
+\item 
+{\footnotesize template$<$int d$>$ }\\int \mbox{\hyperlink{namespacesdlp_a1b5cf2231ac45c205524a477eea5157c}{sdlp\+::lp\+\_\+no\+\_\+con}} (const double $\ast$n\+\_\+vec, const double $\ast$d\+\_\+vec, double $\ast$opt)
+\item 
+int \mbox{\hyperlink{namespacesdlp_a0d2abf1734f7b9de5f520d842130ffb8}{sdlp\+::move\+\_\+to\+\_\+front}} (const int i, int $\ast$next, int $\ast$prev)
+\item 
+void \mbox{\hyperlink{namespacesdlp_aa3a11a42784ea518d08ebd923f03de53}{sdlp\+::lp\+\_\+min\+\_\+lin\+\_\+rat}} (const bool degen, const double cw\+\_\+vec\mbox{[}2\mbox{]}, const double ccw\+\_\+vec\mbox{[}2\mbox{]}, const double n\+\_\+vec\mbox{[}2\mbox{]}, const double d\+\_\+vec\mbox{[}2\mbox{]}, double opt\mbox{[}2\mbox{]})
+\item 
+int \mbox{\hyperlink{namespacesdlp_a450d9e376f49441005bb6fc02061968e}{sdlp\+::wedge}} (const double($\ast$halves)\mbox{[}2\mbox{]}, const int m, int $\ast$next, int $\ast$prev, double cw\+\_\+vec\mbox{[}2\mbox{]}, double ccw\+\_\+vec\mbox{[}2\mbox{]}, bool $\ast$degen)
+\item 
+int \mbox{\hyperlink{namespacesdlp_ae6d51b444583739678013d42d897e076}{sdlp\+::lp\+\_\+base\+\_\+case}} (const double($\ast$halves)\mbox{[}2\mbox{]}, const int m, const double n\+\_\+vec\mbox{[}2\mbox{]}, const double d\+\_\+vec\mbox{[}2\mbox{]}, double opt\mbox{[}2\mbox{]}, int $\ast$next, int $\ast$prev)
+\item 
+{\footnotesize template$<$int d$>$ }\\void \mbox{\hyperlink{namespacesdlp_aff3cb4d7e838637e957ec3d7e5f9da65}{sdlp\+::findimax}} (const double $\ast$pln, int $\ast$imax)
+\item 
+{\footnotesize template$<$int d$>$ }\\void \mbox{\hyperlink{namespacesdlp_ac3f1e6a8d251090c0b43df4c3c133b09}{sdlp\+::vector\+\_\+up}} (const double $\ast$equation, const int ivar, const double $\ast$low\+\_\+vector, double $\ast$vector)
+\item 
+{\footnotesize template$<$int d$>$ }\\void \mbox{\hyperlink{namespacesdlp_a6f615c6987a3954fbc78db0d477a27d4}{sdlp\+::vector\+\_\+down}} (const double $\ast$elim\+\_\+eqn, const int ivar, const double $\ast$old\+\_\+vec, double $\ast$new\+\_\+vec)
+\item 
+{\footnotesize template$<$int d$>$ }\\void \mbox{\hyperlink{namespacesdlp_a469ad2a176343762184e7492fa1c060f}{sdlp\+::plane\+\_\+down}} (const double $\ast$elim\+\_\+eqn, const int ivar, const double $\ast$old\+\_\+plane, double $\ast$new\+\_\+plane)
+\item 
+{\footnotesize template$<$int d$>$ }\\int \mbox{\hyperlink{namespacesdlp_a0a147b0524213aefc591d1653b9194ba}{sdlp\+::linfracprog}} (const double $\ast$halves, const int max\+\_\+size, const int m, const double $\ast$n\+\_\+vec, const double $\ast$d\+\_\+vec, double $\ast$opt, double $\ast$work, int $\ast$next, int $\ast$prev)
+\item 
+template$<$$>$ int \mbox{\hyperlink{namespacesdlp_a39c0d24d7c153d0ce0ecd2aa1bacc7dc}{sdlp\+::linfracprog$<$ 1 $>$}} (const double $\ast$halves, const int max\+\_\+size, const int m, const double $\ast$n\+\_\+vec, const double $\ast$d\+\_\+vec, double $\ast$opt, double $\ast$work, int $\ast$next, int $\ast$prev)
+\item 
+void \mbox{\hyperlink{namespacesdlp_afe6854952b8d64299d08fc6ff541da93}{sdlp\+::rand\+\_\+permutation}} (const int n, int $\ast$p)
+\item 
+{\footnotesize template$<$int d$>$ }\\double \mbox{\hyperlink{namespacesdlp_a42bf631f611b2506f7eed5f687dda8e1}{sdlp\+::linprog}} (const Eigen\+::\+Matrix$<$ double, d, 1 $>$ \&c, const Eigen\+::\+Matrix$<$ double, -\/1, d $>$ \&A, const Eigen\+::\+Matrix$<$ double, -\/1, 1 $>$ \&b, Eigen\+::\+Matrix$<$ double, d, 1 $>$ \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr double \mbox{\hyperlink{namespacesdlp_ab92bf0318cafd6185a2998a4ec94e1f6}{sdlp\+::eps}} = 1.\+0e-\/12
+\end{DoxyCompactItemize}

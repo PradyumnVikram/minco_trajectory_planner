@@ -1,0 +1,101 @@
+\hypertarget{namespacegeo__utils}{}\doxysection{geo\+\_\+utils Namespace Reference}
+\label{namespacegeo__utils}\index{geo\_utils@{geo\_utils}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgeo__utils_1_1filterLess}{filter\+Less}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_ac585c6aa6a6384842ff4193f8a5afa45}{find\+Interior}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Vector3d \&interior)
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_af505b6f8bb24a9cc81df56cfd2f4bca0}{overlap}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly0, const Eigen\+::\+Matrix\+X4d \&h\+Poly1, const double eps=1.\+0e-\/6)
+\item 
+void \mbox{\hyperlink{namespacegeo__utils_a88772df55c51dd3ce8c9317b260be2ab}{filter\+Vs}} (const Eigen\+::\+Matrix3\+Xd \&rV, const double \&epsilon, Eigen\+::\+Matrix3\+Xd \&fV)
+\item 
+void \mbox{\hyperlink{namespacegeo__utils_add88c32cc345838f411623ef81916dee}{enumerate\+Vs}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, const Eigen\+::\+Vector3d \&inner, Eigen\+::\+Matrix3\+Xd \&v\+Poly, const double epsilon=1.\+0e-\/6)
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_a502d37be118d6a9d32116489b9d27fe5}{enumerate\+Vs}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Matrix3\+Xd \&v\+Poly, const double epsilon=1.\+0e-\/6)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegeo__utils_add88c32cc345838f411623ef81916dee}\label{namespacegeo__utils_add88c32cc345838f411623ef81916dee}} 
+\index{geo\_utils@{geo\_utils}!enumerateVs@{enumerateVs}}
+\index{enumerateVs@{enumerateVs}!geo\_utils@{geo\_utils}}
+\doxysubsubsection{\texorpdfstring{enumerateVs()}{enumerateVs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void geo\+\_\+utils\+::enumerate\+Vs (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly,  }\item[{const Eigen\+::\+Vector3d \&}]{inner,  }\item[{Eigen\+::\+Matrix3\+Xd \&}]{v\+Poly,  }\item[{const double}]{epsilon = {\ttfamily 1.0e-\/6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{namespacegeo__utils_add88c32cc345838f411623ef81916dee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegeo__utils_add88c32cc345838f411623ef81916dee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegeo__utils_a502d37be118d6a9d32116489b9d27fe5}\label{namespacegeo__utils_a502d37be118d6a9d32116489b9d27fe5}} 
+\index{geo\_utils@{geo\_utils}!enumerateVs@{enumerateVs}}
+\index{enumerateVs@{enumerateVs}!geo\_utils@{geo\_utils}}
+\doxysubsubsection{\texorpdfstring{enumerateVs()}{enumerateVs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool geo\+\_\+utils\+::enumerate\+Vs (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly,  }\item[{Eigen\+::\+Matrix3\+Xd \&}]{v\+Poly,  }\item[{const double}]{epsilon = {\ttfamily 1.0e-\/6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegeo__utils_a502d37be118d6a9d32116489b9d27fe5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegeo__utils_a88772df55c51dd3ce8c9317b260be2ab}\label{namespacegeo__utils_a88772df55c51dd3ce8c9317b260be2ab}} 
+\index{geo\_utils@{geo\_utils}!filterVs@{filterVs}}
+\index{filterVs@{filterVs}!geo\_utils@{geo\_utils}}
+\doxysubsubsection{\texorpdfstring{filterVs()}{filterVs()}}
+{\footnotesize\ttfamily void geo\+\_\+utils\+::filter\+Vs (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3\+Xd \&}]{rV,  }\item[{const double \&}]{epsilon,  }\item[{Eigen\+::\+Matrix3\+Xd \&}]{fV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegeo__utils_a88772df55c51dd3ce8c9317b260be2ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegeo__utils_ac585c6aa6a6384842ff4193f8a5afa45}\label{namespacegeo__utils_ac585c6aa6a6384842ff4193f8a5afa45}} 
+\index{geo\_utils@{geo\_utils}!findInterior@{findInterior}}
+\index{findInterior@{findInterior}!geo\_utils@{geo\_utils}}
+\doxysubsubsection{\texorpdfstring{findInterior()}{findInterior()}}
+{\footnotesize\ttfamily bool geo\+\_\+utils\+::find\+Interior (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly,  }\item[{Eigen\+::\+Vector3d \&}]{interior }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacegeo__utils_ac585c6aa6a6384842ff4193f8a5afa45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacegeo__utils_af505b6f8bb24a9cc81df56cfd2f4bca0}\label{namespacegeo__utils_af505b6f8bb24a9cc81df56cfd2f4bca0}} 
+\index{geo\_utils@{geo\_utils}!overlap@{overlap}}
+\index{overlap@{overlap}!geo\_utils@{geo\_utils}}
+\doxysubsubsection{\texorpdfstring{overlap()}{overlap()}}
+{\footnotesize\ttfamily bool geo\+\_\+utils\+::overlap (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly0,  }\item[{const Eigen\+::\+Matrix\+X4d \&}]{h\+Poly1,  }\item[{const double}]{eps = {\ttfamily 1.0e-\/6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{namespacegeo__utils_af505b6f8bb24a9cc81df56cfd2f4bca0_icgraph}
+\end{center}
+\end{figure}

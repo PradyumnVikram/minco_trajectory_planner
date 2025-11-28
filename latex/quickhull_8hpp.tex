@@ -1,0 +1,82 @@
+\hypertarget{quickhull_8hpp}{}\doxysection{quickhull.\+hpp File Reference}
+\label{quickhull_8hpp}\index{quickhull.hpp@{quickhull.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for quickhull.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{quickhull_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{quickhull_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1Vector3}{quickhull\+::\+Vector3$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1Plane}{quickhull\+::\+Plane$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1Ray}{quickhull\+::\+Ray$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1Pool}{quickhull\+::\+Pool$<$ S $>$}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1VertexDataSource}{quickhull\+::\+Vertex\+Data\+Source$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{quickhull\+::\+Mesh\+Builder$<$ T $>$\+::\+Half\+Edge}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{quickhull\+::\+Mesh\+Builder$<$ T $>$\+::\+Face}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1HalfEdgeMesh}{quickhull\+::\+Half\+Edge\+Mesh$<$ Float\+Type, Index\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1HalfEdgeMesh_1_1HalfEdge}{quickhull\+::\+Half\+Edge\+Mesh$<$ Float\+Type, Index\+Type $>$\+::\+Half\+Edge}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1HalfEdgeMesh_1_1Face}{quickhull\+::\+Half\+Edge\+Mesh$<$ Float\+Type, Index\+Type $>$\+::\+Face}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1ConvexHull}{quickhull\+::\+Convex\+Hull$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1DiagnosticsData}{quickhull\+::\+Diagnostics\+Data}}
+\item 
+class \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacequickhull}{quickhull}}
+\item 
+ \mbox{\hyperlink{namespacequickhull_1_1mathutils}{quickhull\+::mathutils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacequickhull_ad154706828df6dea160cafaad9259417}{quickhull\+::operator$<$$<$}} (std\+::ostream \&os, const Vector3$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Vector3$<$ T $>$ \mbox{\hyperlink{namespacequickhull_a0953539b2c2048ac369b4de335e4a3b0}{quickhull\+::operator$\ast$}} (T c, const Vector3$<$ T $>$ \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacequickhull_1_1mathutils_a7e83490d8099f120d50432400f9cc893}{quickhull\+::mathutils\+::get\+Squared\+Distance\+Between\+Point\+And\+Ray}} (const Vector3$<$ T $>$ \&p, const Ray$<$ T $>$ \&r)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacequickhull_1_1mathutils_a427f6f7acd316db9b649fc8ba8d6ac0e}{quickhull\+::mathutils\+::get\+Signed\+Distance\+To\+Plane}} (const Vector3$<$ T $>$ \&v, const Plane$<$ T $>$ \&p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Vector3$<$ T $>$ \mbox{\hyperlink{namespacequickhull_1_1mathutils_a7d3de2903a20aa93062320573c011701}{quickhull\+::mathutils\+::get\+Triangle\+Normal}} (const Vector3$<$ T $>$ \&a, const Vector3$<$ T $>$ \&b, const Vector3$<$ T $>$ \&c)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{quickhull\+::default\+Eps}} ()
+\end{DoxyCompactItemize}

@@ -1,0 +1,150 @@
+\hypertarget{classminco_1_1MINCO__S3NU}{}\doxysection{minco\+::MINCO\+\_\+\+S3\+NU Class Reference}
+\label{classminco_1_1MINCO__S3NU}\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+
+
+{\ttfamily \#include $<$minco.\+hpp$>$}
+
+
+
+Collaboration diagram for minco\+::MINCO\+\_\+\+S3\+NU\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classminco_1_1MINCO__S3NU__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classminco_1_1MINCO__S3NU_ac7fbfedaf2421af0a372dc25183ee8bd}{MINCO\+\_\+\+S3\+NU}} ()=default
+\item 
+\mbox{\hyperlink{classminco_1_1MINCO__S3NU_afa3cc9af04a2c48225d4865edca71d41}{$\sim$\+MINCO\+\_\+\+S3\+NU}} ()
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_a1ffb430c2f219321d0713711594556a9}{set\+Conditions}} (const Eigen\+::\+Matrix3d \&head\+State, const Eigen\+::\+Matrix3d \&tail\+State, const int \&piece\+Num)
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_af032eb6d544ba4f03fcc884db25adce4}{set\+Parameters}} (const Eigen\+::\+Matrix3\+Xd \&in\+Ps, const Eigen\+::\+Vector\+Xd \&ts)
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_ade4caa68ed6221a3c4ad78294fa649e9}{get\+Trajectory}} (\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ 5 $>$ \&traj) const
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_a99554ed395cf4b5bc4fa7975f37768d3}{get\+Energy}} (double \&energy) const
+\item 
+const Eigen\+::\+Matrix\+X3d \& \mbox{\hyperlink{classminco_1_1MINCO__S3NU_a7e28cc7052b4821862549647f05fe036}{get\+Coeffs}} (void) const
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_aa199ee15d0262944b65a210596d999d7}{get\+Energy\+Partial\+Grad\+By\+Coeffs}} (Eigen\+::\+Matrix\+X3d \&gdC) const
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_a577012eb9600884fe18297144ae8d8f5}{get\+Energy\+Partial\+Grad\+By\+Times}} (Eigen\+::\+Vector\+Xd \&gdT) const
+\item 
+void \mbox{\hyperlink{classminco_1_1MINCO__S3NU_a4fcad10b30cabccfb98bc576c7255ffb}{propogate\+Grad}} (const Eigen\+::\+Matrix\+X3d \&partial\+Grad\+By\+Coeffs, const Eigen\+::\+Vector\+Xd \&partial\+Grad\+By\+Times, Eigen\+::\+Matrix3\+Xd \&grad\+By\+Points, Eigen\+::\+Vector\+Xd \&grad\+By\+Times)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_ac7fbfedaf2421af0a372dc25183ee8bd}\label{classminco_1_1MINCO__S3NU_ac7fbfedaf2421af0a372dc25183ee8bd}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!MINCO\_S3NU@{MINCO\_S3NU}}
+\index{MINCO\_S3NU@{MINCO\_S3NU}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{MINCO\_S3NU()}{MINCO\_S3NU()}}
+{\footnotesize\ttfamily minco\+::\+MINCO\+\_\+\+S3\+NU\+::\+MINCO\+\_\+\+S3\+NU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_afa3cc9af04a2c48225d4865edca71d41}\label{classminco_1_1MINCO__S3NU_afa3cc9af04a2c48225d4865edca71d41}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!````~MINCO\_S3NU@{$\sim$MINCO\_S3NU}}
+\index{````~MINCO\_S3NU@{$\sim$MINCO\_S3NU}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{$\sim$MINCO\_S3NU()}{~MINCO\_S3NU()}}
+{\footnotesize\ttfamily minco\+::\+MINCO\+\_\+\+S3\+NU\+::$\sim$\+MINCO\+\_\+\+S3\+NU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1MINCO__S3NU_afa3cc9af04a2c48225d4865edca71d41_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_a7e28cc7052b4821862549647f05fe036}\label{classminco_1_1MINCO__S3NU_a7e28cc7052b4821862549647f05fe036}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!getCoeffs@{getCoeffs}}
+\index{getCoeffs@{getCoeffs}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{getCoeffs()}{getCoeffs()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+X3d\& minco\+::\+MINCO\+\_\+\+S3\+NU\+::get\+Coeffs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_a99554ed395cf4b5bc4fa7975f37768d3}\label{classminco_1_1MINCO__S3NU_a99554ed395cf4b5bc4fa7975f37768d3}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!getEnergy@{getEnergy}}
+\index{getEnergy@{getEnergy}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{getEnergy()}{getEnergy()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::get\+Energy (\begin{DoxyParamCaption}\item[{double \&}]{energy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_aa199ee15d0262944b65a210596d999d7}\label{classminco_1_1MINCO__S3NU_aa199ee15d0262944b65a210596d999d7}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!getEnergyPartialGradByCoeffs@{getEnergyPartialGradByCoeffs}}
+\index{getEnergyPartialGradByCoeffs@{getEnergyPartialGradByCoeffs}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{getEnergyPartialGradByCoeffs()}{getEnergyPartialGradByCoeffs()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::get\+Energy\+Partial\+Grad\+By\+Coeffs (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+X3d \&}]{gdC }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_a577012eb9600884fe18297144ae8d8f5}\label{classminco_1_1MINCO__S3NU_a577012eb9600884fe18297144ae8d8f5}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!getEnergyPartialGradByTimes@{getEnergyPartialGradByTimes}}
+\index{getEnergyPartialGradByTimes@{getEnergyPartialGradByTimes}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{getEnergyPartialGradByTimes()}{getEnergyPartialGradByTimes()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::get\+Energy\+Partial\+Grad\+By\+Times (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd \&}]{gdT }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_ade4caa68ed6221a3c4ad78294fa649e9}\label{classminco_1_1MINCO__S3NU_ade4caa68ed6221a3c4ad78294fa649e9}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!getTrajectory@{getTrajectory}}
+\index{getTrajectory@{getTrajectory}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{getTrajectory()}{getTrajectory()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::get\+Trajectory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ 5 $>$ \&}]{traj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1MINCO__S3NU_ade4caa68ed6221a3c4ad78294fa649e9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_a4fcad10b30cabccfb98bc576c7255ffb}\label{classminco_1_1MINCO__S3NU_a4fcad10b30cabccfb98bc576c7255ffb}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!propogateGrad@{propogateGrad}}
+\index{propogateGrad@{propogateGrad}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{propogateGrad()}{propogateGrad()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::propogate\+Grad (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+X3d \&}]{partial\+Grad\+By\+Coeffs,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{partial\+Grad\+By\+Times,  }\item[{Eigen\+::\+Matrix3\+Xd \&}]{grad\+By\+Points,  }\item[{Eigen\+::\+Vector\+Xd \&}]{grad\+By\+Times }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1MINCO__S3NU_a4fcad10b30cabccfb98bc576c7255ffb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_a1ffb430c2f219321d0713711594556a9}\label{classminco_1_1MINCO__S3NU_a1ffb430c2f219321d0713711594556a9}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!setConditions@{setConditions}}
+\index{setConditions@{setConditions}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{setConditions()}{setConditions()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::set\+Conditions (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3d \&}]{head\+State,  }\item[{const Eigen\+::\+Matrix3d \&}]{tail\+State,  }\item[{const int \&}]{piece\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1MINCO__S3NU_a1ffb430c2f219321d0713711594556a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1MINCO__S3NU_af032eb6d544ba4f03fcc884db25adce4}\label{classminco_1_1MINCO__S3NU_af032eb6d544ba4f03fcc884db25adce4}} 
+\index{minco::MINCO\_S3NU@{minco::MINCO\_S3NU}!setParameters@{setParameters}}
+\index{setParameters@{setParameters}!minco::MINCO\_S3NU@{minco::MINCO\_S3NU}}
+\doxysubsubsection{\texorpdfstring{setParameters()}{setParameters()}}
+{\footnotesize\ttfamily void minco\+::\+MINCO\+\_\+\+S3\+NU\+::set\+Parameters (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix3\+Xd \&}]{in\+Ps,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1MINCO__S3NU_af032eb6d544ba4f03fcc884db25adce4_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{minco_8hpp}{minco.\+hpp}}\end{DoxyCompactItemize}

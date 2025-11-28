@@ -1,0 +1,105 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}geo\+\_\+utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gcopter.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}minco.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lbfgs.\+hpp\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix$<$ double, 6, 4 $>$ \mbox{\hyperlink{main_8cpp_ac2922370d3aae6cee155ff3a323a7cc7}{box\+ToH}} (const Eigen\+::\+Vector3d \&center, const Eigen\+::\+Vector3d \&half)
+\item 
+double $\ast$ \mbox{\hyperlink{main_8cpp_ac3211da1fa94eb3dc27f18cdd224e116}{return\+\_\+pos}} (double time, const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&coeff\+\_\+matrix)
+\item 
+double $\ast$ \mbox{\hyperlink{main_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f}{return\+\_\+vel}} (double time, const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&coeff\+\_\+matrix)
+\item 
+double $\ast$ \mbox{\hyperlink{main_8cpp_a44f59d08749ed6e6b2611d330110a936}{return\+\_\+acc}} (double time, const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&coeff\+\_\+matrix)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ac2922370d3aae6cee155ff3a323a7cc7}\label{main_8cpp_ac2922370d3aae6cee155ff3a323a7cc7}} 
+\index{main.cpp@{main.cpp}!boxToH@{boxToH}}
+\index{boxToH@{boxToH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{boxToH()}{boxToH()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix$<$double, 6, 4$>$ box\+ToH (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{center,  }\item[{const Eigen\+::\+Vector3d \&}]{half }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{main_8cpp_ac2922370d3aae6cee155ff3a323a7cc7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a44f59d08749ed6e6b2611d330110a936}\label{main_8cpp_a44f59d08749ed6e6b2611d330110a936}} 
+\index{main.cpp@{main.cpp}!return\_acc@{return\_acc}}
+\index{return\_acc@{return\_acc}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{return\_acc()}{return\_acc()}}
+{\footnotesize\ttfamily double$\ast$ return\+\_\+acc (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&}]{coeff\+\_\+matrix }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{main_8cpp_a44f59d08749ed6e6b2611d330110a936_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_ac3211da1fa94eb3dc27f18cdd224e116}\label{main_8cpp_ac3211da1fa94eb3dc27f18cdd224e116}} 
+\index{main.cpp@{main.cpp}!return\_pos@{return\_pos}}
+\index{return\_pos@{return\_pos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{return\_pos()}{return\_pos()}}
+{\footnotesize\ttfamily double$\ast$ return\+\_\+pos (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&}]{coeff\+\_\+matrix }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{main_8cpp_ac3211da1fa94eb3dc27f18cdd224e116_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f}\label{main_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f}} 
+\index{main.cpp@{main.cpp}!return\_vel@{return\_vel}}
+\index{return\_vel@{return\_vel}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{return\_vel()}{return\_vel()}}
+{\footnotesize\ttfamily double$\ast$ return\+\_\+vel (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{const Eigen\+::\+Matrix$<$ double, 3, 4 $>$ \&}]{coeff\+\_\+matrix }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{main_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f_icgraph}
+\end{center}
+\end{figure}

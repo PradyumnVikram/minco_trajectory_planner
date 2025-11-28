@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lbfgs_324',['lbfgs',['../namespacelbfgs.html',1,'']]]
+  ['lbfgs_320',['lbfgs',['../namespacelbfgs.html',1,'']]]
 ];

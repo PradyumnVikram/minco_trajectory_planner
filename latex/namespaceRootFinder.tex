@@ -1,0 +1,96 @@
+\hypertarget{namespaceRootFinder}{}\doxysection{Root\+Finder Namespace Reference}
+\label{namespaceRootFinder}\index{RootFinder@{RootFinder}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{namespaceRootFinder_a150515ee790a616d218c2362aea5213b}{poly\+Conv}} (const Eigen\+::\+Vector\+Xd \&l\+Coef, const Eigen\+::\+Vector\+Xd \&r\+Coef)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{namespaceRootFinder_ae9f01d118c5a1535fd595c9109c3a81a}{poly\+Sqr}} (const Eigen\+::\+Vector\+Xd \&coef)
+\item 
+double \mbox{\hyperlink{namespaceRootFinder_a13a56adccad1c0144a368e30fb83371e}{poly\+Val}} (const Eigen\+::\+Vector\+Xd \&coeffs, double x, bool numerical\+Stability=true)
+\item 
+int \mbox{\hyperlink{namespaceRootFinder_a67a7c058a3fe020d018c2ab0cc2f44ea}{count\+Roots}} (const Eigen\+::\+Vector\+Xd \&coeffs, double l, double r)
+\item 
+std\+::set$<$ double $>$ \mbox{\hyperlink{namespaceRootFinder_a86a613ee76ef9c1303a21a12fdcfc112}{solve\+Polynomial}} (const Eigen\+::\+Vector\+Xd \&coeffs, double lbound, double ubound, double tol, bool isolation=true)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceRootFinder_a67a7c058a3fe020d018c2ab0cc2f44ea}\label{namespaceRootFinder_a67a7c058a3fe020d018c2ab0cc2f44ea}} 
+\index{RootFinder@{RootFinder}!countRoots@{countRoots}}
+\index{countRoots@{countRoots}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{countRoots()}{countRoots()}}
+{\footnotesize\ttfamily int Root\+Finder\+::count\+Roots (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{coeffs,  }\item[{double}]{l,  }\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_a67a7c058a3fe020d018c2ab0cc2f44ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_a67a7c058a3fe020d018c2ab0cc2f44ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceRootFinder_a150515ee790a616d218c2362aea5213b}\label{namespaceRootFinder_a150515ee790a616d218c2362aea5213b}} 
+\index{RootFinder@{RootFinder}!polyConv@{polyConv}}
+\index{polyConv@{polyConv}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{polyConv()}{polyConv()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Root\+Finder\+::poly\+Conv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{l\+Coef,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{r\+Coef }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespaceRootFinder_ae9f01d118c5a1535fd595c9109c3a81a}\label{namespaceRootFinder_ae9f01d118c5a1535fd595c9109c3a81a}} 
+\index{RootFinder@{RootFinder}!polySqr@{polySqr}}
+\index{polySqr@{polySqr}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{polySqr()}{polySqr()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd Root\+Finder\+::poly\+Sqr (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{coef }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_ae9f01d118c5a1535fd595c9109c3a81a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceRootFinder_a13a56adccad1c0144a368e30fb83371e}\label{namespaceRootFinder_a13a56adccad1c0144a368e30fb83371e}} 
+\index{RootFinder@{RootFinder}!polyVal@{polyVal}}
+\index{polyVal@{polyVal}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{polyVal()}{polyVal()}}
+{\footnotesize\ttfamily double Root\+Finder\+::poly\+Val (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{coeffs,  }\item[{double}]{x,  }\item[{bool}]{numerical\+Stability = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_a13a56adccad1c0144a368e30fb83371e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceRootFinder_a86a613ee76ef9c1303a21a12fdcfc112}\label{namespaceRootFinder_a86a613ee76ef9c1303a21a12fdcfc112}} 
+\index{RootFinder@{RootFinder}!solvePolynomial@{solvePolynomial}}
+\index{solvePolynomial@{solvePolynomial}!RootFinder@{RootFinder}}
+\doxysubsubsection{\texorpdfstring{solvePolynomial()}{solvePolynomial()}}
+{\footnotesize\ttfamily std\+::set$<$double$>$ Root\+Finder\+::solve\+Polynomial (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{coeffs,  }\item[{double}]{lbound,  }\item[{double}]{ubound,  }\item[{double}]{tol,  }\item[{bool}]{isolation = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_a86a613ee76ef9c1303a21a12fdcfc112_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceRootFinder_a86a613ee76ef9c1303a21a12fdcfc112_icgraph}
+\end{center}
+\end{figure}

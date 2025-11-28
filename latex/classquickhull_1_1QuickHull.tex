@@ -1,0 +1,72 @@
+\hypertarget{classquickhull_1_1QuickHull}{}\doxysection{quickhull\+::Quick\+Hull$<$ T $>$ Class Template Reference}
+\label{classquickhull_1_1QuickHull}\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+
+
+{\ttfamily \#include $<$quickhull.\+hpp$>$}
+
+
+
+Collaboration diagram for quickhull\+::Quick\+Hull$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classquickhull_1_1QuickHull__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$ T $>$ \mbox{\hyperlink{classquickhull_1_1QuickHull_a282f65c9acb6ccff1e8422b85147f591}{get\+Convex\+Hull}} (const std\+::vector$<$ \mbox{\hyperlink{classquickhull_1_1Vector3}{Vector3}}$<$ T $>$$>$ \&point\+Cloud, bool CCW, bool use\+Original\+Indices, T eps=\mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$ T $>$())
+\item 
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$ T $>$ \mbox{\hyperlink{classquickhull_1_1QuickHull_a4b4e54d694e5e9e5f4e4f05566e273b3}{get\+Convex\+Hull}} (const \mbox{\hyperlink{classquickhull_1_1Vector3}{Vector3}}$<$ T $>$ $\ast$vertex\+Data, size\+\_\+t vertex\+Count, bool CCW, bool use\+Original\+Indices, T eps=\mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$ T $>$())
+\item 
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$ T $>$ \mbox{\hyperlink{classquickhull_1_1QuickHull_aeb24b48798f92afd706462169ad1f679}{get\+Convex\+Hull}} (const T $\ast$vertex\+Data, size\+\_\+t vertex\+Count, bool CCW, bool use\+Original\+Indices, T eps=\mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$ T $>$())
+\item 
+\mbox{\hyperlink{classquickhull_1_1HalfEdgeMesh}{Half\+Edge\+Mesh}}$<$ T, size\+\_\+t $>$ \mbox{\hyperlink{classquickhull_1_1QuickHull_abb39a47a78017935228e726e5db2cc20}{get\+Convex\+Hull\+As\+Mesh}} (const T $\ast$vertex\+Data, size\+\_\+t vertex\+Count, bool CCW, T eps=\mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$ T $>$())
+\item 
+const \mbox{\hyperlink{structquickhull_1_1DiagnosticsData}{Diagnostics\+Data}} \& \mbox{\hyperlink{classquickhull_1_1QuickHull_aebb652997881bd9a84dd6ad8b3e5e200}{get\+Diagnostics}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classquickhull_1_1QuickHull_a282f65c9acb6ccff1e8422b85147f591}\label{classquickhull_1_1QuickHull_a282f65c9acb6ccff1e8422b85147f591}} 
+\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}!getConvexHull@{getConvexHull}}
+\index{getConvexHull@{getConvexHull}!quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getConvexHull()}{getConvexHull()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$T$>$ \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull}}$<$ T $>$\+::get\+Convex\+Hull (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classquickhull_1_1Vector3}{Vector3}}$<$ T $>$$>$ \&}]{point\+Cloud,  }\item[{bool}]{CCW,  }\item[{bool}]{use\+Original\+Indices,  }\item[{T}]{eps = {\ttfamily \mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$T$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1QuickHull_aeb24b48798f92afd706462169ad1f679}\label{classquickhull_1_1QuickHull_aeb24b48798f92afd706462169ad1f679}} 
+\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}!getConvexHull@{getConvexHull}}
+\index{getConvexHull@{getConvexHull}!quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getConvexHull()}{getConvexHull()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$T$>$ \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull}}$<$ T $>$\+::get\+Convex\+Hull (\begin{DoxyParamCaption}\item[{const T $\ast$}]{vertex\+Data,  }\item[{size\+\_\+t}]{vertex\+Count,  }\item[{bool}]{CCW,  }\item[{bool}]{use\+Original\+Indices,  }\item[{T}]{eps = {\ttfamily \mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$T$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1QuickHull_a4b4e54d694e5e9e5f4e4f05566e273b3}\label{classquickhull_1_1QuickHull_a4b4e54d694e5e9e5f4e4f05566e273b3}} 
+\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}!getConvexHull@{getConvexHull}}
+\index{getConvexHull@{getConvexHull}!quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getConvexHull()}{getConvexHull()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1ConvexHull}{Convex\+Hull}}$<$T$>$ \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull}}$<$ T $>$\+::get\+Convex\+Hull (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classquickhull_1_1Vector3}{Vector3}}$<$ T $>$ $\ast$}]{vertex\+Data,  }\item[{size\+\_\+t}]{vertex\+Count,  }\item[{bool}]{CCW,  }\item[{bool}]{use\+Original\+Indices,  }\item[{T}]{eps = {\ttfamily \mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$T$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1QuickHull_abb39a47a78017935228e726e5db2cc20}\label{classquickhull_1_1QuickHull_abb39a47a78017935228e726e5db2cc20}} 
+\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}!getConvexHullAsMesh@{getConvexHullAsMesh}}
+\index{getConvexHullAsMesh@{getConvexHullAsMesh}!quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getConvexHullAsMesh()}{getConvexHullAsMesh()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1HalfEdgeMesh}{Half\+Edge\+Mesh}}$<$T, size\+\_\+t$>$ \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull}}$<$ T $>$\+::get\+Convex\+Hull\+As\+Mesh (\begin{DoxyParamCaption}\item[{const T $\ast$}]{vertex\+Data,  }\item[{size\+\_\+t}]{vertex\+Count,  }\item[{bool}]{CCW,  }\item[{T}]{eps = {\ttfamily \mbox{\hyperlink{namespacequickhull_a25ea561d81deb3d9cc973c388156c1a6}{default\+Eps}}$<$T$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1QuickHull_aebb652997881bd9a84dd6ad8b3e5e200}\label{classquickhull_1_1QuickHull_aebb652997881bd9a84dd6ad8b3e5e200}} 
+\index{quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}!getDiagnostics@{getDiagnostics}}
+\index{getDiagnostics@{getDiagnostics}!quickhull::QuickHull$<$ T $>$@{quickhull::QuickHull$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getDiagnostics()}{getDiagnostics()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{structquickhull_1_1DiagnosticsData}{Diagnostics\+Data}}\& \mbox{\hyperlink{classquickhull_1_1QuickHull}{quickhull\+::\+Quick\+Hull}}$<$ T $>$\+::get\+Diagnostics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{quickhull_8hpp}{quickhull.\+hpp}}\end{DoxyCompactItemize}

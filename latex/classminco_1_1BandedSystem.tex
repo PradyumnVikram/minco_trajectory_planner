@@ -1,0 +1,181 @@
+\hypertarget{classminco_1_1BandedSystem}{}\doxysection{minco\+::Banded\+System Class Reference}
+\label{classminco_1_1BandedSystem}\index{minco::BandedSystem@{minco::BandedSystem}}
+
+
+{\ttfamily \#include $<$minco.\+hpp$>$}
+
+
+
+Collaboration diagram for minco\+::Banded\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classminco_1_1BandedSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classminco_1_1BandedSystem_ad75f59727271e6f10af62dd487f8c8a0}{create}} (const int \&n, const int \&p, const int \&q)
+\item 
+void \mbox{\hyperlink{classminco_1_1BandedSystem_ab022f9f8c906c7ea04985f7009b91389}{destroy}} ()
+\item 
+void \mbox{\hyperlink{classminco_1_1BandedSystem_a017504a98f5c9e1ae92a43e2d34533f9}{reset}} (void)
+\item 
+const double \& \mbox{\hyperlink{classminco_1_1BandedSystem_aa5f3fbe15a665394d6fd1e0d69c62c60}{operator()}} (const int \&i, const int \&j) const
+\item 
+double \& \mbox{\hyperlink{classminco_1_1BandedSystem_ab35cb2c65e7adac9860f5ef14882a4d7}{operator()}} (const int \&i, const int \&j)
+\item 
+void \mbox{\hyperlink{classminco_1_1BandedSystem_ad489c2fe3cc7652b8f38e22f2b63bd66}{factorize\+LU}} ()
+\item 
+{\footnotesize template$<$typename EIGENMAT $>$ }\\void \mbox{\hyperlink{classminco_1_1BandedSystem_a34d526fc8f218e9715c2e4d0d7782f90}{solve}} (EIGENMAT \&b) const
+\item 
+{\footnotesize template$<$typename EIGENMAT $>$ }\\void \mbox{\hyperlink{classminco_1_1BandedSystem_ab310e3785ea6be2c3358fc255e6a1f01}{solve\+Adj}} (EIGENMAT \&b) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_ad75f59727271e6f10af62dd487f8c8a0}\label{classminco_1_1BandedSystem_ad75f59727271e6f10af62dd487f8c8a0}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!create@{create}}
+\index{create@{create}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void minco\+::\+Banded\+System\+::create (\begin{DoxyParamCaption}\item[{const int \&}]{n,  }\item[{const int \&}]{p,  }\item[{const int \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ad75f59727271e6f10af62dd487f8c8a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ad75f59727271e6f10af62dd487f8c8a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_ab022f9f8c906c7ea04985f7009b91389}\label{classminco_1_1BandedSystem_ab022f9f8c906c7ea04985f7009b91389}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!destroy@{destroy}}
+\index{destroy@{destroy}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void minco\+::\+Banded\+System\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ab022f9f8c906c7ea04985f7009b91389_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_ad489c2fe3cc7652b8f38e22f2b63bd66}\label{classminco_1_1BandedSystem_ad489c2fe3cc7652b8f38e22f2b63bd66}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!factorizeLU@{factorizeLU}}
+\index{factorizeLU@{factorizeLU}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{factorizeLU()}{factorizeLU()}}
+{\footnotesize\ttfamily void minco\+::\+Banded\+System\+::factorize\+LU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ad489c2fe3cc7652b8f38e22f2b63bd66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ad489c2fe3cc7652b8f38e22f2b63bd66_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_ab35cb2c65e7adac9860f5ef14882a4d7}\label{classminco_1_1BandedSystem_ab35cb2c65e7adac9860f5ef14882a4d7}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!operator()@{operator()}}
+\index{operator()@{operator()}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double\& minco\+::\+Banded\+System\+::operator() (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminco_1_1BandedSystem_aa5f3fbe15a665394d6fd1e0d69c62c60}\label{classminco_1_1BandedSystem_aa5f3fbe15a665394d6fd1e0d69c62c60}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!operator()@{operator()}}
+\index{operator()@{operator()}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const double\& minco\+::\+Banded\+System\+::operator() (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_aa5f3fbe15a665394d6fd1e0d69c62c60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_a017504a98f5c9e1ae92a43e2d34533f9}\label{classminco_1_1BandedSystem_a017504a98f5c9e1ae92a43e2d34533f9}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!reset@{reset}}
+\index{reset@{reset}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void minco\+::\+Banded\+System\+::reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_a017504a98f5c9e1ae92a43e2d34533f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_a34d526fc8f218e9715c2e4d0d7782f90}\label{classminco_1_1BandedSystem_a34d526fc8f218e9715c2e4d0d7782f90}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!solve@{solve}}
+\index{solve@{solve}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily template$<$typename EIGENMAT $>$ \\
+void minco\+::\+Banded\+System\+::solve (\begin{DoxyParamCaption}\item[{EIGENMAT \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_a34d526fc8f218e9715c2e4d0d7782f90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_a34d526fc8f218e9715c2e4d0d7782f90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classminco_1_1BandedSystem_ab310e3785ea6be2c3358fc255e6a1f01}\label{classminco_1_1BandedSystem_ab310e3785ea6be2c3358fc255e6a1f01}} 
+\index{minco::BandedSystem@{minco::BandedSystem}!solveAdj@{solveAdj}}
+\index{solveAdj@{solveAdj}!minco::BandedSystem@{minco::BandedSystem}}
+\doxysubsubsection{\texorpdfstring{solveAdj()}{solveAdj()}}
+{\footnotesize\ttfamily template$<$typename EIGENMAT $>$ \\
+void minco\+::\+Banded\+System\+::solve\+Adj (\begin{DoxyParamCaption}\item[{EIGENMAT \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ab310e3785ea6be2c3358fc255e6a1f01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classminco_1_1BandedSystem_ab310e3785ea6be2c3358fc255e6a1f01_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{minco_8hpp}{minco.\+hpp}}\end{DoxyCompactItemize}

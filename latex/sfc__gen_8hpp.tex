@@ -1,0 +1,35 @@
+\hypertarget{sfc__gen_8hpp}{}\doxysection{sfc\+\_\+gen.\+hpp File Reference}
+\label{sfc__gen_8hpp}\index{sfc\_gen.hpp@{sfc\_gen.hpp}}
+{\ttfamily \#include \char`\"{}geo\+\_\+utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}firi.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$ompl/util/\+Console.\+h$>$}\newline
+{\ttfamily \#include $<$ompl/base/\+Space\+Information.\+h$>$}\newline
+{\ttfamily \#include $<$ompl/base/spaces/\+Real\+Vector\+State\+Space.\+h$>$}\newline
+{\ttfamily \#include $<$ompl/geometric/planners/rrt/\+Informed\+RRTstar.\+h$>$}\newline
+{\ttfamily \#include $<$ompl/base/objectives/\+Path\+Length\+Optimization\+Objective.\+h$>$}\newline
+{\ttfamily \#include $<$ompl/base/\+Discrete\+Motion\+Validator.\+h$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+Include dependency graph for sfc\+\_\+gen.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sfc__gen_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesfc__gen}{sfc\+\_\+gen}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Map $>$ }\\double \mbox{\hyperlink{namespacesfc__gen_ae7fcf4a3915c3accd11648441f3c152f}{sfc\+\_\+gen\+::plan\+Path}} (const Eigen\+::\+Vector3d \&s, const Eigen\+::\+Vector3d \&g, const Eigen\+::\+Vector3d \&lb, const Eigen\+::\+Vector3d \&hb, const Map $\ast$map\+Ptr, const double \&timeout, std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&p)
+\item 
+void \mbox{\hyperlink{namespacesfc__gen_a9d70b29396116bf4d2aa64c36a164b3d}{sfc\+\_\+gen\+::convex\+Cover}} (const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&path, const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&points, const Eigen\+::\+Vector3d \&low\+Corner, const Eigen\+::\+Vector3d \&high\+Corner, const double \&progress, const double \&range, std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&hpolys, const double eps=1.\+0e-\/6)
+\item 
+void \mbox{\hyperlink{namespacesfc__gen_ab282d8cd1876e7c6f5b19eabd2b894ab}{sfc\+\_\+gen\+::short\+Cut}} (std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&hpolys)
+\end{DoxyCompactItemize}

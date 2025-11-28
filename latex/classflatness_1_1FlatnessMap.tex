@@ -1,0 +1,59 @@
+\hypertarget{classflatness_1_1FlatnessMap}{}\doxysection{flatness\+::Flatness\+Map Class Reference}
+\label{classflatness_1_1FlatnessMap}\index{flatness::FlatnessMap@{flatness::FlatnessMap}}
+
+
+{\ttfamily \#include $<$flatness.\+hpp$>$}
+
+
+
+Collaboration diagram for flatness\+::Flatness\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classflatness_1_1FlatnessMap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classflatness_1_1FlatnessMap_a6b1bf2d751465e916c44aad9d6068010}{reset}} (const double \&vehicle\+\_\+mass, const double \&gravitational\+\_\+acceleration, const double \&horitonral\+\_\+drag\+\_\+coeff, const double \&vertical\+\_\+drag\+\_\+coeff, const double \&parasitic\+\_\+drag\+\_\+coeff, const double \&speed\+\_\+smooth\+\_\+factor)
+\item 
+void \mbox{\hyperlink{classflatness_1_1FlatnessMap_a18f6cc6ef4d14afa735c783bd08c5b01}{forward}} (const Eigen\+::\+Vector3d \&vel, const Eigen\+::\+Vector3d \&acc, const Eigen\+::\+Vector3d \&jer, const double \&psi, const double \&dpsi, double \&thr, Eigen\+::\+Vector4d \&quat, Eigen\+::\+Vector3d \&omg)
+\item 
+void \mbox{\hyperlink{classflatness_1_1FlatnessMap_a7b56e8aa72a48f686566747d86452a6d}{backward}} (const Eigen\+::\+Vector3d \&pos\+\_\+grad, const Eigen\+::\+Vector3d \&vel\+\_\+grad, const double \&thr\+\_\+grad, const Eigen\+::\+Vector4d \&quat\+\_\+grad, const Eigen\+::\+Vector3d \&omg\+\_\+grad, Eigen\+::\+Vector3d \&pos\+\_\+total\+\_\+grad, Eigen\+::\+Vector3d \&vel\+\_\+total\+\_\+grad, Eigen\+::\+Vector3d \&acc\+\_\+total\+\_\+grad, Eigen\+::\+Vector3d \&jer\+\_\+total\+\_\+grad, double \&psi\+\_\+total\+\_\+grad, double \&dpsi\+\_\+total\+\_\+grad) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classflatness_1_1FlatnessMap_a7b56e8aa72a48f686566747d86452a6d}\label{classflatness_1_1FlatnessMap_a7b56e8aa72a48f686566747d86452a6d}} 
+\index{flatness::FlatnessMap@{flatness::FlatnessMap}!backward@{backward}}
+\index{backward@{backward}!flatness::FlatnessMap@{flatness::FlatnessMap}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily void flatness\+::\+Flatness\+Map\+::backward (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{pos\+\_\+grad,  }\item[{const Eigen\+::\+Vector3d \&}]{vel\+\_\+grad,  }\item[{const double \&}]{thr\+\_\+grad,  }\item[{const Eigen\+::\+Vector4d \&}]{quat\+\_\+grad,  }\item[{const Eigen\+::\+Vector3d \&}]{omg\+\_\+grad,  }\item[{Eigen\+::\+Vector3d \&}]{pos\+\_\+total\+\_\+grad,  }\item[{Eigen\+::\+Vector3d \&}]{vel\+\_\+total\+\_\+grad,  }\item[{Eigen\+::\+Vector3d \&}]{acc\+\_\+total\+\_\+grad,  }\item[{Eigen\+::\+Vector3d \&}]{jer\+\_\+total\+\_\+grad,  }\item[{double \&}]{psi\+\_\+total\+\_\+grad,  }\item[{double \&}]{dpsi\+\_\+total\+\_\+grad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classflatness_1_1FlatnessMap_a18f6cc6ef4d14afa735c783bd08c5b01}\label{classflatness_1_1FlatnessMap_a18f6cc6ef4d14afa735c783bd08c5b01}} 
+\index{flatness::FlatnessMap@{flatness::FlatnessMap}!forward@{forward}}
+\index{forward@{forward}!flatness::FlatnessMap@{flatness::FlatnessMap}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily void flatness\+::\+Flatness\+Map\+::forward (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{vel,  }\item[{const Eigen\+::\+Vector3d \&}]{acc,  }\item[{const Eigen\+::\+Vector3d \&}]{jer,  }\item[{const double \&}]{psi,  }\item[{const double \&}]{dpsi,  }\item[{double \&}]{thr,  }\item[{Eigen\+::\+Vector4d \&}]{quat,  }\item[{Eigen\+::\+Vector3d \&}]{omg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classflatness_1_1FlatnessMap_a6b1bf2d751465e916c44aad9d6068010}\label{classflatness_1_1FlatnessMap_a6b1bf2d751465e916c44aad9d6068010}} 
+\index{flatness::FlatnessMap@{flatness::FlatnessMap}!reset@{reset}}
+\index{reset@{reset}!flatness::FlatnessMap@{flatness::FlatnessMap}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void flatness\+::\+Flatness\+Map\+::reset (\begin{DoxyParamCaption}\item[{const double \&}]{vehicle\+\_\+mass,  }\item[{const double \&}]{gravitational\+\_\+acceleration,  }\item[{const double \&}]{horitonral\+\_\+drag\+\_\+coeff,  }\item[{const double \&}]{vertical\+\_\+drag\+\_\+coeff,  }\item[{const double \&}]{parasitic\+\_\+drag\+\_\+coeff,  }\item[{const double \&}]{speed\+\_\+smooth\+\_\+factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classflatness_1_1FlatnessMap_a6b1bf2d751465e916c44aad9d6068010_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{flatness_8hpp}{flatness.\+hpp}}\end{DoxyCompactItemize}

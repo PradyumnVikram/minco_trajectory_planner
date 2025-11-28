@@ -1,0 +1,49 @@
+\hypertarget{namespacesfc__gen}{}\doxysection{sfc\+\_\+gen Namespace Reference}
+\label{namespacesfc__gen}\index{sfc\_gen@{sfc\_gen}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Map $>$ }\\double \mbox{\hyperlink{namespacesfc__gen_ae7fcf4a3915c3accd11648441f3c152f}{plan\+Path}} (const Eigen\+::\+Vector3d \&s, const Eigen\+::\+Vector3d \&g, const Eigen\+::\+Vector3d \&lb, const Eigen\+::\+Vector3d \&hb, const Map $\ast$map\+Ptr, const double \&timeout, std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&p)
+\item 
+void \mbox{\hyperlink{namespacesfc__gen_a9d70b29396116bf4d2aa64c36a164b3d}{convex\+Cover}} (const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&path, const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&points, const Eigen\+::\+Vector3d \&low\+Corner, const Eigen\+::\+Vector3d \&high\+Corner, const double \&progress, const double \&range, std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&hpolys, const double eps=1.\+0e-\/6)
+\item 
+void \mbox{\hyperlink{namespacesfc__gen_ab282d8cd1876e7c6f5b19eabd2b894ab}{short\+Cut}} (std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&hpolys)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesfc__gen_a9d70b29396116bf4d2aa64c36a164b3d}\label{namespacesfc__gen_a9d70b29396116bf4d2aa64c36a164b3d}} 
+\index{sfc\_gen@{sfc\_gen}!convexCover@{convexCover}}
+\index{convexCover@{convexCover}!sfc\_gen@{sfc\_gen}}
+\doxysubsubsection{\texorpdfstring{convexCover()}{convexCover()}}
+{\footnotesize\ttfamily void sfc\+\_\+gen\+::convex\+Cover (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&}]{path,  }\item[{const std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&}]{points,  }\item[{const Eigen\+::\+Vector3d \&}]{low\+Corner,  }\item[{const Eigen\+::\+Vector3d \&}]{high\+Corner,  }\item[{const double \&}]{progress,  }\item[{const double \&}]{range,  }\item[{std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&}]{hpolys,  }\item[{const double}]{eps = {\ttfamily 1.0e-\/6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesfc__gen_a9d70b29396116bf4d2aa64c36a164b3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesfc__gen_ae7fcf4a3915c3accd11648441f3c152f}\label{namespacesfc__gen_ae7fcf4a3915c3accd11648441f3c152f}} 
+\index{sfc\_gen@{sfc\_gen}!planPath@{planPath}}
+\index{planPath@{planPath}!sfc\_gen@{sfc\_gen}}
+\doxysubsubsection{\texorpdfstring{planPath()}{planPath()}}
+{\footnotesize\ttfamily template$<$typename Map $>$ \\
+double sfc\+\_\+gen\+::plan\+Path (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector3d \&}]{s,  }\item[{const Eigen\+::\+Vector3d \&}]{g,  }\item[{const Eigen\+::\+Vector3d \&}]{lb,  }\item[{const Eigen\+::\+Vector3d \&}]{hb,  }\item[{const Map $\ast$}]{map\+Ptr,  }\item[{const double \&}]{timeout,  }\item[{std\+::vector$<$ Eigen\+::\+Vector3d $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacesfc__gen_ab282d8cd1876e7c6f5b19eabd2b894ab}\label{namespacesfc__gen_ab282d8cd1876e7c6f5b19eabd2b894ab}} 
+\index{sfc\_gen@{sfc\_gen}!shortCut@{shortCut}}
+\index{shortCut@{shortCut}!sfc\_gen@{sfc\_gen}}
+\doxysubsubsection{\texorpdfstring{shortCut()}{shortCut()}}
+{\footnotesize\ttfamily void sfc\+\_\+gen\+::short\+Cut (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Eigen\+::\+Matrix\+X4d $>$ \&}]{hpolys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{namespacesfc__gen_ab282d8cd1876e7c6f5b19eabd2b894ab_cgraph}
+\end{center}
+\end{figure}

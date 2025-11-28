@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trajectory Planner: gcopter.hpp Source File</title>
+<title>S2NU Planner: gcopter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trajectory Planner
+   <div id="projectname">S2NU Planner
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a4fa6bc722b208c3055e82c8b93435f86">   48</a></span>&#160;        <span class="keyword">typedef</span> std::vector&lt;PolyhedronH&gt; <a class="code" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a4fa6bc722b208c3055e82c8b93435f86">PolyhedraH</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classminco_1_1MINCO__S3NU.html">minco::MINCO_S3NU</a> <a class="code" href="namespaceminco.html">minco</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classminco_1_1MINCO__S2NU.html">minco::MINCO_S2NU</a> <a class="code" href="namespaceminco.html">minco</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classflatness_1_1FlatnessMap.html">flatness::FlatnessMap</a> flatmap;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">double</span> rho;</div>
@@ -428,7 +428,7 @@ $(function() {
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordtype">double</span> step, alpha;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keywordtype">double</span> s1, s2, s3, s4, s5;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            Eigen::Matrix&lt;double, 6, 1&gt; beta0, beta1, beta2, beta3, beta4;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            Eigen::Matrix&lt;double, 4, 1&gt; beta0, beta1, beta2, beta3, beta4;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            Eigen::Vector3d outerNormal;</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordtype">int</span> K, L;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keywordtype">double</span> violaPos, violaVel, violaOmg, violaTheta, violaThrust;</div>
@@ -440,7 +440,7 @@ $(function() {
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> integralFrac = 1.0 / integralResolution;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pieceNum; i++)</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="keyword">const</span> Eigen::Matrix&lt;double, 6, 3&gt; &amp;c = coeffs.block&lt;6, 3&gt;(i * 6, 0);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="keyword">const</span> Eigen::Matrix&lt;double, 4, 3&gt; &amp;c = coeffs.block&lt;4, 3&gt;(i * 4, 0);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                step = T(i) * integralFrac;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt;= integralResolution; j++)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                {</div>
@@ -449,11 +449,11 @@ $(function() {
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                    s3 = s2 * s1;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                    s4 = s2 * s2;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                    s5 = s4 * s1;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                    beta0(0) = 1.0, beta0(1) = s1, beta0(2) = s2, beta0(3) = s3, beta0(4) = s4, beta0(5) = s5;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    beta1(0) = 0.0, beta1(1) = 1.0, beta1(2) = 2.0 * s1, beta1(3) = 3.0 * s2, beta1(4) = 4.0 * s3, beta1(5) = 5.0 * s4;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                    beta2(0) = 0.0, beta2(1) = 0.0, beta2(2) = 2.0, beta2(3) = 6.0 * s1, beta2(4) = 12.0 * s2, beta2(5) = 20.0 * s3;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                    beta3(0) = 0.0, beta3(1) = 0.0, beta3(2) = 0.0, beta3(3) = 6.0, beta3(4) = 24.0 * s1, beta3(5) = 60.0 * s2;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    beta4(0) = 0.0, beta4(1) = 0.0, beta4(2) = 0.0, beta4(3) = 0.0, beta4(4) = 24.0, beta4(5) = 120.0 * s1;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                    beta0(0) = 1.0, beta0(1) = s1, beta0(2) = s2, beta0(3) = s3;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    beta1(0) = 0.0, beta1(1) = 1.0, beta1(2) = 2.0 * s1, beta1(3) = 3.0 * s2;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                    beta2(0) = 0.0, beta2(1) = 0.0, beta2(2) = 2.0, beta2(3) = 6.0 * s1;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                    beta3(0) = 0.0, beta3(1) = 0.0, beta3(2) = 0.0, beta3(3) = 6.0;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    beta4(0) = 0.0, beta4(1) = 0.0, beta4(2) = 0.0, beta4(3) = 0.0;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    pos = c.transpose() * beta0;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                    vel = c.transpose() * beta1;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                    acc = c.transpose() * beta2;</div>
@@ -518,7 +518,7 @@ $(function() {
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                    node = (j == 0 || j == integralResolution) ? 0.5 : 1.0;</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    alpha = j * integralFrac;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    gradC.block&lt;6, 3&gt;(i * 6, 0) += (beta0 * totalGradPos.transpose() +</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    gradC.block&lt;4, 3&gt;(i * 4, 0) += (beta0 * totalGradPos.transpose() +</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                                                    beta1 * totalGradVel.transpose() +</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                                                    beta2 * totalGradAcc.transpose() +</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                                                    beta3 * totalGradJer.transpose()) *</div>
@@ -867,13 +867,13 @@ $(function() {
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            times.resize(pieceN);</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            gradByPoints.resize(3, pieceN - 1);</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            gradByTimes.resize(pieceN);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            partialGradByCoeffs.resize(6 * pieceN, 3);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            partialGradByCoeffs.resize(4 * pieceN, 3);</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            partialGradByTimes.resize(pieceN);</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        }</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno"><a class="line" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a5fb5d6ab8ad9102403c98fc6def38332">  809</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a5fb5d6ab8ad9102403c98fc6def38332">optimize</a>(<a class="code" href="classTrajectory.html">Trajectory&lt;5&gt;</a> &amp;traj,</div>
+<div class="line"><a name="l00809"></a><span class="lineno"><a class="line" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a72d6156327efbbd584936c3f3233bdfd">  809</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a72d6156327efbbd584936c3f3233bdfd">optimize</a>(<a class="code" href="classTrajectory.html">Trajectory&lt;3&gt;</a> &amp;traj,</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;relCostTol)</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        {</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            Eigen::VectorXd x(temporalDim + spatialDim);</div>
@@ -931,11 +931,11 @@ $(function() {
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html">gcopter::GCOPTER_PolytopeSFC</a></div><div class="ttdef"><b>Definition:</b> gcopter.hpp:43</div></div>
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_a2adb8d553e8b3de8f7b4207473db25d7"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a2adb8d553e8b3de8f7b4207473db25d7">gcopter::GCOPTER_PolytopeSFC::PolyhedraV</a></div><div class="ttdeci">std::vector&lt; PolyhedronV &gt; PolyhedraV</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:47</div></div>
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_a4fa6bc722b208c3055e82c8b93435f86"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a4fa6bc722b208c3055e82c8b93435f86">gcopter::GCOPTER_PolytopeSFC::PolyhedraH</a></div><div class="ttdeci">std::vector&lt; PolyhedronH &gt; PolyhedraH</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:48</div></div>
-<div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_a5fb5d6ab8ad9102403c98fc6def38332"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a5fb5d6ab8ad9102403c98fc6def38332">gcopter::GCOPTER_PolytopeSFC::optimize</a></div><div class="ttdeci">double optimize(Trajectory&lt; 5 &gt; &amp;traj, const double &amp;relCostTol)</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:809</div></div>
+<div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_a72d6156327efbbd584936c3f3233bdfd"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a72d6156327efbbd584936c3f3233bdfd">gcopter::GCOPTER_PolytopeSFC::optimize</a></div><div class="ttdeci">double optimize(Trajectory&lt; 3 &gt; &amp;traj, const double &amp;relCostTol)</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:809</div></div>
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_abca4cdd6e61a716db18ecbb5be982a99"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#abca4cdd6e61a716db18ecbb5be982a99">gcopter::GCOPTER_PolytopeSFC::setup</a></div><div class="ttdeci">bool setup(const double &amp;timeWeight, const Eigen::Matrix3d &amp;initialPVA, const Eigen::Matrix3d &amp;terminalPVA, const PolyhedraH &amp;safeCorridor, const double &amp;lengthPerPiece, const double &amp;smoothingFactor, const int &amp;integralResolution, const Eigen::VectorXd &amp;magnitudeBounds, const Eigen::VectorXd &amp;penaltyWeights, const Eigen::VectorXd &amp;physicalParams)</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:728</div></div>
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_ae7117b2b66e338f23484614a53f4560b"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#ae7117b2b66e338f23484614a53f4560b">gcopter::GCOPTER_PolytopeSFC::PolyhedronH</a></div><div class="ttdeci">Eigen::MatrixX4d PolyhedronH</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:46</div></div>
 <div class="ttc" id="aclassgcopter_1_1GCOPTER__PolytopeSFC_html_affa96d6e7efff9f47a9913ca1ce4db59"><div class="ttname"><a href="classgcopter_1_1GCOPTER__PolytopeSFC.html#affa96d6e7efff9f47a9913ca1ce4db59">gcopter::GCOPTER_PolytopeSFC::PolyhedronV</a></div><div class="ttdeci">Eigen::Matrix3Xd PolyhedronV</div><div class="ttdef"><b>Definition:</b> gcopter.hpp:45</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S3NU_html"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html">minco::MINCO_S3NU</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:398</div></div>
+<div class="ttc" id="aclassminco_1_1MINCO__S2NU_html"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html">minco::MINCO_S2NU</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:202</div></div>
 <div class="ttc" id="aflatness_8hpp_html"><div class="ttname"><a href="flatness_8hpp.html">flatness.hpp</a></div></div>
 <div class="ttc" id="ageo__utils_8hpp_html"><div class="ttname"><a href="geo__utils_8hpp.html">geo_utils.hpp</a></div></div>
 <div class="ttc" id="albfgs_8hpp_html"><div class="ttname"><a href="lbfgs_8hpp.html">lbfgs.hpp</a></div></div>

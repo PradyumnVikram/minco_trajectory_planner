@@ -1,0 +1,491 @@
+\hypertarget{classTrajectory}{}\doxysection{Trajectory$<$ D $>$ Class Template Reference}
+\label{classTrajectory}\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+
+
+{\ttfamily \#include $<$trajectory.\+hpp$>$}
+
+
+
+Collaboration diagram for Trajectory$<$ D $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classTrajectory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrajectory_ad3734c3b291fe64e8f74e7923837fcba}{Trajectory}} ()=default
+\item 
+\mbox{\hyperlink{classTrajectory_a5fc9766ebfcaf2ac510407468298ff65}{Trajectory}} (const std\+::vector$<$ double $>$ \&durs, const std\+::vector$<$ typename \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::Coefficient\+Mat $>$ \&c\+Mats)
+\item 
+int \mbox{\hyperlink{classTrajectory_a73deec38399c8273756c3ea3616633cf}{get\+Piece\+Num}} () const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classTrajectory_ab78fc1472b7e1d0eab05f9f916c5c8ee}{get\+Durations}} () const
+\item 
+double \mbox{\hyperlink{classTrajectory_af5e975d416b555a802b61fa9ae673fc9}{get\+Total\+Duration}} () const
+\item 
+Eigen\+::\+Matrix3\+Xd \mbox{\hyperlink{classTrajectory_a5bc537fe3cef0f23e13284559afbcd8f}{get\+Positions}} () const
+\item 
+const \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$ \& \mbox{\hyperlink{classTrajectory_ab73adf21a1e6964185e210574ac6b8fd}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\item 
+\mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$ \& \mbox{\hyperlink{classTrajectory_ac8476a59e0622e11a31c2cba402d97bb}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+void \mbox{\hyperlink{classTrajectory_a9677d21a35fa4dac02ece2f57cc9c309}{clear}} (void)
+\item 
+Pieces\+::const\+\_\+iterator \mbox{\hyperlink{classTrajectory_a7854dc4c34f791693a9ad7810c7fc840}{begin}} () const
+\item 
+Pieces\+::const\+\_\+iterator \mbox{\hyperlink{classTrajectory_af735b9a4370e3e26c7bacea6c5d52901}{end}} () const
+\item 
+Pieces\+::iterator \mbox{\hyperlink{classTrajectory_af2a231d15f95e07bf537d83097d5843c}{begin}} ()
+\item 
+Pieces\+::iterator \mbox{\hyperlink{classTrajectory_a6dd9058958c55cef3d601c13ce958a46}{end}} ()
+\item 
+void \mbox{\hyperlink{classTrajectory_a6755465aec53041a851409ab5a453368}{reserve}} (const int \&n)
+\item 
+void \mbox{\hyperlink{classTrajectory_a7a41e9aebb2bd877da14c833799992d9}{emplace\+\_\+back}} (const \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$ \&piece)
+\item 
+void \mbox{\hyperlink{classTrajectory_a52b4a0375b69d8aa8171a63d3e8218b2}{emplace\+\_\+back}} (const double \&dur, const typename \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::Coefficient\+Mat \&c\+Mat)
+\item 
+void \mbox{\hyperlink{classTrajectory_a4c80f172b1caf3d1bc68a5db536c2c9a}{append}} (const \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$ \&traj)
+\item 
+int \mbox{\hyperlink{classTrajectory_a0a6291b71f1dd98acfdfa12fefd8b4ef}{locate\+Piece\+Idx}} (double \&t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_adca82749269119d726fb122ac76b10bb}{get\+Pos}} (double t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_a330848be7c152d1b7b529ba3c41ace95}{get\+Vel}} (double t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_a97b29b05c1c37cfc8833ea3c3de031b8}{get\+Acc}} (double t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_af3a465b040dd8e5100de51947e4aede0}{get\+Jer}} (double t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_af304773193ba6a9a4ff1592ca90ccc3a}{get\+Junc\+Pos}} (int junc\+Idx) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_aa4955a6c8a17ad1f0f8920099cdba6cc}{get\+Junc\+Vel}} (int junc\+Idx) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory_a780efb4d5353e5304f0abb09582dae9a}{get\+Junc\+Acc}} (int junc\+Idx) const
+\item 
+double \mbox{\hyperlink{classTrajectory_af31508dd4d4a590c18a0283c060c284e}{get\+Max\+Vel\+Rate}} () const
+\item 
+double \mbox{\hyperlink{classTrajectory_a5ee630bb7135d8c27675128ce63ab064}{get\+Max\+Acc\+Rate}} () const
+\item 
+bool \mbox{\hyperlink{classTrajectory_ac3de0d1d9b23868259d7f42a65b333d7}{check\+Max\+Vel\+Rate}} (const double \&max\+Vel\+Rate) const
+\item 
+bool \mbox{\hyperlink{classTrajectory_af9a56d76939bd9d195959eb402416e23}{check\+Max\+Acc\+Rate}} (const double \&max\+Acc\+Rate) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrajectory_ad3734c3b291fe64e8f74e7923837fcba}\label{classTrajectory_ad3734c3b291fe64e8f74e7923837fcba}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!Trajectory@{Trajectory}}
+\index{Trajectory@{Trajectory}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{Trajectory()}{Trajectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::\mbox{\hyperlink{classTrajectory}{Trajectory}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classTrajectory_a5fc9766ebfcaf2ac510407468298ff65}\label{classTrajectory_a5fc9766ebfcaf2ac510407468298ff65}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!Trajectory@{Trajectory}}
+\index{Trajectory@{Trajectory}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{Trajectory()}{Trajectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::\mbox{\hyperlink{classTrajectory}{Trajectory}} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{durs,  }\item[{const std\+::vector$<$ typename \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::Coefficient\+Mat $>$ \&}]{c\+Mats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrajectory_a4c80f172b1caf3d1bc68a5db536c2c9a}\label{classTrajectory_a4c80f172b1caf3d1bc68a5db536c2c9a}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!append@{append}}
+\index{append@{append}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::append (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$ \&}]{traj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classTrajectory_a4c80f172b1caf3d1bc68a5db536c2c9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af2a231d15f95e07bf537d83097d5843c}\label{classTrajectory_af2a231d15f95e07bf537d83097d5843c}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!begin@{begin}}
+\index{begin@{begin}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Pieces\+::iterator \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTrajectory_a7854dc4c34f791693a9ad7810c7fc840}\label{classTrajectory_a7854dc4c34f791693a9ad7810c7fc840}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!begin@{begin}}
+\index{begin@{begin}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Pieces\+::const\+\_\+iterator \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classTrajectory_a7854dc4c34f791693a9ad7810c7fc840_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af9a56d76939bd9d195959eb402416e23}\label{classTrajectory_af9a56d76939bd9d195959eb402416e23}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!checkMaxAccRate@{checkMaxAccRate}}
+\index{checkMaxAccRate@{checkMaxAccRate}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{checkMaxAccRate()}{checkMaxAccRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::check\+Max\+Acc\+Rate (\begin{DoxyParamCaption}\item[{const double \&}]{max\+Acc\+Rate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_af9a56d76939bd9d195959eb402416e23_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_ac3de0d1d9b23868259d7f42a65b333d7}\label{classTrajectory_ac3de0d1d9b23868259d7f42a65b333d7}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!checkMaxVelRate@{checkMaxVelRate}}
+\index{checkMaxVelRate@{checkMaxVelRate}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{checkMaxVelRate()}{checkMaxVelRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::check\+Max\+Vel\+Rate (\begin{DoxyParamCaption}\item[{const double \&}]{max\+Vel\+Rate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_ac3de0d1d9b23868259d7f42a65b333d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a9677d21a35fa4dac02ece2f57cc9c309}\label{classTrajectory_a9677d21a35fa4dac02ece2f57cc9c309}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!clear@{clear}}
+\index{clear@{clear}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a9677d21a35fa4dac02ece2f57cc9c309_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a52b4a0375b69d8aa8171a63d3e8218b2}\label{classTrajectory_a52b4a0375b69d8aa8171a63d3e8218b2}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::emplace\+\_\+back (\begin{DoxyParamCaption}\item[{const double \&}]{dur,  }\item[{const typename \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::Coefficient\+Mat \&}]{c\+Mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTrajectory_a7a41e9aebb2bd877da14c833799992d9}\label{classTrajectory_a7a41e9aebb2bd877da14c833799992d9}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::emplace\+\_\+back (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$ \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a7a41e9aebb2bd877da14c833799992d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a6dd9058958c55cef3d601c13ce958a46}\label{classTrajectory_a6dd9058958c55cef3d601c13ce958a46}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!end@{end}}
+\index{end@{end}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Pieces\+::iterator \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTrajectory_af735b9a4370e3e26c7bacea6c5d52901}\label{classTrajectory_af735b9a4370e3e26c7bacea6c5d52901}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!end@{end}}
+\index{end@{end}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Pieces\+::const\+\_\+iterator \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classTrajectory_af735b9a4370e3e26c7bacea6c5d52901_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a97b29b05c1c37cfc8833ea3c3de031b8}\label{classTrajectory_a97b29b05c1c37cfc8833ea3c3de031b8}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getAcc@{getAcc}}
+\index{getAcc@{getAcc}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getAcc()}{getAcc()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Acc (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a97b29b05c1c37cfc8833ea3c3de031b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_ab78fc1472b7e1d0eab05f9f916c5c8ee}\label{classTrajectory_ab78fc1472b7e1d0eab05f9f916c5c8ee}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getDurations@{getDurations}}
+\index{getDurations@{getDurations}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getDurations()}{getDurations()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Durations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_ab78fc1472b7e1d0eab05f9f916c5c8ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classTrajectory_ab78fc1472b7e1d0eab05f9f916c5c8ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af3a465b040dd8e5100de51947e4aede0}\label{classTrajectory_af3a465b040dd8e5100de51947e4aede0}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getJer@{getJer}}
+\index{getJer@{getJer}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getJer()}{getJer()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Jer (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_af3a465b040dd8e5100de51947e4aede0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a780efb4d5353e5304f0abb09582dae9a}\label{classTrajectory_a780efb4d5353e5304f0abb09582dae9a}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getJuncAcc@{getJuncAcc}}
+\index{getJuncAcc@{getJuncAcc}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getJuncAcc()}{getJuncAcc()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Junc\+Acc (\begin{DoxyParamCaption}\item[{int}]{junc\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a780efb4d5353e5304f0abb09582dae9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af304773193ba6a9a4ff1592ca90ccc3a}\label{classTrajectory_af304773193ba6a9a4ff1592ca90ccc3a}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getJuncPos@{getJuncPos}}
+\index{getJuncPos@{getJuncPos}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getJuncPos()}{getJuncPos()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Junc\+Pos (\begin{DoxyParamCaption}\item[{int}]{junc\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_af304773193ba6a9a4ff1592ca90ccc3a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_aa4955a6c8a17ad1f0f8920099cdba6cc}\label{classTrajectory_aa4955a6c8a17ad1f0f8920099cdba6cc}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getJuncVel@{getJuncVel}}
+\index{getJuncVel@{getJuncVel}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getJuncVel()}{getJuncVel()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Junc\+Vel (\begin{DoxyParamCaption}\item[{int}]{junc\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_aa4955a6c8a17ad1f0f8920099cdba6cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a5ee630bb7135d8c27675128ce63ab064}\label{classTrajectory_a5ee630bb7135d8c27675128ce63ab064}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getMaxAccRate@{getMaxAccRate}}
+\index{getMaxAccRate@{getMaxAccRate}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxAccRate()}{getMaxAccRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Max\+Acc\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a5ee630bb7135d8c27675128ce63ab064_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af31508dd4d4a590c18a0283c060c284e}\label{classTrajectory_af31508dd4d4a590c18a0283c060c284e}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getMaxVelRate@{getMaxVelRate}}
+\index{getMaxVelRate@{getMaxVelRate}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxVelRate()}{getMaxVelRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Max\+Vel\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_af31508dd4d4a590c18a0283c060c284e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a73deec38399c8273756c3ea3616633cf}\label{classTrajectory_a73deec38399c8273756c3ea3616633cf}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getPieceNum@{getPieceNum}}
+\index{getPieceNum@{getPieceNum}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getPieceNum()}{getPieceNum()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Piece\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a73deec38399c8273756c3ea3616633cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_adca82749269119d726fb122ac76b10bb}\label{classTrajectory_adca82749269119d726fb122ac76b10bb}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getPos@{getPos}}
+\index{getPos@{getPos}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Pos (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_adca82749269119d726fb122ac76b10bb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a5bc537fe3cef0f23e13284559afbcd8f}\label{classTrajectory_a5bc537fe3cef0f23e13284559afbcd8f}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getPositions@{getPositions}}
+\index{getPositions@{getPositions}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getPositions()}{getPositions()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Matrix3\+Xd \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a5bc537fe3cef0f23e13284559afbcd8f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classTrajectory_a5bc537fe3cef0f23e13284559afbcd8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_af5e975d416b555a802b61fa9ae673fc9}\label{classTrajectory_af5e975d416b555a802b61fa9ae673fc9}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getTotalDuration@{getTotalDuration}}
+\index{getTotalDuration@{getTotalDuration}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getTotalDuration()}{getTotalDuration()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Total\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_af5e975d416b555a802b61fa9ae673fc9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a330848be7c152d1b7b529ba3c41ace95}\label{classTrajectory_a330848be7c152d1b7b529ba3c41ace95}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!getVel@{getVel}}
+\index{getVel@{getVel}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getVel()}{getVel()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::get\+Vel (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a330848be7c152d1b7b529ba3c41ace95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_a0a6291b71f1dd98acfdfa12fefd8b4ef}\label{classTrajectory_a0a6291b71f1dd98acfdfa12fefd8b4ef}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!locatePieceIdx@{locatePieceIdx}}
+\index{locatePieceIdx@{locatePieceIdx}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{locatePieceIdx()}{locatePieceIdx()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::locate\+Piece\+Idx (\begin{DoxyParamCaption}\item[{double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a0a6291b71f1dd98acfdfa12fefd8b4ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrajectory_a0a6291b71f1dd98acfdfa12fefd8b4ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTrajectory_ac8476a59e0622e11a31c2cba402d97bb}\label{classTrajectory_ac8476a59e0622e11a31c2cba402d97bb}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece}{Piece}}$<$D$>$\& \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTrajectory_ab73adf21a1e6964185e210574ac6b8fd}\label{classTrajectory_ab73adf21a1e6964185e210574ac6b8fd}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPiece}{Piece}}$<$D$>$\& \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTrajectory_a6755465aec53041a851409ab5a453368}\label{classTrajectory_a6755465aec53041a851409ab5a453368}} 
+\index{Trajectory$<$ D $>$@{Trajectory$<$ D $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!Trajectory$<$ D $>$@{Trajectory$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ D $>$\+::reserve (\begin{DoxyParamCaption}\item[{const int \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classTrajectory_a6755465aec53041a851409ab5a453368_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{trajectory_8hpp}{trajectory.\+hpp}}\end{DoxyCompactItemize}

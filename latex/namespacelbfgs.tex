@@ -1,0 +1,340 @@
+\hypertarget{namespacelbfgs}{}\doxysection{lbfgs Namespace Reference}
+\label{namespacelbfgs}\index{lbfgs@{lbfgs}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+\_\+parameter\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlbfgs_1_1callback__data__t}{callback\+\_\+data\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double($\ast$ \mbox{\hyperlink{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}{lbfgs\+\_\+evaluate\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, Eigen\+::\+Vector\+Xd \&g)
+\item 
+typedef double($\ast$ \mbox{\hyperlink{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}{lbfgs\+\_\+stepbound\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&xp, const Eigen\+::\+Vector\+Xd \&d)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}{lbfgs\+\_\+progress\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, const Eigen\+::\+Vector\+Xd \&g, const double fx, const double step, const int k, const int ls)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8db8274fdba692875ecab58c06b780b4}{LBFGS\+\_\+\+CONVERGENCE}} = 0
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511af9ca461ac3a12d5168a076a096e5a74e}{LBFGS\+\_\+\+STOP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a90c7f580282e156cf7a3d8ce789aa437}{LBFGS\+\_\+\+CANCELED}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511aa4894d81197ab931795e875aa4065966}{LBFGSERR\+\_\+\+UNKNOWNERROR}} = -\/1024
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8da4292358f1163fe22446247e3073b8}{LBFGSERR\+\_\+\+INVALID\+\_\+N}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a1f85589062e179be962ea05170aac54c}{LBFGSERR\+\_\+\+INVALID\+\_\+\+MEMSIZE}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511afa9581e50712f3ea71ae6e8652e32a11}{LBFGSERR\+\_\+\+INVALID\+\_\+\+GEPSILON}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a10abb766c4cda1935c924f3dbe57ed6f}{LBFGSERR\+\_\+\+INVALID\+\_\+\+TESTPERIOD}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a86b0334b1cca3afb32d6550df7e2471b}{LBFGSERR\+\_\+\+INVALID\+\_\+\+DELTA}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ad6a9614d12d9bc9bbd5e6e7aeb85c107}{LBFGSERR\+\_\+\+INVALID\+\_\+\+MINSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a52892753ea97fae63a5ad7052b7f99ff}{LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a9e45a645a1d1235219dcd241a9d94bd3}{LBFGSERR\+\_\+\+INVALID\+\_\+\+FDECCOEFF}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a15498e80b9d2218a3e85456b786715a9}{LBFGSERR\+\_\+\+INVALID\+\_\+\+SCURVCOEFF}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ae0ee5883fc61ac3764ed41dce84102bf}{LBFGSERR\+\_\+\+INVALID\+\_\+\+MACHINEPREC}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511affe00968c3942a48d3625fa29b0c16a9}{LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXLINESEARCH}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60cb6b1e115f8cf9f3c1ad3192ed1a6e}{LBFGSERR\+\_\+\+INVALID\+\_\+\+FUNCVAL}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a228eafd5fc59e7790192f416dd8ffefa}{LBFGSERR\+\_\+\+MINIMUMSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a077b78364d580ba6812a7f0879443dce}{LBFGSERR\+\_\+\+MAXIMUMSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a3b37d7e4932ec4534341f83c3f9815f0}{LBFGSERR\+\_\+\+MAXIMUMLINESEARCH}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ab79075a76adeb4f1e7918d307925f403}{LBFGSERR\+\_\+\+MAXIMUMITERATION}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a6a660f1c3fc0956b009dee54e1cd1931}{LBFGSERR\+\_\+\+WIDTHTOOSMALL}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60174ffdc4d0481fd6255f5777f5daa2}{LBFGSERR\+\_\+\+INVALIDPARAMETERS}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a2f0bbf433c8da8fb15fa8caa3c6e38b2}{LBFGSERR\+\_\+\+INCREASEGRADIENT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacelbfgs_ae484ef7287c8e91d4d2fe9cd8ca5224d}{line\+\_\+search\+\_\+lewisoverton}} (Eigen\+::\+Vector\+Xd \&x, double \&f, Eigen\+::\+Vector\+Xd \&g, double \&stp, const Eigen\+::\+Vector\+Xd \&s, const Eigen\+::\+Vector\+Xd \&xp, const Eigen\+::\+Vector\+Xd \&gp, const double stpmin, const double stpmax, const \mbox{\hyperlink{structlbfgs_1_1callback__data__t}{callback\+\_\+data\+\_\+t}} \&cd, const \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+\_\+parameter\+\_\+t}} \&param)
+\item 
+int \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize}} (Eigen\+::\+Vector\+Xd \&x, double \&f, \mbox{\hyperlink{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}{lbfgs\+\_\+evaluate\+\_\+t}} proc\+\_\+evaluate, \mbox{\hyperlink{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}{lbfgs\+\_\+stepbound\+\_\+t}} proc\+\_\+stepbound, \mbox{\hyperlink{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}{lbfgs\+\_\+progress\+\_\+t}} proc\+\_\+progress, void $\ast$instance, const \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+\_\+parameter\+\_\+t}} \&param)
+\item 
+const char $\ast$ \mbox{\hyperlink{namespacelbfgs_abff008c6fac426dd92bac66ad4f30b23}{lbfgs\+\_\+strerror}} (const int err)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}\label{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}} 
+\index{lbfgs@{lbfgs}!lbfgs\_evaluate\_t@{lbfgs\_evaluate\_t}}
+\index{lbfgs\_evaluate\_t@{lbfgs\_evaluate\_t}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{lbfgs\_evaluate\_t}{lbfgs\_evaluate\_t}}
+{\footnotesize\ttfamily typedef double($\ast$ lbfgs\+::lbfgs\+\_\+evaluate\+\_\+t) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, Eigen\+::\+Vector\+Xd \&g)}
+
+Callback interface to provide cost function and gradient evaluations.
+
+The \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function call this function to obtain the values of cost function and its gradients when needed. A client program must implement this function to evaluate the values of the cost function and its gradients, given current values of variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The user data sent for \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function by the client. \\
+\hline
+{\em x} & The current values of variables. \\
+\hline
+{\em g} & The gradient vector. The callback function must compute the gradient values for the current variables. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em double} & The value of the cost function for the current variables. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}\label{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}} 
+\index{lbfgs@{lbfgs}!lbfgs\_progress\_t@{lbfgs\_progress\_t}}
+\index{lbfgs\_progress\_t@{lbfgs\_progress\_t}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{lbfgs\_progress\_t}{lbfgs\_progress\_t}}
+{\footnotesize\ttfamily typedef int($\ast$ lbfgs\+::lbfgs\+\_\+progress\+\_\+t) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, const Eigen\+::\+Vector\+Xd \&g, const double fx, const double step, const int k, const int ls)}
+
+Callback interface to monitor the progress of the minimization process.
+
+The \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function call this function for each iteration. Implementing this function, a client program can store or display the current progress of the minimization process. If it is not used, just set it nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The user data sent for \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function by the client. \\
+\hline
+{\em x} & The current values of variables. \\
+\hline
+{\em g} & The current gradient values of variables. \\
+\hline
+{\em fx} & The current value of the cost function. \\
+\hline
+{\em step} & The line-\/search step used for this iteration. \\
+\hline
+{\em k} & The iteration count. \\
+\hline
+{\em ls} & The number of evaluations called for this iteration. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & Zero to continue the minimization process. Returning a non-\/zero value will cancel the minimization process. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}\label{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}} 
+\index{lbfgs@{lbfgs}!lbfgs\_stepbound\_t@{lbfgs\_stepbound\_t}}
+\index{lbfgs\_stepbound\_t@{lbfgs\_stepbound\_t}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{lbfgs\_stepbound\_t}{lbfgs\_stepbound\_t}}
+{\footnotesize\ttfamily typedef double($\ast$ lbfgs\+::lbfgs\+\_\+stepbound\+\_\+t) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&xp, const Eigen\+::\+Vector\+Xd \&d)}
+
+Callback interface to provide an upper bound at the beginning of the current line search.
+
+The \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function call this function to obtain the values of the upperbound of the stepsize to search in, provided with the beginning values of variables before the line search, and the current step vector (can be descent direction). A client program can implement this function for more efficient linesearch. Any step larger than this bound should not be considered. For example, it has a very large or even inf function value. Note that the function value at the provided bound should be FINITE! If it is not used, just set it nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The user data sent for \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function by the client. \\
+\hline
+{\em xp} & The values of variables before current line search. \\
+\hline
+{\em d} & The step vector. It can be the descent direction. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em double} & The upperboud of the step in current line search routine, such that (stpbound $\ast$ d) is the maximum reasonable step. \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Return values of \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}}. Roughly speaking, a negative value indicates an error. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGS\_CONVERGENCE@{LBFGS\_CONVERGENCE}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGS\_CONVERGENCE@{LBFGS\_CONVERGENCE}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8db8274fdba692875ecab58c06b780b4}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8db8274fdba692875ecab58c06b780b4}} 
+LBFGS\+\_\+\+CONVERGENCE&L-\/\+BFGS reaches convergence. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGS\_STOP@{LBFGS\_STOP}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGS\_STOP@{LBFGS\_STOP}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511af9ca461ac3a12d5168a076a096e5a74e}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511af9ca461ac3a12d5168a076a096e5a74e}} 
+LBFGS\+\_\+\+STOP&L-\/\+BFGS satisfies stopping criteria. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGS\_CANCELED@{LBFGS\_CANCELED}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGS\_CANCELED@{LBFGS\_CANCELED}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a90c7f580282e156cf7a3d8ce789aa437}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a90c7f580282e156cf7a3d8ce789aa437}} 
+LBFGS\+\_\+\+CANCELED&The iteration has been canceled by the monitor callback. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_UNKNOWNERROR@{LBFGSERR\_UNKNOWNERROR}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_UNKNOWNERROR@{LBFGSERR\_UNKNOWNERROR}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511aa4894d81197ab931795e875aa4065966}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511aa4894d81197ab931795e875aa4065966}} 
+LBFGSERR\+\_\+\+UNKNOWNERROR&Unknown error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_N@{LBFGSERR\_INVALID\_N}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_N@{LBFGSERR\_INVALID\_N}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8da4292358f1163fe22446247e3073b8}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8da4292358f1163fe22446247e3073b8}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+N&Invalid number of variables specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_MEMSIZE@{LBFGSERR\_INVALID\_MEMSIZE}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_MEMSIZE@{LBFGSERR\_INVALID\_MEMSIZE}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a1f85589062e179be962ea05170aac54c}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a1f85589062e179be962ea05170aac54c}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+MEMSIZE&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_aae75f2da1b631eb3446b09e539f08494}{lbfgs\+\_\+parameter\+\_\+t\+::mem\+\_\+size}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_GEPSILON@{LBFGSERR\_INVALID\_GEPSILON}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_GEPSILON@{LBFGSERR\_INVALID\_GEPSILON}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511afa9581e50712f3ea71ae6e8652e32a11}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511afa9581e50712f3ea71ae6e8652e32a11}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+GEPSILON&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a6d1011e506d3a502283533a953752554}{lbfgs\+\_\+parameter\+\_\+t\+::g\+\_\+epsilon}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_TESTPERIOD@{LBFGSERR\_INVALID\_TESTPERIOD}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_TESTPERIOD@{LBFGSERR\_INVALID\_TESTPERIOD}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a10abb766c4cda1935c924f3dbe57ed6f}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a10abb766c4cda1935c924f3dbe57ed6f}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+TESTPERIOD&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_afe4ac82ee96a51ba9f9042d3e4f8ced0}{lbfgs\+\_\+parameter\+\_\+t\+::past}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_DELTA@{LBFGSERR\_INVALID\_DELTA}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_DELTA@{LBFGSERR\_INVALID\_DELTA}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a86b0334b1cca3afb32d6550df7e2471b}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a86b0334b1cca3afb32d6550df7e2471b}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+DELTA&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a915ec9cb43fc56e8124ed4ad0a750b24}{lbfgs\+\_\+parameter\+\_\+t\+::delta}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_MINSTEP@{LBFGSERR\_INVALID\_MINSTEP}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_MINSTEP@{LBFGSERR\_INVALID\_MINSTEP}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ad6a9614d12d9bc9bbd5e6e7aeb85c107}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ad6a9614d12d9bc9bbd5e6e7aeb85c107}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+MINSTEP&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a06d50fb6134db86745fcb798ecfbe2c2}{lbfgs\+\_\+parameter\+\_\+t\+::min\+\_\+step}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_MAXSTEP@{LBFGSERR\_INVALID\_MAXSTEP}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_MAXSTEP@{LBFGSERR\_INVALID\_MAXSTEP}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a52892753ea97fae63a5ad7052b7f99ff}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a52892753ea97fae63a5ad7052b7f99ff}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXSTEP&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_afc3769c7e9d289d8d7395e490b22b635}{lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+step}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_FDECCOEFF@{LBFGSERR\_INVALID\_FDECCOEFF}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_FDECCOEFF@{LBFGSERR\_INVALID\_FDECCOEFF}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a9e45a645a1d1235219dcd241a9d94bd3}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a9e45a645a1d1235219dcd241a9d94bd3}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+FDECCOEFF&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_ae01fc0b47d161fdbca1c085b526cf382}{lbfgs\+\_\+parameter\+\_\+t\+::f\+\_\+dec\+\_\+coeff}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_SCURVCOEFF@{LBFGSERR\_INVALID\_SCURVCOEFF}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_SCURVCOEFF@{LBFGSERR\_INVALID\_SCURVCOEFF}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a15498e80b9d2218a3e85456b786715a9}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a15498e80b9d2218a3e85456b786715a9}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+SCURVCOEFF&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a96963846fe00d48c0cdd39b5d680f1dd}{lbfgs\+\_\+parameter\+\_\+t\+::s\+\_\+curv\+\_\+coeff}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_MACHINEPREC@{LBFGSERR\_INVALID\_MACHINEPREC}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_MACHINEPREC@{LBFGSERR\_INVALID\_MACHINEPREC}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ae0ee5883fc61ac3764ed41dce84102bf}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ae0ee5883fc61ac3764ed41dce84102bf}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+MACHINEPREC&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a71001c81b21b27ffdaae22745f8455cb}{lbfgs\+\_\+parameter\+\_\+t\+::machine\+\_\+prec}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_MAXLINESEARCH@{LBFGSERR\_INVALID\_MAXLINESEARCH}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_MAXLINESEARCH@{LBFGSERR\_INVALID\_MAXLINESEARCH}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511affe00968c3942a48d3625fa29b0c16a9}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511affe00968c3942a48d3625fa29b0c16a9}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXLINESEARCH&Invalid parameter \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_aa8173b75232d441c4d805fb7e59080b9}{lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+linesearch}} specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALID\_FUNCVAL@{LBFGSERR\_INVALID\_FUNCVAL}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALID\_FUNCVAL@{LBFGSERR\_INVALID\_FUNCVAL}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60cb6b1e115f8cf9f3c1ad3192ed1a6e}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60cb6b1e115f8cf9f3c1ad3192ed1a6e}} 
+LBFGSERR\+\_\+\+INVALID\+\_\+\+FUNCVAL&The function value became NaN or Inf. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_MINIMUMSTEP@{LBFGSERR\_MINIMUMSTEP}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_MINIMUMSTEP@{LBFGSERR\_MINIMUMSTEP}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a228eafd5fc59e7790192f416dd8ffefa}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a228eafd5fc59e7790192f416dd8ffefa}} 
+LBFGSERR\+\_\+\+MINIMUMSTEP&The line-\/search step became smaller than \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a06d50fb6134db86745fcb798ecfbe2c2}{lbfgs\+\_\+parameter\+\_\+t\+::min\+\_\+step}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_MAXIMUMSTEP@{LBFGSERR\_MAXIMUMSTEP}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_MAXIMUMSTEP@{LBFGSERR\_MAXIMUMSTEP}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a077b78364d580ba6812a7f0879443dce}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a077b78364d580ba6812a7f0879443dce}} 
+LBFGSERR\+\_\+\+MAXIMUMSTEP&The line-\/search step became larger than \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_afc3769c7e9d289d8d7395e490b22b635}{lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+step}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_MAXIMUMLINESEARCH@{LBFGSERR\_MAXIMUMLINESEARCH}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_MAXIMUMLINESEARCH@{LBFGSERR\_MAXIMUMLINESEARCH}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a3b37d7e4932ec4534341f83c3f9815f0}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a3b37d7e4932ec4534341f83c3f9815f0}} 
+LBFGSERR\+\_\+\+MAXIMUMLINESEARCH&Line search reaches the maximum, assumptions not satisfied or precision not achievable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_MAXIMUMITERATION@{LBFGSERR\_MAXIMUMITERATION}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_MAXIMUMITERATION@{LBFGSERR\_MAXIMUMITERATION}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ab79075a76adeb4f1e7918d307925f403}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ab79075a76adeb4f1e7918d307925f403}} 
+LBFGSERR\+\_\+\+MAXIMUMITERATION&The algorithm routine reaches the maximum number of iterations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_WIDTHTOOSMALL@{LBFGSERR\_WIDTHTOOSMALL}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_WIDTHTOOSMALL@{LBFGSERR\_WIDTHTOOSMALL}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a6a660f1c3fc0956b009dee54e1cd1931}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a6a660f1c3fc0956b009dee54e1cd1931}} 
+LBFGSERR\+\_\+\+WIDTHTOOSMALL&Relative search interval width is at least \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a71001c81b21b27ffdaae22745f8455cb}{lbfgs\+\_\+parameter\+\_\+t\+::machine\+\_\+prec}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INVALIDPARAMETERS@{LBFGSERR\_INVALIDPARAMETERS}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INVALIDPARAMETERS@{LBFGSERR\_INVALIDPARAMETERS}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60174ffdc4d0481fd6255f5777f5daa2}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60174ffdc4d0481fd6255f5777f5daa2}} 
+LBFGSERR\+\_\+\+INVALIDPARAMETERS&A logic error (negative line-\/search step) occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LBFGSERR\_INCREASEGRADIENT@{LBFGSERR\_INCREASEGRADIENT}!lbfgs@{lbfgs}}\index{lbfgs@{lbfgs}!LBFGSERR\_INCREASEGRADIENT@{LBFGSERR\_INCREASEGRADIENT}}}\mbox{\Hypertarget{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a2f0bbf433c8da8fb15fa8caa3c6e38b2}\label{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a2f0bbf433c8da8fb15fa8caa3c6e38b2}} 
+LBFGSERR\+\_\+\+INCREASEGRADIENT&The current search direction increases the cost function value. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacelbfgs_a25919c3755adc48965ba380d9254be39}\label{namespacelbfgs_a25919c3755adc48965ba380d9254be39}} 
+\index{lbfgs@{lbfgs}!lbfgs\_optimize@{lbfgs\_optimize}}
+\index{lbfgs\_optimize@{lbfgs\_optimize}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{lbfgs\_optimize()}{lbfgs\_optimize()}}
+{\footnotesize\ttfamily int lbfgs\+::lbfgs\+\_\+optimize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd \&}]{x,  }\item[{double \&}]{f,  }\item[{\mbox{\hyperlink{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}{lbfgs\+\_\+evaluate\+\_\+t}}}]{proc\+\_\+evaluate,  }\item[{\mbox{\hyperlink{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}{lbfgs\+\_\+stepbound\+\_\+t}}}]{proc\+\_\+stepbound,  }\item[{\mbox{\hyperlink{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}{lbfgs\+\_\+progress\+\_\+t}}}]{proc\+\_\+progress,  }\item[{void $\ast$}]{instance,  }\item[{const \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+\_\+parameter\+\_\+t}} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Start a L-\/\+BFGS optimization. Assumptions\+: 1. f(x) is either C2 or C0 but piecewise C2;
+\begin{DoxyEnumerate}
+\item f(x) is lower bounded;
+\item f(x) has bounded level sets;
+\item g(x) is either the gradient or subgradient;
+\item The gradient exists at the initial guess x0. A user must implement a function compatible with \mbox{\hyperlink{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}{lbfgs\+\_\+evaluate\+\_\+t}} (evaluation callback) and pass the pointer to the callback function to \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} arguments. Similarly, a user can implement a function compatible with \mbox{\hyperlink{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}{lbfgs\+\_\+stepbound\+\_\+t}} to provide an external upper bound for stepsize, and \mbox{\hyperlink{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}{lbfgs\+\_\+progress\+\_\+t}} (progress callback) to obtain the current progress (e.\+g., variables, function, and gradient, etc) and to cancel the iteration process if necessary. Implementation of the stepbound and the progress callback is optional\+: a user can pass nullptr if progress notification is not necessary.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector of decision variables. THE INITIAL GUESS x0 SHOULD BE SET BEFORE THE CALL! A client program can receive decision variables through this vector, at which the cost and its gradient are queried during minimization. \\
+\hline
+{\em f} & The ref to the variable that receives the final value of the cost function for the variables. \\
+\hline
+{\em proc\+\_\+evaluate} & The callback function to provide function f(x) and gradient g(x) evaluations given a current values of variables x. A client program must implement a callback function compatible with lbfgs\+\_\+evaluate\+\_\+t and pass the pointer to the callback function. \\
+\hline
+{\em proc\+\_\+stepbound} & The callback function to provide values of the upperbound of the stepsize to search in, provided with the beginning values of variables before the line search, and the current step vector (can be negative gradient). A client program can implement this function for more efficient linesearch. If it is not used, just set it nullptr. \\
+\hline
+{\em proc\+\_\+progress} & The callback function to receive the progress (the number of iterations, the current value of the cost function) of the minimization process. This argument can be set to nullptr if a progress report is unnecessary. \\
+\hline
+{\em instance} & A user data pointer for client programs. The callback functions will receive the value of this argument. \\
+\hline
+{\em param} & The parameters for L-\/\+BFGS optimization. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & The status code. This function returns a nonnegative integer if the minimization process terminates without an error. A negative integer indicates an error. \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{namespacelbfgs_a25919c3755adc48965ba380d9254be39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacelbfgs_a25919c3755adc48965ba380d9254be39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacelbfgs_abff008c6fac426dd92bac66ad4f30b23}\label{namespacelbfgs_abff008c6fac426dd92bac66ad4f30b23}} 
+\index{lbfgs@{lbfgs}!lbfgs\_strerror@{lbfgs\_strerror}}
+\index{lbfgs\_strerror@{lbfgs\_strerror}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{lbfgs\_strerror()}{lbfgs\_strerror()}}
+{\footnotesize\ttfamily const char$\ast$ lbfgs\+::lbfgs\+\_\+strerror (\begin{DoxyParamCaption}\item[{const int}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get string description of an \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} return code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & A value returned by \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}}. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacelbfgs_abff008c6fac426dd92bac66ad4f30b23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacelbfgs_ae484ef7287c8e91d4d2fe9cd8ca5224d}\label{namespacelbfgs_ae484ef7287c8e91d4d2fe9cd8ca5224d}} 
+\index{lbfgs@{lbfgs}!line\_search\_lewisoverton@{line\_search\_lewisoverton}}
+\index{line\_search\_lewisoverton@{line\_search\_lewisoverton}!lbfgs@{lbfgs}}
+\doxysubsubsection{\texorpdfstring{line\_search\_lewisoverton()}{line\_search\_lewisoverton()}}
+{\footnotesize\ttfamily int lbfgs\+::line\+\_\+search\+\_\+lewisoverton (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xd \&}]{x,  }\item[{double \&}]{f,  }\item[{Eigen\+::\+Vector\+Xd \&}]{g,  }\item[{double \&}]{stp,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{s,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{xp,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{gp,  }\item[{const double}]{stpmin,  }\item[{const double}]{stpmax,  }\item[{const \mbox{\hyperlink{structlbfgs_1_1callback__data__t}{callback\+\_\+data\+\_\+t}} \&}]{cd,  }\item[{const \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+\_\+parameter\+\_\+t}} \&}]{param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Line search method for smooth or nonsmooth functions. This function performs line search to find a point that satisfy both the Armijo condition and the weak Wolfe condition. It is as robust as the backtracking line search but further applies to continuous and piecewise smooth functions where the strong Wolfe condition usually does not hold.
+
+\begin{DoxySeeAlso}{See also}
+Adrian S. Lewis and Michael L. Overton. Nonsmooth optimization via quasi-\/\+Newton methods. Mathematical Programming, Vol 141, No 1, pp. 135-\/163, 2013. 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacelbfgs_ae484ef7287c8e91d4d2fe9cd8ca5224d_icgraph}
+\end{center}
+\end{figure}

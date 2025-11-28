@@ -1,0 +1,85 @@
+\hypertarget{lbfgs_8hpp}{}\doxysection{lbfgs.\+hpp File Reference}
+\label{lbfgs_8hpp}\index{lbfgs.hpp@{lbfgs.hpp}}
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for lbfgs.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{lbfgs_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{lbfgs_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t}{lbfgs\+::lbfgs\+\_\+parameter\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlbfgs_1_1callback__data__t}{lbfgs\+::callback\+\_\+data\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacelbfgs}{lbfgs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double($\ast$ \mbox{\hyperlink{namespacelbfgs_a415529dd955b1806c101e02eabf575a4}{lbfgs\+::lbfgs\+\_\+evaluate\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, Eigen\+::\+Vector\+Xd \&g)
+\item 
+typedef double($\ast$ \mbox{\hyperlink{namespacelbfgs_a0c10e9cbe6e2a62c19226cf94a5fde18}{lbfgs\+::lbfgs\+\_\+stepbound\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&xp, const Eigen\+::\+Vector\+Xd \&d)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{namespacelbfgs_a65146245bda9f01d3635e84d0e92197d}{lbfgs\+::lbfgs\+\_\+progress\+\_\+t}}) (void $\ast$instance, const Eigen\+::\+Vector\+Xd \&x, const Eigen\+::\+Vector\+Xd \&g, const double fx, const double step, const int k, const int ls)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8db8274fdba692875ecab58c06b780b4}{lbfgs\+::\+LBFGS\+\_\+\+CONVERGENCE}} = 0
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511af9ca461ac3a12d5168a076a096e5a74e}{lbfgs\+::\+LBFGS\+\_\+\+STOP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a90c7f580282e156cf7a3d8ce789aa437}{lbfgs\+::\+LBFGS\+\_\+\+CANCELED}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511aa4894d81197ab931795e875aa4065966}{lbfgs\+::\+LBFGSERR\+\_\+\+UNKNOWNERROR}} = -\/1024
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a8da4292358f1163fe22446247e3073b8}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+N}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a1f85589062e179be962ea05170aac54c}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+MEMSIZE}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511afa9581e50712f3ea71ae6e8652e32a11}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+GEPSILON}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a10abb766c4cda1935c924f3dbe57ed6f}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+TESTPERIOD}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a86b0334b1cca3afb32d6550df7e2471b}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+DELTA}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ad6a9614d12d9bc9bbd5e6e7aeb85c107}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+MINSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a52892753ea97fae63a5ad7052b7f99ff}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a9e45a645a1d1235219dcd241a9d94bd3}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+FDECCOEFF}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a15498e80b9d2218a3e85456b786715a9}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+SCURVCOEFF}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ae0ee5883fc61ac3764ed41dce84102bf}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+MACHINEPREC}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511affe00968c3942a48d3625fa29b0c16a9}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+MAXLINESEARCH}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60cb6b1e115f8cf9f3c1ad3192ed1a6e}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALID\+\_\+\+FUNCVAL}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a228eafd5fc59e7790192f416dd8ffefa}{lbfgs\+::\+LBFGSERR\+\_\+\+MINIMUMSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a077b78364d580ba6812a7f0879443dce}{lbfgs\+::\+LBFGSERR\+\_\+\+MAXIMUMSTEP}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a3b37d7e4932ec4534341f83c3f9815f0}{lbfgs\+::\+LBFGSERR\+\_\+\+MAXIMUMLINESEARCH}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ab79075a76adeb4f1e7918d307925f403}{lbfgs\+::\+LBFGSERR\+\_\+\+MAXIMUMITERATION}}
+, \newline
+\mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a6a660f1c3fc0956b009dee54e1cd1931}{lbfgs\+::\+LBFGSERR\+\_\+\+WIDTHTOOSMALL}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a60174ffdc4d0481fd6255f5777f5daa2}{lbfgs\+::\+LBFGSERR\+\_\+\+INVALIDPARAMETERS}}
+, \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511a2f0bbf433c8da8fb15fa8caa3c6e38b2}{lbfgs\+::\+LBFGSERR\+\_\+\+INCREASEGRADIENT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacelbfgs_ae484ef7287c8e91d4d2fe9cd8ca5224d}{lbfgs\+::line\+\_\+search\+\_\+lewisoverton}} (Eigen\+::\+Vector\+Xd \&x, double \&f, Eigen\+::\+Vector\+Xd \&g, double \&stp, const Eigen\+::\+Vector\+Xd \&s, const Eigen\+::\+Vector\+Xd \&xp, const Eigen\+::\+Vector\+Xd \&gp, const double stpmin, const double stpmax, const callback\+\_\+data\+\_\+t \&cd, const lbfgs\+\_\+parameter\+\_\+t \&param)
+\item 
+int \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+::lbfgs\+\_\+optimize}} (Eigen\+::\+Vector\+Xd \&x, double \&f, lbfgs\+\_\+evaluate\+\_\+t proc\+\_\+evaluate, lbfgs\+\_\+stepbound\+\_\+t proc\+\_\+stepbound, lbfgs\+\_\+progress\+\_\+t proc\+\_\+progress, void $\ast$instance, const lbfgs\+\_\+parameter\+\_\+t \&param)
+\item 
+const char $\ast$ \mbox{\hyperlink{namespacelbfgs_abff008c6fac426dd92bac66ad4f30b23}{lbfgs\+::lbfgs\+\_\+strerror}} (const int err)
+\end{DoxyCompactItemize}

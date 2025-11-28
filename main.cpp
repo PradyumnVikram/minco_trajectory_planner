@@ -13,7 +13,7 @@
 
 
     // Helper: construct an axis-aligned box as a 6x4 H-matrix.
-    // Row format: [nx, ny, nz, d] representing nx*x + ny*y + nz*z + d <= 0 for interior.
+    // Row format: [nx, ny, nz, d] representing nx*x + ny*y + d <= 0 for interior.
     Eigen::Matrix<double, 6, 4> boxToH(const Eigen::Vector3d &center, const Eigen::Vector3d &half)
     {
         Eigen::Matrix<double, 6, 4> H;

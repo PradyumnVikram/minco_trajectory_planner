@@ -1,0 +1,113 @@
+\hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC}{}\doxysection{gcopter\+::GCOPTER\+\_\+\+Polytope\+SFC Class Reference}
+\label{classgcopter_1_1GCOPTER__PolytopeSFC}\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+
+
+{\ttfamily \#include $<$gcopter.\+hpp$>$}
+
+
+
+Collaboration diagram for gcopter\+::GCOPTER\+\_\+\+Polytope\+SFC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classgcopter_1_1GCOPTER__PolytopeSFC__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix3\+Xd \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}{PolyhedronV}}
+\item 
+typedef Eigen\+::\+Matrix\+X4d \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}{PolyhedronH}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}{PolyhedronV}} $>$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a2adb8d553e8b3de8f7b4207473db25d7}{PolyhedraV}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}{PolyhedronH}} $>$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}{PolyhedraH}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_abca4cdd6e61a716db18ecbb5be982a99}{setup}} (const double \&time\+Weight, const Eigen\+::\+Matrix3d \&initial\+PVA, const Eigen\+::\+Matrix3d \&terminal\+PVA, const \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}{PolyhedraH}} \&safe\+Corridor, const double \&length\+Per\+Piece, const double \&smoothing\+Factor, const int \&integral\+Resolution, const Eigen\+::\+Vector\+Xd \&magnitude\+Bounds, const Eigen\+::\+Vector\+Xd \&penalty\+Weights, const Eigen\+::\+Vector\+Xd \&physical\+Params)
+\item 
+double \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a72d6156327efbbd584936c3f3233bdfd}{optimize}} (\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ 3 $>$ \&traj, const double \&rel\+Cost\+Tol)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}\label{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!PolyhedraH@{PolyhedraH}}
+\index{PolyhedraH@{PolyhedraH}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{PolyhedraH}{PolyhedraH}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}{PolyhedronH}}$>$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}{gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::\+PolyhedraH}}}
+
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_a2adb8d553e8b3de8f7b4207473db25d7}\label{classgcopter_1_1GCOPTER__PolytopeSFC_a2adb8d553e8b3de8f7b4207473db25d7}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!PolyhedraV@{PolyhedraV}}
+\index{PolyhedraV@{PolyhedraV}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{PolyhedraV}{PolyhedraV}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}{PolyhedronV}}$>$ \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a2adb8d553e8b3de8f7b4207473db25d7}{gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::\+PolyhedraV}}}
+
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}\label{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!PolyhedronH@{PolyhedronH}}
+\index{PolyhedronH@{PolyhedronH}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{PolyhedronH}{PolyhedronH}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix\+X4d \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_ae7117b2b66e338f23484614a53f4560b}{gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::\+PolyhedronH}}}
+
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}\label{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!PolyhedronV@{PolyhedronV}}
+\index{PolyhedronV@{PolyhedronV}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{PolyhedronV}{PolyhedronV}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix3\+Xd \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_affa96d6e7efff9f47a9913ca1ce4db59}{gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::\+PolyhedronV}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_a72d6156327efbbd584936c3f3233bdfd}\label{classgcopter_1_1GCOPTER__PolytopeSFC_a72d6156327efbbd584936c3f3233bdfd}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!optimize@{optimize}}
+\index{optimize@{optimize}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily double gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::optimize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTrajectory}{Trajectory}}$<$ 3 $>$ \&}]{traj,  }\item[{const double \&}]{rel\+Cost\+Tol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgcopter_1_1GCOPTER__PolytopeSFC_a72d6156327efbbd584936c3f3233bdfd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classgcopter_1_1GCOPTER__PolytopeSFC_a72d6156327efbbd584936c3f3233bdfd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classgcopter_1_1GCOPTER__PolytopeSFC_abca4cdd6e61a716db18ecbb5be982a99}\label{classgcopter_1_1GCOPTER__PolytopeSFC_abca4cdd6e61a716db18ecbb5be982a99}} 
+\index{gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}!setup@{setup}}
+\index{setup@{setup}!gcopter::GCOPTER\_PolytopeSFC@{gcopter::GCOPTER\_PolytopeSFC}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily bool gcopter\+::\+GCOPTER\+\_\+\+Polytope\+SFC\+::setup (\begin{DoxyParamCaption}\item[{const double \&}]{time\+Weight,  }\item[{const Eigen\+::\+Matrix3d \&}]{initial\+PVA,  }\item[{const Eigen\+::\+Matrix3d \&}]{terminal\+PVA,  }\item[{const \mbox{\hyperlink{classgcopter_1_1GCOPTER__PolytopeSFC_a4fa6bc722b208c3055e82c8b93435f86}{PolyhedraH}} \&}]{safe\+Corridor,  }\item[{const double \&}]{length\+Per\+Piece,  }\item[{const double \&}]{smoothing\+Factor,  }\item[{const int \&}]{integral\+Resolution,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{magnitude\+Bounds,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{penalty\+Weights,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{physical\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgcopter_1_1GCOPTER__PolytopeSFC_abca4cdd6e61a716db18ecbb5be982a99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classgcopter_1_1GCOPTER__PolytopeSFC_abca4cdd6e61a716db18ecbb5be982a99_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gcopter_8hpp}{gcopter.\+hpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trajectory Planner: minco.hpp Source File</title>
+<title>S2NU Planner: minco.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trajectory Planner
+   <div id="projectname">S2NU Planner
    </div>
   </td>
  </tr>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// banded width p/q are needed</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0">   48</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0">create</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;n, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;p, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;q)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// In case of re-creating before destroying</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// In case ofso re-creating before destroying</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classminco_1_1BandedSystem.html#ab022f9f8c906c7ea04985f7009b91389">destroy</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            N = n;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            lowerBw = p;</div>
@@ -282,13 +282,13 @@ $(function() {
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        Eigen::VectorXd T3;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S2NU.html#af2fdd8e54afc379a479969529d903cd5">  218</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S2NU.html#af2fdd8e54afc379a479969529d903cd5">setConditions</a>(<span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 2&gt; &amp;headState,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                  <span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 2&gt; &amp;tailState,</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S2NU.html#a21ffede2b849541228368efe2bbe106a">  218</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S2NU.html#a21ffede2b849541228368efe2bbe106a">setConditions</a>(<span class="keyword">const</span> Eigen::Matrix3d &amp;headState,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                  <span class="keyword">const</span> Eigen::Matrix3d &amp;tailState,</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                  <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;pieceNum)</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            N = pieceNum;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            headPV = headState;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            tailPV = tailState;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            headPV = headState.leftCols&lt;2&gt;();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            tailPV = tailState.leftCols&lt;2&gt;();</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0">create</a>(4 * N, 4, 4);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            b.resize(4 * N, 3);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            T1.resize(N);</div>
@@ -721,351 +721,8 @@ $(function() {
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        }</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    };</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="comment">// MINCO for s=4 and non-uniform time</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html">  658</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classminco_1_1MINCO__S4NU.html">MINCO_S4NU</a></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    {</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00661"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#a62441ab7306f8abbbc4111323b5af0de">  661</a></span>&#160;        <a class="code" href="classminco_1_1MINCO__S4NU.html#a62441ab7306f8abbbc4111323b5af0de">MINCO_S4NU</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00662"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#a6adb6d39800a41d226c462f3ffcad78b">  662</a></span>&#160;        <a class="code" href="classminco_1_1MINCO__S4NU.html#a6adb6d39800a41d226c462f3ffcad78b">~MINCO_S4NU</a>() { A.<a class="code" href="classminco_1_1BandedSystem.html#ab022f9f8c906c7ea04985f7009b91389">destroy</a>(); }</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        <span class="keywordtype">int</span> N;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        Eigen::Matrix&lt;double, 3, 4&gt; headPVAJ;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        Eigen::Matrix&lt;double, 3, 4&gt; tailPVAJ;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <a class="code" href="classminco_1_1BandedSystem.html">BandedSystem</a> A;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        Eigen::MatrixX3d b;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        Eigen::VectorXd T1;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        Eigen::VectorXd T2;</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        Eigen::VectorXd T3;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        Eigen::VectorXd T4;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        Eigen::VectorXd T5;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        Eigen::VectorXd T6;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        Eigen::VectorXd T7;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00679"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#ad3cdb9368d29d08bb190442f81b83c82">  679</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#ad3cdb9368d29d08bb190442f81b83c82">setConditions</a>(<span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 4&gt; &amp;headState,</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                                  <span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 4&gt; &amp;tailState,</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                                  <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;pieceNum)</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            N = pieceNum;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            headPVAJ = headState;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            tailPVAJ = tailState;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0">create</a>(8 * N, 8, 8);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            b.resize(8 * N, 3);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            T1.resize(N);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            T2.resize(N);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            T3.resize(N);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            T4.resize(N);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            T5.resize(N);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            T6.resize(N);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            T7.resize(N);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        }</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
-<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#acd008fd42e1caeb5adda8a5131fccca5">  698</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#acd008fd42e1caeb5adda8a5131fccca5">setParameters</a>(<span class="keyword">const</span> Eigen::MatrixXd &amp;inPs,</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                  <span class="keyword">const</span> Eigen::VectorXd &amp;ts)</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        {</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            T1 = ts;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            T2 = T1.cwiseProduct(T1);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            T3 = T2.cwiseProduct(T1);</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            T4 = T2.cwiseProduct(T2);</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            T5 = T4.cwiseProduct(T1);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            T6 = T4.cwiseProduct(T2);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            T7 = T4.cwiseProduct(T3);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#a017504a98f5c9e1ae92a43e2d34533f9">reset</a>();</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            b.setZero();</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            A(0, 0) = 1.0;</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            A(1, 1) = 1.0;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            A(2, 2) = 2.0;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            A(3, 3) = 6.0;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            b.row(0) = headPVAJ.col(0).transpose();</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;            b.row(1) = headPVAJ.col(1).transpose();</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;            b.row(2) = headPVAJ.col(2).transpose();</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            b.row(3) = headPVAJ.col(3).transpose();</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N - 1; i++)</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            {</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                A(8 * i + 4, 8 * i + 4) = 24.0;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                A(8 * i + 4, 8 * i + 5) = 120.0 * T1(i);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                A(8 * i + 4, 8 * i + 6) = 360.0 * T2(i);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                A(8 * i + 4, 8 * i + 7) = 840.0 * T3(i);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                A(8 * i + 4, 8 * i + 12) = -24.0;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                A(8 * i + 5, 8 * i + 5) = 120.0;</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                A(8 * i + 5, 8 * i + 6) = 720.0 * T1(i);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                A(8 * i + 5, 8 * i + 7) = 2520.0 * T2(i);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                A(8 * i + 5, 8 * i + 13) = -120.0;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                A(8 * i + 6, 8 * i + 6) = 720.0;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                A(8 * i + 6, 8 * i + 7) = 5040.0 * T1(i);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                A(8 * i + 6, 8 * i + 14) = -720.0;</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                A(8 * i + 7, 8 * i) = 1.0;</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                A(8 * i + 7, 8 * i + 1) = T1(i);</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                A(8 * i + 7, 8 * i + 2) = T2(i);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                A(8 * i + 7, 8 * i + 3) = T3(i);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                A(8 * i + 7, 8 * i + 4) = T4(i);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                A(8 * i + 7, 8 * i + 5) = T5(i);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                A(8 * i + 7, 8 * i + 6) = T6(i);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                A(8 * i + 7, 8 * i + 7) = T7(i);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                A(8 * i + 8, 8 * i) = 1.0;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                A(8 * i + 8, 8 * i + 1) = T1(i);</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                A(8 * i + 8, 8 * i + 2) = T2(i);</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                A(8 * i + 8, 8 * i + 3) = T3(i);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                A(8 * i + 8, 8 * i + 4) = T4(i);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                A(8 * i + 8, 8 * i + 5) = T5(i);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                A(8 * i + 8, 8 * i + 6) = T6(i);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                A(8 * i + 8, 8 * i + 7) = T7(i);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                A(8 * i + 8, 8 * i + 8) = -1.0;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                A(8 * i + 9, 8 * i + 1) = 1.0;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                A(8 * i + 9, 8 * i + 2) = 2.0 * T1(i);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                A(8 * i + 9, 8 * i + 3) = 3.0 * T2(i);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                A(8 * i + 9, 8 * i + 4) = 4.0 * T3(i);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                A(8 * i + 9, 8 * i + 5) = 5.0 * T4(i);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                A(8 * i + 9, 8 * i + 6) = 6.0 * T5(i);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                A(8 * i + 9, 8 * i + 7) = 7.0 * T6(i);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                A(8 * i + 9, 8 * i + 9) = -1.0;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                A(8 * i + 10, 8 * i + 2) = 2.0;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                A(8 * i + 10, 8 * i + 3) = 6.0 * T1(i);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                A(8 * i + 10, 8 * i + 4) = 12.0 * T2(i);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                A(8 * i + 10, 8 * i + 5) = 20.0 * T3(i);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                A(8 * i + 10, 8 * i + 6) = 30.0 * T4(i);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                A(8 * i + 10, 8 * i + 7) = 42.0 * T5(i);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                A(8 * i + 10, 8 * i + 10) = -2.0;</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                A(8 * i + 11, 8 * i + 3) = 6.0;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                A(8 * i + 11, 8 * i + 4) = 24.0 * T1(i);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                A(8 * i + 11, 8 * i + 5) = 60.0 * T2(i);</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                A(8 * i + 11, 8 * i + 6) = 120.0 * T3(i);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                A(8 * i + 11, 8 * i + 7) = 210.0 * T4(i);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                A(8 * i + 11, 8 * i + 11) = -6.0;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                b.row(8 * i + 7) = inPs.col(i).transpose();</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            }</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            A(8 * N - 4, 8 * N - 8) = 1.0;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            A(8 * N - 4, 8 * N - 7) = T1(N - 1);</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            A(8 * N - 4, 8 * N - 6) = T2(N - 1);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            A(8 * N - 4, 8 * N - 5) = T3(N - 1);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            A(8 * N - 4, 8 * N - 4) = T4(N - 1);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            A(8 * N - 4, 8 * N - 3) = T5(N - 1);</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            A(8 * N - 4, 8 * N - 2) = T6(N - 1);</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            A(8 * N - 4, 8 * N - 1) = T7(N - 1);</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            A(8 * N - 3, 8 * N - 7) = 1.0;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            A(8 * N - 3, 8 * N - 6) = 2.0 * T1(N - 1);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            A(8 * N - 3, 8 * N - 5) = 3.0 * T2(N - 1);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            A(8 * N - 3, 8 * N - 4) = 4.0 * T3(N - 1);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            A(8 * N - 3, 8 * N - 3) = 5.0 * T4(N - 1);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            A(8 * N - 3, 8 * N - 2) = 6.0 * T5(N - 1);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            A(8 * N - 3, 8 * N - 1) = 7.0 * T6(N - 1);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            A(8 * N - 2, 8 * N - 6) = 2.0;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            A(8 * N - 2, 8 * N - 5) = 6.0 * T1(N - 1);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            A(8 * N - 2, 8 * N - 4) = 12.0 * T2(N - 1);</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            A(8 * N - 2, 8 * N - 3) = 20.0 * T3(N - 1);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            A(8 * N - 2, 8 * N - 2) = 30.0 * T4(N - 1);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            A(8 * N - 2, 8 * N - 1) = 42.0 * T5(N - 1);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            A(8 * N - 1, 8 * N - 5) = 6.0;</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            A(8 * N - 1, 8 * N - 4) = 24.0 * T1(N - 1);</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            A(8 * N - 1, 8 * N - 3) = 60.0 * T2(N - 1);</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            A(8 * N - 1, 8 * N - 2) = 120.0 * T3(N - 1);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            A(8 * N - 1, 8 * N - 1) = 210.0 * T4(N - 1);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            b.row(8 * N - 4) = tailPVAJ.col(0).transpose();</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            b.row(8 * N - 3) = tailPVAJ.col(1).transpose();</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            b.row(8 * N - 2) = tailPVAJ.col(2).transpose();</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            b.row(8 * N - 1) = tailPVAJ.col(3).transpose();</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#ad489c2fe3cc7652b8f38e22f2b63bd66">factorizeLU</a>();</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#a34d526fc8f218e9715c2e4d0d7782f90">solve</a>(b);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        }</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
-<div class="line"><a name="l00815"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#a191468fd3356ddb4f73cad627b97eb08">  815</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#a191468fd3356ddb4f73cad627b97eb08">getTrajectory</a>(<a class="code" href="classTrajectory.html">Trajectory&lt;7&gt;</a> &amp;traj)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            traj.<a class="code" href="classTrajectory.html#a9677d21a35fa4dac02ece2f57cc9c309">clear</a>();</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            traj.<a class="code" href="classTrajectory.html#a6755465aec53041a851409ab5a453368">reserve</a>(N);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++)</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                traj.<a class="code" href="classTrajectory.html#a7a41e9aebb2bd877da14c833799992d9">emplace_back</a>(T1(i),</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                                  b.block&lt;8, 3&gt;(8 * i, 0)</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                                      .transpose()</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                                      .rowwise()</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                                      .reverse());</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;            }</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        }</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160; </div>
-<div class="line"><a name="l00830"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#ae73341befee3aff6f0285c361802a6ae">  830</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#ae73341befee3aff6f0285c361802a6ae">getEnergy</a>(<span class="keywordtype">double</span> &amp;energy)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            energy = 0.0;</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++)</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            {</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                energy += 576.0 * b.row(8 * i + 4).squaredNorm() * T1(i) +</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                          2880.0 * b.row(8 * i + 4).dot(b.row(8 * i + 5)) * T2(i) +</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                          4800.0 * b.row(8 * i + 5).squaredNorm() * T3(i) +</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                          5760.0 * b.row(8 * i + 4).dot(b.row(8 * i + 6)) * T3(i) +</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                          21600.0 * b.row(8 * i + 5).dot(b.row(8 * i + 6)) * T4(i) +</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                          10080.0 * b.row(8 * i + 4).dot(b.row(8 * i + 7)) * T4(i) +</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                          25920.0 * b.row(8 * i + 6).squaredNorm() * T5(i) +</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                          40320.0 * b.row(8 * i + 5).dot(b.row(8 * i + 7)) * T5(i) +</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                          100800.0 * b.row(8 * i + 6).dot(b.row(8 * i + 7)) * T6(i) +</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                          100800.0 * b.row(8 * i + 7).squaredNorm() * T7(i);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            }</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        }</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
-<div class="line"><a name="l00849"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#ad9fc0c7b324625c9211573bc8c6f0db0">  849</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> Eigen::MatrixX3d &amp;<a class="code" href="classminco_1_1MINCO__S4NU.html#ad9fc0c7b324625c9211573bc8c6f0db0">getCoeffs</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keywordflow">return</span> b;</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        }</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
-<div class="line"><a name="l00854"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#a96774a00c337b40f613615264f4087a2">  854</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#a96774a00c337b40f613615264f4087a2">getEnergyPartialGradByCoeffs</a>(Eigen::MatrixX3d &amp;gdC)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            gdC.resize(8 * N, 3);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++)</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            {</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                gdC.row(8 * i + 7) = 10080.0 * b.row(8 * i + 4) * T4(i) +</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                                     40320.0 * b.row(8 * i + 5) * T5(i) +</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                                     100800.0 * b.row(8 * i + 6) * T6(i) +</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                                     201600.0 * b.row(8 * i + 7) * T7(i);</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                gdC.row(8 * i + 6) = 5760.0 * b.row(8 * i + 4) * T3(i) +</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                                     21600.0 * b.row(8 * i + 5) * T4(i) +</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                                     51840.0 * b.row(8 * i + 6) * T5(i) +</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                                     100800.0 * b.row(8 * i + 7) * T6(i);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                gdC.row(8 * i + 5) = 2880.0 * b.row(8 * i + 4) * T2(i) +</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                                     9600.0 * b.row(8 * i + 5) * T3(i) +</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                                     21600.0 * b.row(8 * i + 6) * T4(i) +</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                                     40320.0 * b.row(8 * i + 7) * T5(i);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                gdC.row(8 * i + 4) = 1152.0 * b.row(8 * i + 4) * T1(i) +</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                                     2880.0 * b.row(8 * i + 5) * T2(i) +</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                                     5760.0 * b.row(8 * i + 6) * T3(i) +</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                                     10080.0 * b.row(8 * i + 7) * T4(i);</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                gdC.block&lt;4, 3&gt;(8 * i, 0).setZero();</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            }</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        }</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
-<div class="line"><a name="l00880"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#a43ac3ab22a4598f1265309d5e753c9c2">  880</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#a43ac3ab22a4598f1265309d5e753c9c2">getEnergyPartialGradByTimes</a>(Eigen::VectorXd &amp;gdT)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;            gdT.resize(N);</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; i++)</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;            {</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                gdT(i) = 576.0 * b.row(8 * i + 4).squaredNorm() +</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                         5760.0 * b.row(8 * i + 4).dot(b.row(8 * i + 5)) * T1(i) +</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                         14400.0 * b.row(8 * i + 5).squaredNorm() * T2(i) +</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                         17280.0 * b.row(8 * i + 4).dot(b.row(8 * i + 6)) * T2(i) +</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                         86400.0 * b.row(8 * i + 5).dot(b.row(8 * i + 6)) * T3(i) +</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                         40320.0 * b.row(8 * i + 4).dot(b.row(8 * i + 7)) * T3(i) +</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                         129600.0 * b.row(8 * i + 6).squaredNorm() * T4(i) +</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                         201600.0 * b.row(8 * i + 5).dot(b.row(8 * i + 7)) * T4(i) +</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                         604800.0 * b.row(8 * i + 6).dot(b.row(8 * i + 7)) * T5(i) +</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                         705600.0 * b.row(8 * i + 7).squaredNorm() * T6(i);</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;            }</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        }</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
-<div class="line"><a name="l00899"></a><span class="lineno"><a class="line" href="classminco_1_1MINCO__S4NU.html#ab50389bfdc8db029202350cc383eacf3">  899</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classminco_1_1MINCO__S4NU.html#ab50389bfdc8db029202350cc383eacf3">propogateGrad</a>(<span class="keyword">const</span> Eigen::MatrixX3d &amp;partialGradByCoeffs,</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                                  <span class="keyword">const</span> Eigen::VectorXd &amp;partialGradByTimes,</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                                  Eigen::Matrix3Xd &amp;gradByPoints,</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                                  Eigen::VectorXd &amp;gradByTimes)</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        {</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;            gradByPoints.resize(3, N - 1);</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            gradByTimes.resize(N);</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            Eigen::MatrixX3d adjGrad = partialGradByCoeffs;</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;            A.<a class="code" href="classminco_1_1BandedSystem.html#ab310e3785ea6be2c3358fc255e6a1f01">solveAdj</a>(adjGrad);</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160; </div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N - 1; i++)</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            {</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                gradByPoints.col(i) = adjGrad.row(8 * i + 7).transpose();</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            }</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            Eigen::Matrix&lt;double, 8, 3&gt; B1;</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            Eigen::Matrix&lt;double, 4, 3&gt; B2;</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N - 1; i++)</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            {</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                <span class="comment">// negative velocity</span></div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                B1.row(3) = -(b.row(i * 8 + 1) +</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                              2.0 * T1(i) * b.row(i * 8 + 2) +</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                              3.0 * T2(i) * b.row(i * 8 + 3) +</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                              4.0 * T3(i) * b.row(i * 8 + 4) +</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                              5.0 * T4(i) * b.row(i * 8 + 5) +</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                              6.0 * T5(i) * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                              7.0 * T6(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                B1.row(4) = B1.row(3);</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160; </div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                <span class="comment">// negative acceleration</span></div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                B1.row(5) = -(2.0 * b.row(i * 8 + 2) +</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                              6.0 * T1(i) * b.row(i * 8 + 3) +</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                              12.0 * T2(i) * b.row(i * 8 + 4) +</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                              20.0 * T3(i) * b.row(i * 8 + 5) +</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                              30.0 * T4(i) * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                              42.0 * T5(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160; </div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                <span class="comment">// negative jerk</span></div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                B1.row(6) = -(6.0 * b.row(i * 8 + 3) +</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                              24.0 * T1(i) * b.row(i * 8 + 4) +</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                              60.0 * T2(i) * b.row(i * 8 + 5) +</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                              120.0 * T3(i) * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;                              210.0 * T4(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;                <span class="comment">// negative snap</span></div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;                B1.row(7) = -(24.0 * b.row(i * 8 + 4) +</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;                              120.0 * T1(i) * b.row(i * 8 + 5) +</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;                              360.0 * T2(i) * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                              840.0 * T3(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160; </div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;                <span class="comment">// negative crackle</span></div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                B1.row(0) = -(120.0 * b.row(i * 8 + 5) +</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;                              720.0 * T1(i) * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                              2520.0 * T2(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160; </div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;                <span class="comment">// negative d_crackle</span></div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;                B1.row(1) = -(720.0 * b.row(i * 8 + 6) +</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;                              5040.0 * T1(i) * b.row(i * 8 + 7));</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160; </div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;                <span class="comment">// negative dd_crackle</span></div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                B1.row(2) = -5040.0 * b.row(i * 8 + 7);</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160; </div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                gradByTimes(i) = B1.cwiseProduct(adjGrad.block&lt;8, 3&gt;(8 * i + 4, 0)).sum();</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;            }</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160; </div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;            <span class="comment">// negative velocity</span></div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;            B2.row(0) = -(b.row(8 * N - 7) +</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                          2.0 * T1(N - 1) * b.row(8 * N - 6) +</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                          3.0 * T2(N - 1) * b.row(8 * N - 5) +</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;                          4.0 * T3(N - 1) * b.row(8 * N - 4) +</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;                          5.0 * T4(N - 1) * b.row(8 * N - 3) +</div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;                          6.0 * T5(N - 1) * b.row(8 * N - 2) +</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;                          7.0 * T6(N - 1) * b.row(8 * N - 1));</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160; </div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;            <span class="comment">// negative acceleration</span></div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;            B2.row(1) = -(2.0 * b.row(8 * N - 6) +</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                          6.0 * T1(N - 1) * b.row(8 * N - 5) +</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;                          12.0 * T2(N - 1) * b.row(8 * N - 4) +</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;                          20.0 * T3(N - 1) * b.row(8 * N - 3) +</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;                          30.0 * T4(N - 1) * b.row(8 * N - 2) +</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                          42.0 * T5(N - 1) * b.row(8 * N - 1));</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160; </div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            <span class="comment">// negative jerk</span></div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;            B2.row(2) = -(6.0 * b.row(8 * N - 5) +</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;                          24.0 * T1(N - 1) * b.row(8 * N - 4) +</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;                          60.0 * T2(N - 1) * b.row(8 * N - 3) +</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;                          120.0 * T3(N - 1) * b.row(8 * N - 2) +</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;                          210.0 * T4(N - 1) * b.row(8 * N - 1));</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160; </div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            <span class="comment">// negative snap</span></div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;            B2.row(3) = -(24.0 * b.row(8 * N - 4) +</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                          120.0 * T1(N - 1) * b.row(8 * N - 3) +</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                          360.0 * T2(N - 1) * b.row(8 * N - 2) +</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;                          840.0 * T3(N - 1) * b.row(8 * N - 1));</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160; </div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;            gradByTimes(N - 1) = B2.cwiseProduct(adjGrad.block&lt;4, 3&gt;(8 * N - 4, 0)).sum();</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;            gradByTimes += partialGradByTimes;</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;        }</div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;    };</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160; </div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;}</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160; </div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;}</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassTrajectory_html"><div class="ttname"><a href="classTrajectory.html">Trajectory</a></div><div class="ttdef"><b>Definition:</b> trajectory.hpp:319</div></div>
 <div class="ttc" id="aclassTrajectory_html_a6755465aec53041a851409ab5a453368"><div class="ttname"><a href="classTrajectory.html#a6755465aec53041a851409ab5a453368">Trajectory::reserve</a></div><div class="ttdeci">void reserve(const int &amp;n)</div><div class="ttdef"><b>Definition:</b> trajectory.hpp:413</div></div>
 <div class="ttc" id="aclassTrajectory_html_a7a41e9aebb2bd877da14c833799992d9"><div class="ttname"><a href="classTrajectory.html#a7a41e9aebb2bd877da14c833799992d9">Trajectory::emplace_back</a></div><div class="ttdeci">void emplace_back(const Piece&lt; D &gt; &amp;piece)</div><div class="ttdef"><b>Definition:</b> trajectory.hpp:419</div></div>
@@ -1081,6 +738,7 @@ $(function() {
 <div class="ttc" id="aclassminco_1_1BandedSystem_html_ad75f59727271e6f10af62dd487f8c8a0"><div class="ttname"><a href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0">minco::BandedSystem::create</a></div><div class="ttdeci">void create(const int &amp;n, const int &amp;p, const int &amp;q)</div><div class="ttdef"><b>Definition:</b> minco.hpp:48</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html">minco::MINCO_S2NU</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:202</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a161078d69dc13bfdc776e2ef9acc9df4"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a161078d69dc13bfdc776e2ef9acc9df4">minco::MINCO_S2NU::MINCO_S2NU</a></div><div class="ttdeci">MINCO_S2NU()=default</div></div>
+<div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a21ffede2b849541228368efe2bbe106a"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a21ffede2b849541228368efe2bbe106a">minco::MINCO_S2NU::setConditions</a></div><div class="ttdeci">void setConditions(const Eigen::Matrix3d &amp;headState, const Eigen::Matrix3d &amp;tailState, const int &amp;pieceNum)</div><div class="ttdef"><b>Definition:</b> minco.hpp:218</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a2507c367127219e0ac2b3b93ce72bf6d"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a2507c367127219e0ac2b3b93ce72bf6d">minco::MINCO_S2NU::getEnergy</a></div><div class="ttdeci">void getEnergy(double &amp;energy) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:302</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a2d7c11507f7c0f3d4a79df56c819fb71"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a2d7c11507f7c0f3d4a79df56c819fb71">minco::MINCO_S2NU::getCoeffs</a></div><div class="ttdeci">const Eigen::MatrixX3d &amp; getCoeffs(void) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:314</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a3d50e1c05cdfdb47e2be543111bdc37d"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a3d50e1c05cdfdb47e2be543111bdc37d">minco::MINCO_S2NU::getEnergyPartialGradByTimes</a></div><div class="ttdeci">void getEnergyPartialGradByTimes(Eigen::VectorXd &amp;gdT) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:333</div></div>
@@ -1089,7 +747,6 @@ $(function() {
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a697f9f67add4bb10e1d4cdcd64939f48"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a697f9f67add4bb10e1d4cdcd64939f48">minco::MINCO_S2NU::setParameters</a></div><div class="ttdeci">void setParameters(const Eigen::Matrix3Xd &amp;inPs, const Eigen::VectorXd &amp;ts)</div><div class="ttdef"><b>Definition:</b> minco.hpp:233</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_a793ccba00912bd6b210a1e1c1f5e9671"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#a793ccba00912bd6b210a1e1c1f5e9671">minco::MINCO_S2NU::~MINCO_S2NU</a></div><div class="ttdeci">~MINCO_S2NU()</div><div class="ttdef"><b>Definition:</b> minco.hpp:205</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_aba3433c0444c0a66db05b279d6f1fdf9"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#aba3433c0444c0a66db05b279d6f1fdf9">minco::MINCO_S2NU::getTrajectory</a></div><div class="ttdeci">void getTrajectory(Trajectory&lt; 3 &gt; &amp;traj) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:287</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S2NU_html_af2fdd8e54afc379a479969529d903cd5"><div class="ttname"><a href="classminco_1_1MINCO__S2NU.html#af2fdd8e54afc379a479969529d903cd5">minco::MINCO_S2NU::setConditions</a></div><div class="ttdeci">void setConditions(const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;headState, const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;tailState, const int &amp;pieceNum)</div><div class="ttdef"><b>Definition:</b> minco.hpp:218</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html">minco::MINCO_S3NU</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:398</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html_a1ffb430c2f219321d0713711594556a9"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html#a1ffb430c2f219321d0713711594556a9">minco::MINCO_S3NU::setConditions</a></div><div class="ttdeci">void setConditions(const Eigen::Matrix3d &amp;headState, const Eigen::Matrix3d &amp;tailState, const int &amp;pieceNum)</div><div class="ttdef"><b>Definition:</b> minco.hpp:416</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html_a4fcad10b30cabccfb98bc576c7255ffb"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html#a4fcad10b30cabccfb98bc576c7255ffb">minco::MINCO_S3NU::propogateGrad</a></div><div class="ttdeci">void propogateGrad(const Eigen::MatrixX3d &amp;partialGradByCoeffs, const Eigen::VectorXd &amp;partialGradByTimes, Eigen::Matrix3Xd &amp;gradByPoints, Eigen::VectorXd &amp;gradByTimes)</div><div class="ttdef"><b>Definition:</b> minco.hpp:584</div></div>
@@ -1101,17 +758,6 @@ $(function() {
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html_ade4caa68ed6221a3c4ad78294fa649e9"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html#ade4caa68ed6221a3c4ad78294fa649e9">minco::MINCO_S3NU::getTrajectory</a></div><div class="ttdeci">void getTrajectory(Trajectory&lt; 5 &gt; &amp;traj) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:515</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html_af032eb6d544ba4f03fcc884db25adce4"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html#af032eb6d544ba4f03fcc884db25adce4">minco::MINCO_S3NU::setParameters</a></div><div class="ttdeci">void setParameters(const Eigen::Matrix3Xd &amp;inPs, const Eigen::VectorXd &amp;ts)</div><div class="ttdef"><b>Definition:</b> minco.hpp:433</div></div>
 <div class="ttc" id="aclassminco_1_1MINCO__S3NU_html_afa3cc9af04a2c48225d4865edca71d41"><div class="ttname"><a href="classminco_1_1MINCO__S3NU.html#afa3cc9af04a2c48225d4865edca71d41">minco::MINCO_S3NU::~MINCO_S3NU</a></div><div class="ttdeci">~MINCO_S3NU()</div><div class="ttdef"><b>Definition:</b> minco.hpp:401</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html">minco::MINCO_S4NU</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:659</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_a191468fd3356ddb4f73cad627b97eb08"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#a191468fd3356ddb4f73cad627b97eb08">minco::MINCO_S4NU::getTrajectory</a></div><div class="ttdeci">void getTrajectory(Trajectory&lt; 7 &gt; &amp;traj) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:815</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_a43ac3ab22a4598f1265309d5e753c9c2"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#a43ac3ab22a4598f1265309d5e753c9c2">minco::MINCO_S4NU::getEnergyPartialGradByTimes</a></div><div class="ttdeci">void getEnergyPartialGradByTimes(Eigen::VectorXd &amp;gdT) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:880</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_a62441ab7306f8abbbc4111323b5af0de"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#a62441ab7306f8abbbc4111323b5af0de">minco::MINCO_S4NU::MINCO_S4NU</a></div><div class="ttdeci">MINCO_S4NU()=default</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_a6adb6d39800a41d226c462f3ffcad78b"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#a6adb6d39800a41d226c462f3ffcad78b">minco::MINCO_S4NU::~MINCO_S4NU</a></div><div class="ttdeci">~MINCO_S4NU()</div><div class="ttdef"><b>Definition:</b> minco.hpp:662</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_a96774a00c337b40f613615264f4087a2"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#a96774a00c337b40f613615264f4087a2">minco::MINCO_S4NU::getEnergyPartialGradByCoeffs</a></div><div class="ttdeci">void getEnergyPartialGradByCoeffs(Eigen::MatrixX3d &amp;gdC) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:854</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_ab50389bfdc8db029202350cc383eacf3"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#ab50389bfdc8db029202350cc383eacf3">minco::MINCO_S4NU::propogateGrad</a></div><div class="ttdeci">void propogateGrad(const Eigen::MatrixX3d &amp;partialGradByCoeffs, const Eigen::VectorXd &amp;partialGradByTimes, Eigen::Matrix3Xd &amp;gradByPoints, Eigen::VectorXd &amp;gradByTimes)</div><div class="ttdef"><b>Definition:</b> minco.hpp:899</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_acd008fd42e1caeb5adda8a5131fccca5"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#acd008fd42e1caeb5adda8a5131fccca5">minco::MINCO_S4NU::setParameters</a></div><div class="ttdeci">void setParameters(const Eigen::MatrixXd &amp;inPs, const Eigen::VectorXd &amp;ts)</div><div class="ttdef"><b>Definition:</b> minco.hpp:698</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_ad3cdb9368d29d08bb190442f81b83c82"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#ad3cdb9368d29d08bb190442f81b83c82">minco::MINCO_S4NU::setConditions</a></div><div class="ttdeci">void setConditions(const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;headState, const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;tailState, const int &amp;pieceNum)</div><div class="ttdef"><b>Definition:</b> minco.hpp:679</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_ad9fc0c7b324625c9211573bc8c6f0db0"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#ad9fc0c7b324625c9211573bc8c6f0db0">minco::MINCO_S4NU::getCoeffs</a></div><div class="ttdeci">const Eigen::MatrixX3d &amp; getCoeffs(void) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:849</div></div>
-<div class="ttc" id="aclassminco_1_1MINCO__S4NU_html_ae73341befee3aff6f0285c361802a6ae"><div class="ttname"><a href="classminco_1_1MINCO__S4NU.html#ae73341befee3aff6f0285c361802a6ae">minco::MINCO_S4NU::getEnergy</a></div><div class="ttdeci">void getEnergy(double &amp;energy) const</div><div class="ttdef"><b>Definition:</b> minco.hpp:830</div></div>
 <div class="ttc" id="anamespaceminco_html"><div class="ttname"><a href="namespaceminco.html">minco</a></div><div class="ttdef"><b>Definition:</b> minco.hpp:36</div></div>
 <div class="ttc" id="atrajectory_8hpp_html"><div class="ttname"><a href="trajectory_8hpp.html">trajectory.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

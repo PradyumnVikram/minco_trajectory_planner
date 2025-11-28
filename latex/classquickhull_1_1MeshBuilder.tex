@@ -1,0 +1,176 @@
+\hypertarget{classquickhull_1_1MeshBuilder}{}\doxysection{quickhull\+::Mesh\+Builder$<$ T $>$ Class Template Reference}
+\label{classquickhull_1_1MeshBuilder}\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+
+
+{\ttfamily \#include $<$quickhull.\+hpp$>$}
+
+
+
+Collaboration diagram for quickhull\+::Mesh\+Builder$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classquickhull_1_1MeshBuilder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}}
+\item 
+struct \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{Half\+Edge}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder_abb7ac0d29bc44c2f141dc37ff5c824a6}{add\+Face}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a5da5150fc876b9536f83fc717fe5c9d1}{add\+Half\+Edge}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ size\+\_\+t $>$ $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a635b5bd5cbafe913372bbe327eff068f}{disable\+Face}} (size\+\_\+t face\+Index)
+\item 
+void \mbox{\hyperlink{classquickhull_1_1MeshBuilder_ab6b64518a6248dd25774dcbcf4eeb147}{disable\+Half\+Edge}} (size\+\_\+t he\+Index)
+\item 
+\mbox{\hyperlink{classquickhull_1_1MeshBuilder_add932898956d5140a5b8b8b964a59157}{Mesh\+Builder}} ()=default
+\item 
+void \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a26e4bfa3bb3595df724eecd32ed7b477}{setup}} (size\+\_\+t a, size\+\_\+t b, size\+\_\+t c, size\+\_\+t d)
+\item 
+std\+::array$<$ size\+\_\+t, 3 $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a472db0c35de317b657d3090e25f8cc18}{get\+Vertex\+Indices\+Of\+Face}} (const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}} \&f) const
+\item 
+std\+::array$<$ size\+\_\+t, 2 $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_ab3ea6ab4d05fb509cc672c506917b360}{get\+Vertex\+Indices\+Of\+Half\+Edge}} (const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{Half\+Edge}} \&he) const
+\item 
+std\+::array$<$ size\+\_\+t, 3 $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_ac947cbc30ac4e72060551ed55cb5517c}{get\+Half\+Edge\+Indices\+Of\+Face}} (const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}} \&f) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}} $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a722173be2f44bfcc97da05195d10894c}{m\+\_\+faces}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{Half\+Edge}} $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_add79b57dabb991d330694022777a2420}{m\+\_\+half\+Edges}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_aa7df45a251f013716fb21f47d776b93e}{m\+\_\+disabled\+Faces}}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder_a0a4434ce48f2e1f79e36072432bd891d}{m\+\_\+disabled\+Half\+Edges}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_add932898956d5140a5b8b8b964a59157}\label{classquickhull_1_1MeshBuilder_add932898956d5140a5b8b8b964a59157}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!MeshBuilder@{MeshBuilder}}
+\index{MeshBuilder@{MeshBuilder}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MeshBuilder()}{MeshBuilder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::\mbox{\hyperlink{classquickhull_1_1MeshBuilder}{Mesh\+Builder}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_abb7ac0d29bc44c2f141dc37ff5c824a6}\label{classquickhull_1_1MeshBuilder_abb7ac0d29bc44c2f141dc37ff5c824a6}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!addFace@{addFace}}
+\index{addFace@{addFace}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addFace()}{addFace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::add\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a5da5150fc876b9536f83fc717fe5c9d1}\label{classquickhull_1_1MeshBuilder_a5da5150fc876b9536f83fc717fe5c9d1}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!addHalfEdge@{addHalfEdge}}
+\index{addHalfEdge@{addHalfEdge}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addHalfEdge()}{addHalfEdge()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::add\+Half\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a635b5bd5cbafe913372bbe327eff068f}\label{classquickhull_1_1MeshBuilder_a635b5bd5cbafe913372bbe327eff068f}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!disableFace@{disableFace}}
+\index{disableFace@{disableFace}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{disableFace()}{disableFace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unique\+\_\+ptr$<$std\+::vector$<$size\+\_\+t$>$ $>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::disable\+Face (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{face\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_ab6b64518a6248dd25774dcbcf4eeb147}\label{classquickhull_1_1MeshBuilder_ab6b64518a6248dd25774dcbcf4eeb147}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!disableHalfEdge@{disableHalfEdge}}
+\index{disableHalfEdge@{disableHalfEdge}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{disableHalfEdge()}{disableHalfEdge()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::disable\+Half\+Edge (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{he\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_ac947cbc30ac4e72060551ed55cb5517c}\label{classquickhull_1_1MeshBuilder_ac947cbc30ac4e72060551ed55cb5517c}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!getHalfEdgeIndicesOfFace@{getHalfEdgeIndicesOfFace}}
+\index{getHalfEdgeIndicesOfFace@{getHalfEdgeIndicesOfFace}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getHalfEdgeIndicesOfFace()}{getHalfEdgeIndicesOfFace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::array$<$size\+\_\+t, 3$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::get\+Half\+Edge\+Indices\+Of\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}} \&}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classquickhull_1_1MeshBuilder_ac947cbc30ac4e72060551ed55cb5517c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a472db0c35de317b657d3090e25f8cc18}\label{classquickhull_1_1MeshBuilder_a472db0c35de317b657d3090e25f8cc18}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!getVertexIndicesOfFace@{getVertexIndicesOfFace}}
+\index{getVertexIndicesOfFace@{getVertexIndicesOfFace}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexIndicesOfFace()}{getVertexIndicesOfFace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::array$<$size\+\_\+t, 3$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::get\+Vertex\+Indices\+Of\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}} \&}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classquickhull_1_1MeshBuilder_a472db0c35de317b657d3090e25f8cc18_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_ab3ea6ab4d05fb509cc672c506917b360}\label{classquickhull_1_1MeshBuilder_ab3ea6ab4d05fb509cc672c506917b360}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!getVertexIndicesOfHalfEdge@{getVertexIndicesOfHalfEdge}}
+\index{getVertexIndicesOfHalfEdge@{getVertexIndicesOfHalfEdge}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexIndicesOfHalfEdge()}{getVertexIndicesOfHalfEdge()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::array$<$size\+\_\+t, 2$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::get\+Vertex\+Indices\+Of\+Half\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{Half\+Edge}} \&}]{he }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a26e4bfa3bb3595df724eecd32ed7b477}\label{classquickhull_1_1MeshBuilder_a26e4bfa3bb3595df724eecd32ed7b477}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!setup@{setup}}
+\index{setup@{setup}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::setup (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{a,  }\item[{size\+\_\+t}]{b,  }\item[{size\+\_\+t}]{c,  }\item[{size\+\_\+t}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_aa7df45a251f013716fb21f47d776b93e}\label{classquickhull_1_1MeshBuilder_aa7df45a251f013716fb21f47d776b93e}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!m\_disabledFaces@{m\_disabledFaces}}
+\index{m\_disabledFaces@{m\_disabledFaces}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_disabledFaces}{m\_disabledFaces}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$size\+\_\+t$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::m\+\_\+disabled\+Faces}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a0a4434ce48f2e1f79e36072432bd891d}\label{classquickhull_1_1MeshBuilder_a0a4434ce48f2e1f79e36072432bd891d}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!m\_disabledHalfEdges@{m\_disabledHalfEdges}}
+\index{m\_disabledHalfEdges@{m\_disabledHalfEdges}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_disabledHalfEdges}{m\_disabledHalfEdges}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$size\+\_\+t$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::m\+\_\+disabled\+Half\+Edges}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_a722173be2f44bfcc97da05195d10894c}\label{classquickhull_1_1MeshBuilder_a722173be2f44bfcc97da05195d10894c}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!m\_faces@{m\_faces}}
+\index{m\_faces@{m\_faces}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_faces}{m\_faces}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1Face}{Face}}$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::m\+\_\+faces}
+
+\mbox{\Hypertarget{classquickhull_1_1MeshBuilder_add79b57dabb991d330694022777a2420}\label{classquickhull_1_1MeshBuilder_add79b57dabb991d330694022777a2420}} 
+\index{quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}!m\_halfEdges@{m\_halfEdges}}
+\index{m\_halfEdges@{m\_halfEdges}!quickhull::MeshBuilder$<$ T $>$@{quickhull::MeshBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_halfEdges}{m\_halfEdges}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{structquickhull_1_1MeshBuilder_1_1HalfEdge}{Half\+Edge}}$>$ \mbox{\hyperlink{classquickhull_1_1MeshBuilder}{quickhull\+::\+Mesh\+Builder}}$<$ T $>$\+::m\+\_\+half\+Edges}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{quickhull_8hpp}{quickhull.\+hpp}}\end{DoxyCompactItemize}

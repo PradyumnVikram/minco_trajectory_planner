@@ -1,10 +1,8 @@
 <map id="minco::BandedSystem::destroy" name="minco::BandedSystem::destroy">
-<area shape="rect" id="node1" title=" " alt="" coords="436,169,604,211"/>
-<area shape="rect" id="node2" href="$classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0" title=" " alt="" coords="220,71,388,112"/>
-<area shape="rect" id="node6" href="$classminco_1_1MINCO__S2NU.html#a793ccba00912bd6b210a1e1c1f5e9671" title=" " alt="" coords="221,136,387,177"/>
-<area shape="rect" id="node7" href="$classminco_1_1MINCO__S3NU.html#afa3cc9af04a2c48225d4865edca71d41" title=" " alt="" coords="221,201,387,243"/>
-<area shape="rect" id="node8" href="$classminco_1_1MINCO__S4NU.html#a6adb6d39800a41d226c462f3ffcad78b" title=" " alt="" coords="221,267,387,308"/>
-<area shape="rect" id="node3" href="$classminco_1_1MINCO__S3NU.html#a1ffb430c2f219321d0713711594556a9" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node4" href="$classminco_1_1MINCO__S2NU.html#af2fdd8e54afc379a479969529d903cd5" title=" " alt="" coords="5,71,172,112"/>
-<area shape="rect" id="node5" href="$classminco_1_1MINCO__S4NU.html#ad3cdb9368d29d08bb190442f81b83c82" title=" " alt="" coords="5,136,172,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="436,103,604,144"/>
+<area shape="rect" id="node2" href="$classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0" title=" " alt="" coords="220,37,388,79"/>
+<area shape="rect" id="node5" href="$classminco_1_1MINCO__S2NU.html#a793ccba00912bd6b210a1e1c1f5e9671" title=" " alt="" coords="221,103,387,144"/>
+<area shape="rect" id="node6" href="$classminco_1_1MINCO__S3NU.html#afa3cc9af04a2c48225d4865edca71d41" title=" " alt="" coords="221,168,387,209"/>
+<area shape="rect" id="node3" href="$classminco_1_1MINCO__S2NU.html#a21ffede2b849541228368efe2bbe106a" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node4" href="$classminco_1_1MINCO__S3NU.html#a1ffb430c2f219321d0713711594556a9" title=" " alt="" coords="5,71,172,112"/>
 </map>

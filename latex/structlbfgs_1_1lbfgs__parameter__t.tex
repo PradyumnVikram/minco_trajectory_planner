@@ -1,0 +1,126 @@
+\hypertarget{structlbfgs_1_1lbfgs__parameter__t}{}\doxysection{lbfgs\+::lbfgs\+\_\+parameter\+\_\+t Struct Reference}
+\label{structlbfgs_1_1lbfgs__parameter__t}\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+
+
+{\ttfamily \#include $<$lbfgs.\+hpp$>$}
+
+
+
+Collaboration diagram for lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{structlbfgs_1_1lbfgs__parameter__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_aae75f2da1b631eb3446b09e539f08494}{mem\+\_\+size}} = 8
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a6d1011e506d3a502283533a953752554}{g\+\_\+epsilon}} = 1.\+0e-\/5
+\item 
+int \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_afe4ac82ee96a51ba9f9042d3e4f8ced0}{past}} = 3
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a915ec9cb43fc56e8124ed4ad0a750b24}{delta}} = 1.\+0e-\/6
+\item 
+int \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_ab58f67214940f5abd794bb9bc9fa2b2f}{max\+\_\+iterations}} = 0
+\item 
+int \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_aa8173b75232d441c4d805fb7e59080b9}{max\+\_\+linesearch}} = 64
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a06d50fb6134db86745fcb798ecfbe2c2}{min\+\_\+step}} = 1.\+0e-\/20
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_afc3769c7e9d289d8d7395e490b22b635}{max\+\_\+step}} = 1.\+0e+20
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_ae01fc0b47d161fdbca1c085b526cf382}{f\+\_\+dec\+\_\+coeff}} = 1.\+0e-\/4
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a96963846fe00d48c0cdd39b5d680f1dd}{s\+\_\+curv\+\_\+coeff}} = 0.\+9
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_aa16b320a44dafcf48ebed0fa1d8c42ed}{cautious\+\_\+factor}} = 1.\+0e-\/6
+\item 
+double \mbox{\hyperlink{structlbfgs_1_1lbfgs__parameter__t_a71001c81b21b27ffdaae22745f8455cb}{machine\+\_\+prec}} = 1.\+0e-\/16
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+L-\/\+BFGS optimization parameters. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_aa16b320a44dafcf48ebed0fa1d8c42ed}\label{structlbfgs_1_1lbfgs__parameter__t_aa16b320a44dafcf48ebed0fa1d8c42ed}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!cautious\_factor@{cautious\_factor}}
+\index{cautious\_factor@{cautious\_factor}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{cautious\_factor}{cautious\_factor}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::cautious\+\_\+factor = 1.\+0e-\/6}
+
+A parameter to ensure the global convergence for nonconvex functions. The default value is 1.\+0e-\/6. The parameter performs the so called cautious update for L-\/\+BFGS, especially when the convergence is not sufficient. The parameter must be positive but might as well be less than 1.\+0e-\/3 in practice. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_a915ec9cb43fc56e8124ed4ad0a750b24}\label{structlbfgs_1_1lbfgs__parameter__t_a915ec9cb43fc56e8124ed4ad0a750b24}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!delta@{delta}}
+\index{delta@{delta}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::delta = 1.\+0e-\/6}
+
+Delta for convergence test. This parameter determines the minimum rate of decrease of the cost function. The library stops iterations when the following condition is met\+: $\vert$f\textquotesingle{} -\/ f$\vert$ / max(1, $\vert$f$\vert$) $<$ delta, where f\textquotesingle{} is the cost value of past iterations ago, and f is the cost value of the current iteration. The default value is 1.\+0e-\/6. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_ae01fc0b47d161fdbca1c085b526cf382}\label{structlbfgs_1_1lbfgs__parameter__t_ae01fc0b47d161fdbca1c085b526cf382}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!f\_dec\_coeff@{f\_dec\_coeff}}
+\index{f\_dec\_coeff@{f\_dec\_coeff}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{f\_dec\_coeff}{f\_dec\_coeff}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::f\+\_\+dec\+\_\+coeff = 1.\+0e-\/4}
+
+A parameter to control the accuracy of the line search routine. The default value is 1.\+0e-\/4. This parameter should be greater than zero and smaller than 1.\+0. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_a6d1011e506d3a502283533a953752554}\label{structlbfgs_1_1lbfgs__parameter__t_a6d1011e506d3a502283533a953752554}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!g\_epsilon@{g\_epsilon}}
+\index{g\_epsilon@{g\_epsilon}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{g\_epsilon}{g\_epsilon}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::g\+\_\+epsilon = 1.\+0e-\/5}
+
+Epsilon for grad convergence test. DO NOT USE IT in nonsmooth cases! Set it to 0.\+0 and use past-\/delta-\/based test for nonsmooth functions. This parameter determines the accuracy with which the solution is to be found. A minimization terminates when $\vert$$\vert$g(x)$\vert$$\vert$\+\_\+inf / max(1, $\vert$$\vert$x$\vert$$\vert$\+\_\+inf) $<$ g\+\_\+epsilon, where $\vert$$\vert$.$\vert$$\vert$\+\_\+inf is the infinity norm. The default value is 1.\+0e-\/5. This should be greater than 1.\+0e-\/6 in practice because L-\/\+BFGS does not directly reduce first-\/order residual. It still needs the function value which can be corrupted by machine\+\_\+prec when $\vert$$\vert$g$\vert$$\vert$ is small. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_a71001c81b21b27ffdaae22745f8455cb}\label{structlbfgs_1_1lbfgs__parameter__t_a71001c81b21b27ffdaae22745f8455cb}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!machine\_prec@{machine\_prec}}
+\index{machine\_prec@{machine\_prec}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{machine\_prec}{machine\_prec}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::machine\+\_\+prec = 1.\+0e-\/16}
+
+The machine precision for floating-\/point values. The default is 1.\+0e-\/16. This parameter must be a positive value set by a client program to estimate the machine precision. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_ab58f67214940f5abd794bb9bc9fa2b2f}\label{structlbfgs_1_1lbfgs__parameter__t_ab58f67214940f5abd794bb9bc9fa2b2f}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!max\_iterations@{max\_iterations}}
+\index{max\_iterations@{max\_iterations}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{max\_iterations}{max\_iterations}}
+{\footnotesize\ttfamily int lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+iterations = 0}
+
+The maximum number of iterations. The \mbox{\hyperlink{namespacelbfgs_a25919c3755adc48965ba380d9254be39}{lbfgs\+\_\+optimize()}} function terminates an minimization process with \mbox{\hyperlink{namespacelbfgs_a40ef2bec20a1247763d2559835c45511ab79075a76adeb4f1e7918d307925f403}{LBFGSERR\+\_\+\+MAXIMUMITERATION}} status code when the iteration count exceedes this parameter. Setting this parameter to zero continues an minimization process until a convergence or error. The default value is 0. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_aa8173b75232d441c4d805fb7e59080b9}\label{structlbfgs_1_1lbfgs__parameter__t_aa8173b75232d441c4d805fb7e59080b9}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!max\_linesearch@{max\_linesearch}}
+\index{max\_linesearch@{max\_linesearch}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{max\_linesearch}{max\_linesearch}}
+{\footnotesize\ttfamily int lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+linesearch = 64}
+
+The maximum number of trials for the line search. This parameter controls the number of function and gradients evaluations per iteration for the line search routine. The default value is 64. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_afc3769c7e9d289d8d7395e490b22b635}\label{structlbfgs_1_1lbfgs__parameter__t_afc3769c7e9d289d8d7395e490b22b635}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!max\_step@{max\_step}}
+\index{max\_step@{max\_step}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{max\_step}{max\_step}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::max\+\_\+step = 1.\+0e+20}
+
+The maximum step of the line search. The default value is 1.\+0e+20. This value need not be modified unless the exponents are too large for the machine being used, or unless the problem is extremely badly scaled (in which case the exponents should be increased). \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_aae75f2da1b631eb3446b09e539f08494}\label{structlbfgs_1_1lbfgs__parameter__t_aae75f2da1b631eb3446b09e539f08494}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!mem\_size@{mem\_size}}
+\index{mem\_size@{mem\_size}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{mem\_size}{mem\_size}}
+{\footnotesize\ttfamily int lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::mem\+\_\+size = 8}
+
+The number of corrections to approximate the inverse hessian matrix. The L-\/\+BFGS routine stores the computation results of previous m iterations to approximate the inverse hessian matrix of the current iteration. This parameter controls the size of the limited memories (corrections). The default value is 8. Values less than 3 are not recommended. Large values will result in excessive computing time. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_a06d50fb6134db86745fcb798ecfbe2c2}\label{structlbfgs_1_1lbfgs__parameter__t_a06d50fb6134db86745fcb798ecfbe2c2}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!min\_step@{min\_step}}
+\index{min\_step@{min\_step}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{min\_step}{min\_step}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::min\+\_\+step = 1.\+0e-\/20}
+
+The minimum step of the line search routine. The default value is 1.\+0e-\/20. This value need not be modified unless the exponents are too large for the machine being used, or unless the problem is extremely badly scaled (in which case the exponents should be increased). \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_afe4ac82ee96a51ba9f9042d3e4f8ced0}\label{structlbfgs_1_1lbfgs__parameter__t_afe4ac82ee96a51ba9f9042d3e4f8ced0}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!past@{past}}
+\index{past@{past}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{past}{past}}
+{\footnotesize\ttfamily int lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::past = 3}
+
+Distance for delta-\/based convergence test. This parameter determines the distance, in iterations, to compute the rate of decrease of the cost function. If the value of this parameter is zero, the library does not perform the delta-\/based convergence test. The default value is 3. \mbox{\Hypertarget{structlbfgs_1_1lbfgs__parameter__t_a96963846fe00d48c0cdd39b5d680f1dd}\label{structlbfgs_1_1lbfgs__parameter__t_a96963846fe00d48c0cdd39b5d680f1dd}} 
+\index{lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}!s\_curv\_coeff@{s\_curv\_coeff}}
+\index{s\_curv\_coeff@{s\_curv\_coeff}!lbfgs::lbfgs\_parameter\_t@{lbfgs::lbfgs\_parameter\_t}}
+\doxysubsubsection{\texorpdfstring{s\_curv\_coeff}{s\_curv\_coeff}}
+{\footnotesize\ttfamily double lbfgs\+::lbfgs\+\_\+parameter\+\_\+t\+::s\+\_\+curv\+\_\+coeff = 0.\+9}
+
+A parameter to control the accuracy of the line search routine. The default value is 0.\+9. If the function and gradient evaluations are inexpensive with respect to the cost of the iteration (which is sometimes the case when solving very large problems) it may be advantageous to set this parameter to a small value. A typical small value is 0.\+1. This parameter should be greater than the f\+\_\+dec\+\_\+coeff parameter and smaller than 1.\+0. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lbfgs_8hpp}{lbfgs.\+hpp}}\end{DoxyCompactItemize}

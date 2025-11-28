@@ -1,0 +1,280 @@
+\hypertarget{classPiece}{}\doxysection{Piece$<$ D $>$ Class Template Reference}
+\label{classPiece}\index{Piece$<$ D $>$@{Piece$<$ D $>$}}
+
+
+{\ttfamily \#include $<$trajectory.\+hpp$>$}
+
+
+
+Collaboration diagram for Piece$<$ D $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classPiece__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, 3, D+1 $>$ \mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, 3, D $>$ \mbox{\hyperlink{classPiece_abd04f31a4d07116daa5ded6098f54d0f}{Vel\+Coefficient\+Mat}}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, 3, D -\/ 1 $>$ \mbox{\hyperlink{classPiece_ae38aba9f0a94f774504cb911de37fb5e}{Acc\+Coefficient\+Mat}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPiece_adb5046c6bcf9b03ec04cd03b708a9691}{Piece}} ()=default
+\item 
+\mbox{\hyperlink{classPiece_ab7e649612cab24ea68c16ba32bb44f2b}{Piece}} (double dur, const \mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}} \&c\+Mat)
+\item 
+int \mbox{\hyperlink{classPiece_a2ebc02ef0e1e86a64870293a71cf7221}{get\+Dim}} () const
+\item 
+int \mbox{\hyperlink{classPiece_ab48d99f258c2508803d2d58e87720f35}{get\+Degree}} () const
+\item 
+double \mbox{\hyperlink{classPiece_a8dae75eb9d9ab9135b650e9f11e5b2ff}{get\+Duration}} () const
+\item 
+const \mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}} \& \mbox{\hyperlink{classPiece_ae30b76f7e966a2af364ccdd2a9a0c3d6}{get\+Coeff\+Mat}} () const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece_a1220737a9cef769eb0e6fec8d8672e5f}{get\+Pos}} (const double \&t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece_ae722aaeced88e3778be8769a836d01b8}{get\+Vel}} (const double \&t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece_aae7658323ee3934140a7374150c5908f}{get\+Acc}} (const double \&t) const
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece_aeeb95b842df06e4b9780be873918b7b5}{get\+Jer}} (const double \&t) const
+\item 
+\mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}} \mbox{\hyperlink{classPiece_aecc076603696c3071c5b9c36e3574af4}{normalize\+Pos\+Coeff\+Mat}} () const
+\item 
+\mbox{\hyperlink{classPiece_abd04f31a4d07116daa5ded6098f54d0f}{Vel\+Coefficient\+Mat}} \mbox{\hyperlink{classPiece_ad4a0ea8fdef3e3f28482b1517b6e9f4e}{normalize\+Vel\+Coeff\+Mat}} () const
+\item 
+\mbox{\hyperlink{classPiece_ae38aba9f0a94f774504cb911de37fb5e}{Acc\+Coefficient\+Mat}} \mbox{\hyperlink{classPiece_a05ddcb2ffa2331defdc3686cad05d00e}{normalize\+Acc\+Coeff\+Mat}} () const
+\item 
+double \mbox{\hyperlink{classPiece_aaf744bc7ea65590fda82980adbb2ca30}{get\+Max\+Vel\+Rate}} () const
+\item 
+double \mbox{\hyperlink{classPiece_a17ab197332f79951caa7b968ec58a358}{get\+Max\+Acc\+Rate}} () const
+\item 
+bool \mbox{\hyperlink{classPiece_ac8c3eb5e63cae834347b125621c2ab2a}{check\+Max\+Vel\+Rate}} (const double \&max\+Vel\+Rate) const
+\item 
+bool \mbox{\hyperlink{classPiece_a0143c8e8e0b573265abf0ebeb4d46fd6}{check\+Max\+Acc\+Rate}} (const double \&max\+Acc\+Rate) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classPiece_ae38aba9f0a94f774504cb911de37fb5e}\label{classPiece_ae38aba9f0a94f774504cb911de37fb5e}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!AccCoefficientMat@{AccCoefficientMat}}
+\index{AccCoefficientMat@{AccCoefficientMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{AccCoefficientMat}{AccCoefficientMat}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef Eigen\+::\+Matrix$<$double, 3, D -\/ 1$>$ \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::\mbox{\hyperlink{classPiece_ae38aba9f0a94f774504cb911de37fb5e}{Acc\+Coefficient\+Mat}}}
+
+\mbox{\Hypertarget{classPiece_a659e7eb401a47f615535565304f23b12}\label{classPiece_a659e7eb401a47f615535565304f23b12}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!CoefficientMat@{CoefficientMat}}
+\index{CoefficientMat@{CoefficientMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{CoefficientMat}{CoefficientMat}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef Eigen\+::\+Matrix$<$double, 3, D + 1$>$ \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::\mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}}}
+
+\mbox{\Hypertarget{classPiece_abd04f31a4d07116daa5ded6098f54d0f}\label{classPiece_abd04f31a4d07116daa5ded6098f54d0f}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!VelCoefficientMat@{VelCoefficientMat}}
+\index{VelCoefficientMat@{VelCoefficientMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{VelCoefficientMat}{VelCoefficientMat}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef Eigen\+::\+Matrix$<$double, 3, D$>$ \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::\mbox{\hyperlink{classPiece_abd04f31a4d07116daa5ded6098f54d0f}{Vel\+Coefficient\+Mat}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPiece_adb5046c6bcf9b03ec04cd03b708a9691}\label{classPiece_adb5046c6bcf9b03ec04cd03b708a9691}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::\mbox{\hyperlink{classPiece}{Piece}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classPiece_ab7e649612cab24ea68c16ba32bb44f2b}\label{classPiece_ab7e649612cab24ea68c16ba32bb44f2b}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::\mbox{\hyperlink{classPiece}{Piece}} (\begin{DoxyParamCaption}\item[{double}]{dur,  }\item[{const \mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}} \&}]{c\+Mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPiece_a0143c8e8e0b573265abf0ebeb4d46fd6}\label{classPiece_a0143c8e8e0b573265abf0ebeb4d46fd6}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!checkMaxAccRate@{checkMaxAccRate}}
+\index{checkMaxAccRate@{checkMaxAccRate}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{checkMaxAccRate()}{checkMaxAccRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::check\+Max\+Acc\+Rate (\begin{DoxyParamCaption}\item[{const double \&}]{max\+Acc\+Rate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_a0143c8e8e0b573265abf0ebeb4d46fd6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_ac8c3eb5e63cae834347b125621c2ab2a}\label{classPiece_ac8c3eb5e63cae834347b125621c2ab2a}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!checkMaxVelRate@{checkMaxVelRate}}
+\index{checkMaxVelRate@{checkMaxVelRate}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{checkMaxVelRate()}{checkMaxVelRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::check\+Max\+Vel\+Rate (\begin{DoxyParamCaption}\item[{const double \&}]{max\+Vel\+Rate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_ac8c3eb5e63cae834347b125621c2ab2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_aae7658323ee3934140a7374150c5908f}\label{classPiece_aae7658323ee3934140a7374150c5908f}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getAcc@{getAcc}}
+\index{getAcc@{getAcc}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getAcc()}{getAcc()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Acc (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classPiece_aae7658323ee3934140a7374150c5908f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_ae30b76f7e966a2af364ccdd2a9a0c3d6}\label{classPiece_ae30b76f7e966a2af364ccdd2a9a0c3d6}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getCoeffMat@{getCoeffMat}}
+\index{getCoeffMat@{getCoeffMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getCoeffMat()}{getCoeffMat()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}}\& \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Coeff\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_ab48d99f258c2508803d2d58e87720f35}\label{classPiece_ab48d99f258c2508803d2d58e87720f35}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getDegree@{getDegree}}
+\index{getDegree@{getDegree}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getDegree()}{getDegree()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_a2ebc02ef0e1e86a64870293a71cf7221}\label{classPiece_a2ebc02ef0e1e86a64870293a71cf7221}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getDim@{getDim}}
+\index{getDim@{getDim}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getDim()}{getDim()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_a8dae75eb9d9ab9135b650e9f11e5b2ff}\label{classPiece_a8dae75eb9d9ab9135b650e9f11e5b2ff}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_aeeb95b842df06e4b9780be873918b7b5}\label{classPiece_aeeb95b842df06e4b9780be873918b7b5}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getJer@{getJer}}
+\index{getJer@{getJer}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getJer()}{getJer()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Jer (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_a17ab197332f79951caa7b968ec58a358}\label{classPiece_a17ab197332f79951caa7b968ec58a358}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getMaxAccRate@{getMaxAccRate}}
+\index{getMaxAccRate@{getMaxAccRate}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxAccRate()}{getMaxAccRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Max\+Acc\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_a17ab197332f79951caa7b968ec58a358_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_aaf744bc7ea65590fda82980adbb2ca30}\label{classPiece_aaf744bc7ea65590fda82980adbb2ca30}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getMaxVelRate@{getMaxVelRate}}
+\index{getMaxVelRate@{getMaxVelRate}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxVelRate()}{getMaxVelRate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Max\+Vel\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_aaf744bc7ea65590fda82980adbb2ca30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_a1220737a9cef769eb0e6fec8d8672e5f}\label{classPiece_a1220737a9cef769eb0e6fec8d8672e5f}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getPos@{getPos}}
+\index{getPos@{getPos}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Pos (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_ae722aaeced88e3778be8769a836d01b8}\label{classPiece_ae722aaeced88e3778be8769a836d01b8}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!getVel@{getVel}}
+\index{getVel@{getVel}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{getVel()}{getVel()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::get\+Vel (\begin{DoxyParamCaption}\item[{const double \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classPiece_ae722aaeced88e3778be8769a836d01b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_a05ddcb2ffa2331defdc3686cad05d00e}\label{classPiece_a05ddcb2ffa2331defdc3686cad05d00e}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!normalizeAccCoeffMat@{normalizeAccCoeffMat}}
+\index{normalizeAccCoeffMat@{normalizeAccCoeffMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{normalizeAccCoeffMat()}{normalizeAccCoeffMat()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece_ae38aba9f0a94f774504cb911de37fb5e}{Acc\+Coefficient\+Mat}} \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::normalize\+Acc\+Coeff\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_a05ddcb2ffa2331defdc3686cad05d00e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPiece_aecc076603696c3071c5b9c36e3574af4}\label{classPiece_aecc076603696c3071c5b9c36e3574af4}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!normalizePosCoeffMat@{normalizePosCoeffMat}}
+\index{normalizePosCoeffMat@{normalizePosCoeffMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{normalizePosCoeffMat()}{normalizePosCoeffMat()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece_a659e7eb401a47f615535565304f23b12}{Coefficient\+Mat}} \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::normalize\+Pos\+Coeff\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPiece_ad4a0ea8fdef3e3f28482b1517b6e9f4e}\label{classPiece_ad4a0ea8fdef3e3f28482b1517b6e9f4e}} 
+\index{Piece$<$ D $>$@{Piece$<$ D $>$}!normalizeVelCoeffMat@{normalizeVelCoeffMat}}
+\index{normalizeVelCoeffMat@{normalizeVelCoeffMat}!Piece$<$ D $>$@{Piece$<$ D $>$}}
+\doxysubsubsection{\texorpdfstring{normalizeVelCoeffMat()}{normalizeVelCoeffMat()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPiece_abd04f31a4d07116daa5ded6098f54d0f}{Vel\+Coefficient\+Mat}} \mbox{\hyperlink{classPiece}{Piece}}$<$ D $>$\+::normalize\+Vel\+Coeff\+Mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPiece_ad4a0ea8fdef3e3f28482b1517b6e9f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{trajectory_8hpp}{trajectory.\+hpp}}\end{DoxyCompactItemize}

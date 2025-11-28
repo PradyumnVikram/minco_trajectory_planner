@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trajectory Planner: main.cpp File Reference</title>
+<title>S2NU Planner: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trajectory Planner
+   <div id="projectname">S2NU Planner
    </div>
   </td>
  </tr>
@@ -116,12 +116,12 @@ Include dependency graph for main.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:ac2922370d3aae6cee155ff3a323a7cc7"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; double, 6, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac2922370d3aae6cee155ff3a323a7cc7">boxToH</a> (const Eigen::Vector3d &amp;center, const Eigen::Vector3d &amp;half)</td></tr>
 <tr class="separator:ac2922370d3aae6cee155ff3a323a7cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac60a4a6ea402265f5b7b9c518cef915c"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac60a4a6ea402265f5b7b9c518cef915c">return_pos</a> (double time, const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;coeff_matrix)</td></tr>
-<tr class="separator:ac60a4a6ea402265f5b7b9c518cef915c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93b27cd6afb569ce65717489cdbadff6"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a93b27cd6afb569ce65717489cdbadff6">return_vel</a> (double time, const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;coeff_matrix)</td></tr>
-<tr class="separator:a93b27cd6afb569ce65717489cdbadff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ff763d70ee9d4161860928059102c5c"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ff763d70ee9d4161860928059102c5c">return_acc</a> (double time, const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;coeff_matrix)</td></tr>
-<tr class="separator:a3ff763d70ee9d4161860928059102c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3211da1fa94eb3dc27f18cdd224e116"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac3211da1fa94eb3dc27f18cdd224e116">return_pos</a> (double time, const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;coeff_matrix)</td></tr>
+<tr class="separator:ac3211da1fa94eb3dc27f18cdd224e116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6bdac4bccdbed89660aeb1da36aa7f"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afb6bdac4bccdbed89660aeb1da36aa7f">return_vel</a> (double time, const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;coeff_matrix)</td></tr>
+<tr class="separator:afb6bdac4bccdbed89660aeb1da36aa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f59d08749ed6e6b2611d330110a936"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a44f59d08749ed6e6b2611d330110a936">return_acc</a> (double time, const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;coeff_matrix)</td></tr>
+<tr class="separator:a44f59d08749ed6e6b2611d330110a936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -187,10 +187,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classTrajectory.html#ab78fc1472b7e1d0eab05f9f916c5c8ee" title=" " alt="" coords="122,56,299,83"/>
 <area shape="rect" href="classTrajectory.html#a73deec38399c8273756c3ea3616633cf" title=" " alt="" coords="361,107,541,133"/>
 <area shape="rect" href="classTrajectory.html#a5bc537fe3cef0f23e13284559afbcd8f" title=" " alt="" coords="124,157,297,184"/>
-<area shape="rect" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a5fb5d6ab8ad9102403c98fc6def38332" title=" " alt="" coords="108,209,313,250"/>
-<area shape="rect" href="main_8cpp.html#a3ff763d70ee9d4161860928059102c5c" title=" " alt="" coords="165,275,256,301"/>
-<area shape="rect" href="main_8cpp.html#ac60a4a6ea402265f5b7b9c518cef915c" title=" " alt="" coords="165,325,256,352"/>
-<area shape="rect" href="main_8cpp.html#a93b27cd6afb569ce65717489cdbadff6" title=" " alt="" coords="167,376,255,403"/>
+<area shape="rect" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#a72d6156327efbbd584936c3f3233bdfd" title=" " alt="" coords="108,209,313,250"/>
+<area shape="rect" href="main_8cpp.html#a44f59d08749ed6e6b2611d330110a936" title=" " alt="" coords="165,275,256,301"/>
+<area shape="rect" href="main_8cpp.html#ac3211da1fa94eb3dc27f18cdd224e116" title=" " alt="" coords="165,325,256,352"/>
+<area shape="rect" href="main_8cpp.html#afb6bdac4bccdbed89660aeb1da36aa7f" title=" " alt="" coords="167,376,255,403"/>
 <area shape="rect" href="classgcopter_1_1GCOPTER__PolytopeSFC.html#abca4cdd6e61a716db18ecbb5be982a99" title=" " alt="" coords="108,427,313,469"/>
 <area shape="rect" href="classTrajectory.html#a9677d21a35fa4dac02ece2f57cc9c309" title=" " alt="" coords="389,165,514,192"/>
 <area shape="rect" href="namespacelbfgs.html#a25919c3755adc48965ba380d9254be39" title=" " alt="" coords="372,216,531,243"/>
@@ -202,8 +202,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3ff763d70ee9d4161860928059102c5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ff763d70ee9d4161860928059102c5c">&#9670;&nbsp;</a></span>return_acc()</h2>
+<a id="a44f59d08749ed6e6b2611d330110a936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f59d08749ed6e6b2611d330110a936">&#9670;&nbsp;</a></span>return_acc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +217,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;&#160;</td>
           <td class="paramname"><em>coeff_matrix</em>&#160;</td>
         </tr>
         <tr>
@@ -230,8 +230,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a3ff763d70ee9d4161860928059102c5c_icgraph.png" border="0" usemap="#amain_8cpp_a3ff763d70ee9d4161860928059102c5c_icgraph" alt=""/></div>
-<map name="amain_8cpp_a3ff763d70ee9d4161860928059102c5c_icgraph" id="amain_8cpp_a3ff763d70ee9d4161860928059102c5c_icgraph">
+<div class="center"><img src="main_8cpp_a44f59d08749ed6e6b2611d330110a936_icgraph.png" border="0" usemap="#amain_8cpp_a44f59d08749ed6e6b2611d330110a936_icgraph" alt=""/></div>
+<map name="amain_8cpp_a44f59d08749ed6e6b2611d330110a936_icgraph" id="amain_8cpp_a44f59d08749ed6e6b2611d330110a936_icgraph">
 <area shape="rect" title=" " alt="" coords="108,5,199,32"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
 </map>
@@ -239,8 +239,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac60a4a6ea402265f5b7b9c518cef915c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac60a4a6ea402265f5b7b9c518cef915c">&#9670;&nbsp;</a></span>return_pos()</h2>
+<a id="ac3211da1fa94eb3dc27f18cdd224e116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3211da1fa94eb3dc27f18cdd224e116">&#9670;&nbsp;</a></span>return_pos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,7 +254,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;&#160;</td>
           <td class="paramname"><em>coeff_matrix</em>&#160;</td>
         </tr>
         <tr>
@@ -267,8 +267,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_ac60a4a6ea402265f5b7b9c518cef915c_icgraph.png" border="0" usemap="#amain_8cpp_ac60a4a6ea402265f5b7b9c518cef915c_icgraph" alt=""/></div>
-<map name="amain_8cpp_ac60a4a6ea402265f5b7b9c518cef915c_icgraph" id="amain_8cpp_ac60a4a6ea402265f5b7b9c518cef915c_icgraph">
+<div class="center"><img src="main_8cpp_ac3211da1fa94eb3dc27f18cdd224e116_icgraph.png" border="0" usemap="#amain_8cpp_ac3211da1fa94eb3dc27f18cdd224e116_icgraph" alt=""/></div>
+<map name="amain_8cpp_ac3211da1fa94eb3dc27f18cdd224e116_icgraph" id="amain_8cpp_ac3211da1fa94eb3dc27f18cdd224e116_icgraph">
 <area shape="rect" title=" " alt="" coords="108,5,199,32"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
 </map>
@@ -276,8 +276,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a93b27cd6afb569ce65717489cdbadff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93b27cd6afb569ce65717489cdbadff6">&#9670;&nbsp;</a></span>return_vel()</h2>
+<a id="afb6bdac4bccdbed89660aeb1da36aa7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6bdac4bccdbed89660aeb1da36aa7f">&#9670;&nbsp;</a></span>return_vel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +291,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 6 &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 4 &gt; &amp;&#160;</td>
           <td class="paramname"><em>coeff_matrix</em>&#160;</td>
         </tr>
         <tr>
@@ -304,8 +304,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp_a93b27cd6afb569ce65717489cdbadff6_icgraph.png" border="0" usemap="#amain_8cpp_a93b27cd6afb569ce65717489cdbadff6_icgraph" alt=""/></div>
-<map name="amain_8cpp_a93b27cd6afb569ce65717489cdbadff6_icgraph" id="amain_8cpp_a93b27cd6afb569ce65717489cdbadff6_icgraph">
+<div class="center"><img src="main_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f_icgraph.png" border="0" usemap="#amain_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f_icgraph" alt=""/></div>
+<map name="amain_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f_icgraph" id="amain_8cpp_afb6bdac4bccdbed89660aeb1da36aa7f_icgraph">
 <area shape="rect" title=" " alt="" coords="108,5,196,32"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
 </map>

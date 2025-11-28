@@ -1,0 +1,48 @@
+\hypertarget{geo__utils_8hpp}{}\doxysection{geo\+\_\+utils.\+hpp File Reference}
+\label{geo__utils_8hpp}\index{geo\_utils.hpp@{geo\_utils.hpp}}
+{\ttfamily \#include \char`\"{}quickhull.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdlp.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for geo\+\_\+utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{geo__utils_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{geo__utils_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgeo__utils_1_1filterLess}{geo\+\_\+utils\+::filter\+Less}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacegeo__utils}{geo\+\_\+utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_ac585c6aa6a6384842ff4193f8a5afa45}{geo\+\_\+utils\+::find\+Interior}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Vector3d \&interior)
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_af505b6f8bb24a9cc81df56cfd2f4bca0}{geo\+\_\+utils\+::overlap}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly0, const Eigen\+::\+Matrix\+X4d \&h\+Poly1, const double eps=1.\+0e-\/6)
+\item 
+void \mbox{\hyperlink{namespacegeo__utils_a88772df55c51dd3ce8c9317b260be2ab}{geo\+\_\+utils\+::filter\+Vs}} (const Eigen\+::\+Matrix3\+Xd \&rV, const double \&epsilon, Eigen\+::\+Matrix3\+Xd \&fV)
+\item 
+void \mbox{\hyperlink{namespacegeo__utils_add88c32cc345838f411623ef81916dee}{geo\+\_\+utils\+::enumerate\+Vs}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, const Eigen\+::\+Vector3d \&inner, Eigen\+::\+Matrix3\+Xd \&v\+Poly, const double epsilon=1.\+0e-\/6)
+\item 
+bool \mbox{\hyperlink{namespacegeo__utils_a502d37be118d6a9d32116489b9d27fe5}{geo\+\_\+utils\+::enumerate\+Vs}} (const Eigen\+::\+Matrix\+X4d \&h\+Poly, Eigen\+::\+Matrix3\+Xd \&v\+Poly, const double epsilon=1.\+0e-\/6)
+\end{DoxyCompactItemize}

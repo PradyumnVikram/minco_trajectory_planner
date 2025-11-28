@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trajectory Planner: minco::MINCO_S2NU Class Reference</title>
+<title>S2NU Planner: minco::MINCO_S2NU Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trajectory Planner
+   <div id="projectname">S2NU Planner
    </div>
   </td>
  </tr>
@@ -74,6 +74,14 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="minco_8hpp_source.html">minco.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for minco::MINCO_S2NU:</div>
+<div class="dyncontent">
+<div class="center"><img src="classminco_1_1MINCO__S2NU__coll__graph.png" border="0" usemap="#aminco_1_1MINCO__S2NU_coll__map" alt="Collaboration graph"/></div>
+<map name="aminco_1_1MINCO__S2NU_coll__map" id="aminco_1_1MINCO__S2NU_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,248,215"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -81,8 +89,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a161078d69dc13bfdc776e2ef9acc9df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793ccba00912bd6b210a1e1c1f5e9671"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminco_1_1MINCO__S2NU.html#a793ccba00912bd6b210a1e1c1f5e9671">~MINCO_S2NU</a> ()</td></tr>
 <tr class="separator:a793ccba00912bd6b210a1e1c1f5e9671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2fdd8e54afc379a479969529d903cd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminco_1_1MINCO__S2NU.html#af2fdd8e54afc379a479969529d903cd5">setConditions</a> (const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;headState, const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;tailState, const int &amp;pieceNum)</td></tr>
-<tr class="separator:af2fdd8e54afc379a479969529d903cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ffede2b849541228368efe2bbe106a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminco_1_1MINCO__S2NU.html#a21ffede2b849541228368efe2bbe106a">setConditions</a> (const Eigen::Matrix3d &amp;headState, const Eigen::Matrix3d &amp;tailState, const int &amp;pieceNum)</td></tr>
+<tr class="separator:a21ffede2b849541228368efe2bbe106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a697f9f67add4bb10e1d4cdcd64939f48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminco_1_1MINCO__S2NU.html#a697f9f67add4bb10e1d4cdcd64939f48">setParameters</a> (const Eigen::Matrix3Xd &amp;inPs, const Eigen::VectorXd &amp;ts)</td></tr>
 <tr class="separator:a697f9f67add4bb10e1d4cdcd64939f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba3433c0444c0a66db05b279d6f1fdf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classminco_1_1MINCO__S2NU.html#aba3433c0444c0a66db05b279d6f1fdf9">getTrajectory</a> (<a class="el" href="classTrajectory.html">Trajectory</a>&lt; 3 &gt; &amp;traj) const</td></tr>
@@ -358,8 +366,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af2fdd8e54afc379a479969529d903cd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2fdd8e54afc379a479969529d903cd5">&#9670;&nbsp;</a></span>setConditions()</h2>
+<a id="a21ffede2b849541228368efe2bbe106a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ffede2b849541228368efe2bbe106a">&#9670;&nbsp;</a></span>setConditions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,13 +378,13 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void minco::MINCO_S2NU::setConditions </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
           <td class="paramname"><em>headState</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; double, 3, 2 &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix3d &amp;&#160;</td>
           <td class="paramname"><em>tailState</em>, </td>
         </tr>
         <tr>
@@ -400,8 +408,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classminco_1_1MINCO__S2NU_af2fdd8e54afc379a479969529d903cd5_cgraph.png" border="0" usemap="#aclassminco_1_1MINCO__S2NU_af2fdd8e54afc379a479969529d903cd5_cgraph" alt=""/></div>
-<map name="aclassminco_1_1MINCO__S2NU_af2fdd8e54afc379a479969529d903cd5_cgraph" id="aclassminco_1_1MINCO__S2NU_af2fdd8e54afc379a479969529d903cd5_cgraph">
+<div class="center"><img src="classminco_1_1MINCO__S2NU_a21ffede2b849541228368efe2bbe106a_cgraph.png" border="0" usemap="#aclassminco_1_1MINCO__S2NU_a21ffede2b849541228368efe2bbe106a_cgraph" alt=""/></div>
+<map name="aclassminco_1_1MINCO__S2NU_a21ffede2b849541228368efe2bbe106a_cgraph" id="aclassminco_1_1MINCO__S2NU_a21ffede2b849541228368efe2bbe106a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,172,47"/>
 <area shape="rect" href="classminco_1_1BandedSystem.html#ad75f59727271e6f10af62dd487f8c8a0" title=" " alt="" coords="220,5,388,47"/>
 <area shape="rect" href="classminco_1_1BandedSystem.html#ab022f9f8c906c7ea04985f7009b91389" title=" " alt="" coords="436,5,604,47"/>

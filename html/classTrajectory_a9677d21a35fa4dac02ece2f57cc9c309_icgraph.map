@@ -1,8 +1,7 @@
 <map id="Trajectory::clear" name="Trajectory::clear">
-<area shape="rect" id="node1" title=" " alt="" coords="361,111,487,138"/>
+<area shape="rect" id="node1" title=" " alt="" coords="361,78,487,105"/>
 <area shape="rect" id="node2" href="$classminco_1_1MINCO__S2NU.html#aba3433c0444c0a66db05b279d6f1fdf9" title=" " alt="" coords="127,5,294,47"/>
 <area shape="rect" id="node3" href="$classminco_1_1MINCO__S3NU.html#ade4caa68ed6221a3c4ad78294fa649e9" title=" " alt="" coords="127,71,294,112"/>
-<area shape="rect" id="node4" href="$classminco_1_1MINCO__S4NU.html#a191468fd3356ddb4f73cad627b97eb08" title=" " alt="" coords="127,136,294,177"/>
-<area shape="rect" id="node5" href="$classgcopter_1_1GCOPTER__PolytopeSFC.html#a5fb5d6ab8ad9102403c98fc6def38332" title=" " alt="" coords="108,201,313,243"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,209,60,235"/>
+<area shape="rect" id="node4" href="$classgcopter_1_1GCOPTER__PolytopeSFC.html#a72d6156327efbbd584936c3f3233bdfd" title=" " alt="" coords="108,136,313,177"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,143,60,170"/>
 </map>
