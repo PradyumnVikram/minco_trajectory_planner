@@ -47,7 +47,7 @@ namespace minco
         // banded width p/q are needed
         inline void create(const int &n, const int &p, const int &q)
         {
-            // In case of re-creating before destroying
+            // In case ofso re-creating before destroying
             destroy();
             N = n;
             lowerBw = p;
@@ -215,13 +215,13 @@ namespace minco
         Eigen::VectorXd T3;
 
     public:
-        inline void setConditions(const Eigen::Matrix<double, 3, 2> &headState,
-                                  const Eigen::Matrix<double, 3, 2> &tailState,
+        inline void setConditions(const Eigen::Matrix3d &headState,
+                                  const Eigen::Matrix3d &tailState,
                                   const int &pieceNum)
         {
             N = pieceNum;
-            headPV = headState;
-            tailPV = tailState;
+            headPV = headState.leftCols<2>();
+            tailPV = tailState.leftCols<2>();
             A.create(4 * N, 4, 4);
             b.resize(4 * N, 3);
             T1.resize(N);

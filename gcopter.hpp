@@ -48,7 +48,7 @@ namespace gcopter
         typedef std::vector<PolyhedronH> PolyhedraH;
 
     private:
-        minco::MINCO_S3NU minco;
+        minco::MINCO_S2NU minco;
         flatness::FlatnessMap flatmap;
 
         double rho;
@@ -361,7 +361,7 @@ namespace gcopter
 
             double step, alpha;
             double s1, s2, s3, s4, s5;
-            Eigen::Matrix<double, 6, 1> beta0, beta1, beta2, beta3, beta4;
+            Eigen::Matrix<double, 4, 1> beta0, beta1, beta2, beta3, beta4;
             Eigen::Vector3d outerNormal;
             int K, L;
             double violaPos, violaVel, violaOmg, violaTheta, violaThrust;
@@ -373,7 +373,7 @@ namespace gcopter
             const double integralFrac = 1.0 / integralResolution;
             for (int i = 0; i < pieceNum; i++)
             {
-                const Eigen::Matrix<double, 6, 3> &c = coeffs.block<6, 3>(i * 6, 0);
+                const Eigen::Matrix<double, 4, 3> &c = coeffs.block<4, 3>(i * 4, 0);
                 step = T(i) * integralFrac;
                 for (int j = 0; j <= integralResolution; j++)
                 {
@@ -382,11 +382,11 @@ namespace gcopter
                     s3 = s2 * s1;
                     s4 = s2 * s2;
                     s5 = s4 * s1;
-                    beta0(0) = 1.0, beta0(1) = s1, beta0(2) = s2, beta0(3) = s3, beta0(4) = s4, beta0(5) = s5;
-                    beta1(0) = 0.0, beta1(1) = 1.0, beta1(2) = 2.0 * s1, beta1(3) = 3.0 * s2, beta1(4) = 4.0 * s3, beta1(5) = 5.0 * s4;
-                    beta2(0) = 0.0, beta2(1) = 0.0, beta2(2) = 2.0, beta2(3) = 6.0 * s1, beta2(4) = 12.0 * s2, beta2(5) = 20.0 * s3;
-                    beta3(0) = 0.0, beta3(1) = 0.0, beta3(2) = 0.0, beta3(3) = 6.0, beta3(4) = 24.0 * s1, beta3(5) = 60.0 * s2;
-                    beta4(0) = 0.0, beta4(1) = 0.0, beta4(2) = 0.0, beta4(3) = 0.0, beta4(4) = 24.0, beta4(5) = 120.0 * s1;
+                    beta0(0) = 1.0, beta0(1) = s1, beta0(2) = s2, beta0(3) = s3;
+                    beta1(0) = 0.0, beta1(1) = 1.0, beta1(2) = 2.0 * s1, beta1(3) = 3.0 * s2;
+                    beta2(0) = 0.0, beta2(1) = 0.0, beta2(2) = 2.0, beta2(3) = 6.0 * s1;
+                    beta3(0) = 0.0, beta3(1) = 0.0, beta3(2) = 0.0, beta3(3) = 6.0;
+                    beta4(0) = 0.0, beta4(1) = 0.0, beta4(2) = 0.0, beta4(3) = 0.0;
                     pos = c.transpose() * beta0;
                     vel = c.transpose() * beta1;
                     acc = c.transpose() * beta2;
@@ -451,7 +451,7 @@ namespace gcopter
 
                     node = (j == 0 || j == integralResolution) ? 0.5 : 1.0;
                     alpha = j * integralFrac;
-                    gradC.block<6, 3>(i * 6, 0) += (beta0 * totalGradPos.transpose() +
+                    gradC.block<4, 3>(i * 4, 0) += (beta0 * totalGradPos.transpose() +
                                                     beta1 * totalGradVel.transpose() +
                                                     beta2 * totalGradAcc.transpose() +
                                                     beta3 * totalGradJer.transpose()) *
@@ -800,13 +800,13 @@ namespace gcopter
             times.resize(pieceN);
             gradByPoints.resize(3, pieceN - 1);
             gradByTimes.resize(pieceN);
-            partialGradByCoeffs.resize(6 * pieceN, 3);
+            partialGradByCoeffs.resize(4 * pieceN, 3);
             partialGradByTimes.resize(pieceN);
 
             return true;
         }
 
-        inline double optimize(Trajectory<5> &traj,
+        inline double optimize(Trajectory<3> &traj,
                                const double &relCostTol)
         {
             Eigen::VectorXd x(temporalDim + spatialDim);
