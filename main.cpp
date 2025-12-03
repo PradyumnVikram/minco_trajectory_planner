@@ -162,7 +162,7 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
         }
 
         auto end_time_csv = std::chrono::high_resolution_clock::now();
-
+        //CSV
         auto duration_csv = std::chrono::duration_cast<std::chrono::microseconds>(end_time_csv - start_time);
         std::cout << "Execution time: " << duration_csv.count() << " microseconds" << std::endl;
 

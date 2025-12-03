@@ -751,7 +751,7 @@ namespace gcopter
             {
                 return false;
             }
-
+            
             polyN = hPolytopes.size();
             smoothEps = smoothingFactor;
             integralRes = integralResolution;
