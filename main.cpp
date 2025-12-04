@@ -77,23 +77,18 @@ double* return_acc(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix)
 
         // build a chain of overlapping corridor boxes along straight line
         // Use the exact PolyhedraH type expected by GCOPTER:
-        std::vector<Eigen::MatrixX3d> safeCorridor;
-        const int numBoxes = 24;
         Eigen::Vector2d center;
         double amplitude = 3; // Amplitude of the wave (adjust as needed)
         double wavelength = 8.0; // Distance over which one wave cycle occurs
 
+        std::vector<Eigen::MatrixX3d> safeCorridor;
+        const int numBoxes = 24;
+        Eigen::Vector2d half(1.5, 2.0);  // Fixed corridor width/height
+        
         for (int i = 0; i < numBoxes; ++i) {
-            double alpha = double(i) / double(std::max(8, numBoxes - 1));
-            double x = alpha * 8.0; // x-coordinate along the path
-            double y = amplitude * sin(2.0 * M_PI * x / wavelength); // y-coordinate oscillates
-
-            center = Eigen::Vector2d(x, y); // z remains 0 for a 2D wave
-
-            Eigen::Vector2d half(1.5, 2.0); // corridor width/height (tune)
-            Eigen::Matrix<double,4,3> H = boxToH(center, half);
-            //std::cout << half << " " << center << " done" << std::endl;
-            safeCorridor.push_back(H);
+            double x = (double(i) / (numBoxes - 1)) * 8.0;  // Linear x from 0 to 8
+            center << x, 0.0;  // Straight y=0 path
+            safeCorridor.push_back(boxToH(center, half));
         }
 
         // tuning parameters for GCOPTER
@@ -194,9 +189,9 @@ double* return_acc(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix)
             acceleration = return_acc(t_rel, *cMat);
 
             fout_csv << time_stamp << ","
-                    << position[0] << "," << position[1] << "," 
-                    << velocity[0] << "," << velocity[1] << ","
-                    << acceleration[0] << "," << acceleration[1] << "\n";
+                    << position[0] << "," << position[1] << "," << "0" << ","
+                    << velocity[0] << "," << velocity[1] << "," << "0" << ","
+                    << acceleration[0] << "," << acceleration[1] << "," << "0" << "\n";
 
             time_stamp += increment;
         }
