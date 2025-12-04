@@ -14,30 +14,25 @@
 
     // Helper: construct an axis-aligned box as a 6x4 H-matrix.
     // Row format: [nx, ny, nz, d] representing nx*x + ny*y + d <= 0 for interior.
-    Eigen::Matrix<double, 6, 4> boxToH(const Eigen::Vector3d &center, const Eigen::Vector3d &half)
+    Eigen::Matrix<double, 4, 3> boxToH(const Eigen::Vector2d &center, const Eigen::Vector2d &half)
     {
-        Eigen::Matrix<double, 6, 4> H;
+        Eigen::Matrix<double, 4, 3> H;
         // +x plane: x <= cx + ex  ->  1*x + 0*y + 0*z + (-(cx+ex)) <= 0
-        H.row(0) << 1.0, 0.0, 0.0, -(center(0) + half(0));
+        H.row(0) << 1.0, 0.0, -(center(0) + half(0));
         // -x plane: x >= cx - ex  ->  -1*x + 0*y + 0*z + (cx - ex) <= 0
-        H.row(1) << -1.0, 0.0, 0.0, center(0) - half(0);
+        H.row(1) << -1.0, 0.0, center(0) - half(0);
 
         // +y
-        H.row(2) << 0.0, 1.0, 0.0, -(center(1) + half(1));
+        H.row(2) << 0.0, 1.0, -(center(1) + half(1));
         // -y
-        H.row(3) << 0.0, -1.0, 0.0, center(1) - half(1);
-
-        // +z
-        H.row(4) << 0.0, 0.0, 1.0, -(center(2) + half(2));
-        // -z
-        H.row(5) << 0.0, 0.0, -1.0, center(2) - half(2);
+        H.row(3) << 0.0, -1.0, center(1) - half(1);
 
         return H;
     }
-
-double* return_pos(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix){
-    double* pos_coord = (double*)malloc(3*sizeof(double));
-    for (int i = 0; i < 3; i++) {
+//to_edit
+double* return_pos(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix){
+    double* pos_coord = (double*)malloc(2*sizeof(double));
+    for (int i = 0; i < 2; i++) {
         // pos(t) = c0 + t*c1 + t^2*c2 + t^3*c3
         pos_coord[i] = coeff_matrix(i, 3)
                      + time * coeff_matrix(i, 2)
@@ -47,9 +42,9 @@ double* return_pos(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
     return pos_coord;
 }
 
-double* return_vel(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix){
-    double* vel_coord = (double*)malloc(3*sizeof(double));
-    for (int i = 0; i < 3; i++) {
+double* return_vel(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix){
+    double* vel_coord = (double*)malloc(2*sizeof(double));
+    for (int i = 0; i < 2; i++) {
         // derivative: v(t) = c1 + 2 t c2 + 3 t^2 c3
         vel_coord[i] = coeff_matrix(i, 2)
                      + 2*time * coeff_matrix(i, 1)
@@ -58,9 +53,9 @@ double* return_vel(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
     return vel_coord;
 }
 
-double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix){
-    double* acc_coord = (double*)malloc(3*sizeof(double));
-    for (int i = 0; i < 3; i++) {
+double* return_acc(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix){
+    double* acc_coord = (double*)malloc(2*sizeof(double));
+    for (int i = 0; i < 2; i++) {
         // acceleration: a(t) = 2 c2 + 6 t c3
         acc_coord[i] = 2*coeff_matrix(i, 1)
                      + 6*time * coeff_matrix(i, 0);
@@ -73,18 +68,18 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
     {
         auto start_time = std::chrono::high_resolution_clock::now();
         // boundaries (P, V, A)
-        Eigen::Matrix3d headPVA, tailPVA;
-        headPVA.setZero();
-        tailPVA.setZero();
-        headPVA.col(0) = Eigen::Vector3d(0.0, 0.0, 0.0);   // start pos
-        tailPVA.col(0) = Eigen::Vector3d(8.0, 0.0, 0.0);   // end pos
-        Eigen::Vector3d shift(0.0, 1.5, 0.0);
+        Eigen::Matrix2d headPV, tailPV;
+        headPV.setZero();
+        tailPV.setZero();
+        headPV.col(0) = Eigen::Vector2d(0.0, 0.0);   // start pos
+        tailPV.col(0) = Eigen::Vector2d(8.0, 0.0);   // end pos
+        Eigen::Vector2d shift(0.0, 1.5);
 
         // build a chain of overlapping corridor boxes along straight line
         // Use the exact PolyhedraH type expected by GCOPTER:
-        std::vector<Eigen::MatrixX4d> safeCorridor;
+        std::vector<Eigen::MatrixX3d> safeCorridor;
         const int numBoxes = 24;
-        Eigen::Vector3d center;
+        Eigen::Vector2d center;
         double amplitude = 3; // Amplitude of the wave (adjust as needed)
         double wavelength = 8.0; // Distance over which one wave cycle occurs
 
@@ -93,10 +88,10 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
             double x = alpha * 8.0; // x-coordinate along the path
             double y = amplitude * sin(2.0 * M_PI * x / wavelength); // y-coordinate oscillates
 
-            center = Eigen::Vector3d(x, y, 0.0); // z remains 0 for a 2D wave
+            center = Eigen::Vector2d(x, y); // z remains 0 for a 2D wave
 
-            Eigen::Vector3d half(1.5, 2.0, 1.0); // corridor width/height (tune)
-            Eigen::Matrix<double,6,4> H = boxToH(center, half);
+            Eigen::Vector2d half(1.5, 2.0); // corridor width/height (tune)
+            Eigen::Matrix<double,4,3> H = boxToH(center, half);
             std::cout << half << " " << center << " done" << std::endl;
             safeCorridor.push_back(H);
         }
@@ -119,8 +114,8 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
         // Create GCOPTER SFC object and setup
         gcopter::GCOPTER_PolytopeSFC sfc;
         bool ok = sfc.setup(timeWeight,
-                            headPVA,
-                            tailPVA,
+                            headPV,
+                            tailPV,
                             safeCorridor,
                             lengthPerPiece,
                             smoothingFactor,
@@ -152,12 +147,12 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
         //cout << "Optimized times:\n" << opt_times.transpose() << "\n";
 
         // Junction positions: 3 x (pieceNum + 1) [start, junc1, junc2, ..., end]
-        Eigen::Matrix3Xd positions = traj.getPositions();
+        Eigen::Matrix2Xd positions = traj.getPositions();
         //cout << "Junction positions (columns: start ... end):\n" << positions << "\n";
 
         // Inner (intermediate) points: exclude first and last columns
         if (positions.cols() >= 3) {
-            Eigen::Matrix3Xd innerPoints = positions.middleCols(1, positions.cols() - 2);
+            Eigen::Matrix2Xd innerPoints = positions.middleCols(1, positions.cols() - 2);
             //cout << "Optimized inner points (columns):\n" << innerPoints << "\n";
         }
 
@@ -167,15 +162,15 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
         std::cout << "Execution time: " << duration_csv.count() << " microseconds" << std::endl;
 
         std::fstream fout_csv;
-        fout_csv.open("trajectory.csv", std::ios::out | std::ios::app);
+        fout_csv.open("trajectory_2d.csv", std::ios::out | std::ios::app);
         double time_stamp = 0.0;
         double duration;
         double accumulated_stamps = 0.0;
         double prev_time_stamp = 0.0;
         double increment = 0.001;
-        double* position = (double* )malloc(3*sizeof(double));
-        double* velocity = (double* )malloc(3*sizeof(double));
-        double* acceleration = (double* )malloc(3*sizeof(double));
+        double* position = (double* )malloc(2*sizeof(double));
+        double* velocity = (double* )malloc(2*sizeof(double));
+        double* acceleration = (double* )malloc(2*sizeof(double));
         // Per-segment coefficient matrices (Piece<D>::getCoeffMat()): 3 x (D+1)
 
         int seg = 0;
@@ -199,9 +194,9 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
             acceleration = return_acc(t_rel, *cMat);
 
             fout_csv << time_stamp << ","
-                    << position[0] << "," << position[1] << "," << position[2] << ","
-                    << velocity[0] << "," << velocity[1] << "," << velocity[2] << ","
-                    << acceleration[0] << "," << acceleration[1] << "," << acceleration[2] << "\n";
+                    << position[0] << "," << position[1] << "," 
+                    << velocity[0] << "," << velocity[1] << ","
+                    << acceleration[0] << "," << acceleration[1] << "\n";
 
             time_stamp += increment;
         }

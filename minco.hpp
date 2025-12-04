@@ -206,31 +206,31 @@ namespace minco
 
     private:
         int N;
-        Eigen::Matrix<double, 3, 2> headPV;
-        Eigen::Matrix<double, 3, 2> tailPV;
+        Eigen::Matrix<double, 2, 2> headPV;
+        Eigen::Matrix<double, 2, 2> tailPV;
         BandedSystem A;
-        Eigen::MatrixX3d b;
+        Eigen::MatrixX2d b;
         Eigen::VectorXd T1;
         Eigen::VectorXd T2;
         Eigen::VectorXd T3;
 
     public:
-        inline void setConditions(const Eigen::Matrix3d &headState,
-                                  const Eigen::Matrix3d &tailState,
+        inline void setConditions(const Eigen::Matrix2d &headState,
+                                  const Eigen::Matrix2d &tailState,
                                   const int &pieceNum)
         {
             N = pieceNum;
             headPV = headState.leftCols<2>();
             tailPV = tailState.leftCols<2>();
             A.create(4 * N, 4, 4);
-            b.resize(4 * N, 3);
+            b.resize(4 * N, 2);
             T1.resize(N);
             T2.resize(N);
             T3.resize(N);
             return;
         }
 
-        inline void setParameters(const Eigen::Matrix3Xd &inPs,
+        inline void setParameters(const Eigen::Matrix2Xd &inPs,
                                   const Eigen::VectorXd &ts)
         {
             T1 = ts;
@@ -291,7 +291,7 @@ namespace minco
             for (int i = 0; i < N; i++)
             {
                 traj.emplace_back(T1(i),
-                                  b.block<4, 3>(4 * i, 0)
+                                  b.block<4, 2>(4 * i, 0)
                                       .transpose()
                                       .rowwise()
                                       .reverse());
@@ -311,21 +311,21 @@ namespace minco
             return;
         }
 
-        inline const Eigen::MatrixX3d &getCoeffs(void) const
+        inline const Eigen::MatrixX2d &getCoeffs(void) const
         {
             return b;
         }
 
-        inline void getEnergyPartialGradByCoeffs(Eigen::MatrixX3d &gdC) const
+        inline void getEnergyPartialGradByCoeffs(Eigen::MatrixX2d &gdC) const
         {
-            gdC.resize(4 * N, 3);
+            gdC.resize(4 * N, 2);
             for (int i = 0; i < N; i++)
             {
                 gdC.row(4 * i + 3) = 12.0 * b.row(4 * i + 2) * T2(i) +
                                      24.0 * b.row(4 * i + 3) * T3(i);
                 gdC.row(4 * i + 2) = 8.0 * b.row(4 * i + 2) * T1(i) +
                                      12.0 * b.row(4 * i + 3) * T2(i);
-                gdC.block<2, 3>(4 * i, 0).setZero();
+                gdC.block<2, 2>(4 * i, 0).setZero();
             }
             return;
         }
@@ -342,15 +342,15 @@ namespace minco
             return;
         }
 
-        inline void propogateGrad(const Eigen::MatrixX3d &partialGradByCoeffs,
+        inline void propogateGrad(const Eigen::MatrixX2d &partialGradByCoeffs,
                                   const Eigen::VectorXd &partialGradByTimes,
-                                  Eigen::Matrix3Xd &gradByPoints,
+                                  Eigen::Matrix2Xd &gradByPoints,
                                   Eigen::VectorXd &gradByTimes)
 
         {
-            gradByPoints.resize(3, N - 1);
+            gradByPoints.resize(2, N - 1);
             gradByTimes.resize(N);
-            Eigen::MatrixX3d adjGrad = partialGradByCoeffs;
+            Eigen::MatrixX2d adjGrad = partialGradByCoeffs;
             A.solveAdj(adjGrad);
 
             for (int i = 0; i < N - 1; i++)
@@ -358,8 +358,8 @@ namespace minco
                 gradByPoints.col(i) = adjGrad.row(4 * i + 3).transpose();
             }
 
-            Eigen::Matrix<double, 4, 3> B1;
-            Eigen::Matrix<double, 2, 3> B2;
+            Eigen::Matrix<double, 4, 2> B1;
+            Eigen::Matrix<double, 2, 2> B2;
             for (int i = 0; i < N - 1; i++)
             {
                 // negative jerk
@@ -375,7 +375,7 @@ namespace minco
                 B1.row(3) = -(2.0 * b.row(i * 4 + 2) +
                               6.0 * T1(i) * b.row(i * 4 + 3));
 
-                gradByTimes(i) = B1.cwiseProduct(adjGrad.block<4, 3>(4 * i + 2, 0)).sum();
+                gradByTimes(i) = B1.cwiseProduct(adjGrad.block<4, 2>(4 * i + 2, 0)).sum();
             }
 
             // negative velocity
@@ -387,7 +387,7 @@ namespace minco
             B2.row(1) = -(2.0 * b.row(4 * N - 2) +
                           6.0 * T1(N - 1) * b.row(4 * N - 1));
 
-            gradByTimes(N - 1) = B2.cwiseProduct(adjGrad.block<2, 3>(4 * N - 2, 0)).sum();
+            gradByTimes(N - 1) = B2.cwiseProduct(adjGrad.block<2, 2>(4 * N - 2, 0)).sum();
 
             gradByTimes += partialGradByTimes;
         }

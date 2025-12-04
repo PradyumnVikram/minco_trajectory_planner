@@ -40,73 +40,67 @@ namespace geo_utils
 
     // Each row of hPoly is defined by h0, h1, h2, h3 as
     // h0*x + h1*y + h2*z + h3 <= 0
-    inline bool findInterior(const Eigen::MatrixX4d &hPoly,
-                             Eigen::Vector3d &interior)
+    inline bool findInterior(const Eigen::MatrixX3d &hPoly,
+                             Eigen::Vector2d &interior)
     {
         const int m = hPoly.rows();
 
-        Eigen::MatrixX4d A(m, 4);
+        Eigen::MatrixX3d A(m, 3);
         Eigen::VectorXd b(m);
-        Eigen::Vector4d c, x;
-        const Eigen::ArrayXd hNorm = hPoly.leftCols<3>().rowwise().norm();
-        A.leftCols<3>() = hPoly.leftCols<3>().array().colwise() / hNorm;
+        Eigen::Vector3d c, x;
+        const Eigen::ArrayXd hNorm = hPoly.leftCols<2>().rowwise().norm();
+        A.leftCols<2>() = hPoly.leftCols<2>().array().colwise() / hNorm;
         A.rightCols<1>().setConstant(1.0);
         b = -hPoly.rightCols<1>().array() / hNorm;
         c.setZero();
-        c(3) = -1.0;
+        c(2) = -1.0;
 
-        const double minmaxsd = sdlp::linprog<4>(c, A, b, x);
-        interior = x.head<3>();
+        const double minmaxsd = sdlp::linprog<3>(c, A, b, x);
+        interior = x.head<2>();
 
         return minmaxsd < 0.0 && !std::isinf(minmaxsd);
     }
 
-    inline bool overlap(const Eigen::MatrixX4d &hPoly0,
-                        const Eigen::MatrixX4d &hPoly1,
+    inline bool overlap(const Eigen::MatrixX3d &hPoly0,
+                        const Eigen::MatrixX3d &hPoly1,
                         const double eps = 1.0e-6)
 
     {
         const int m = hPoly0.rows();
         const int n = hPoly1.rows();
-        Eigen::MatrixX4d A(m + n, 4);
-        Eigen::Vector4d c, x;
+        Eigen::MatrixX3d A(m + n, 3);
+        Eigen::Vector3d c, x;
         Eigen::VectorXd b(m + n);
-        A.leftCols<3>().topRows(m) = hPoly0.leftCols<3>();
-        A.leftCols<3>().bottomRows(n) = hPoly1.leftCols<3>();
+        A.leftCols<2>().topRows(m) = hPoly0.leftCols<2>();
+        A.leftCols<2>().bottomRows(n) = hPoly1.leftCols<2>();
         A.rightCols<1>().setConstant(1.0);
         b.topRows(m) = -hPoly0.rightCols<1>();
         b.bottomRows(n) = -hPoly1.rightCols<1>();
         c.setZero();
-        c(3) = -1.0;
+        c(2) = -1.0;
 
-        const double minmaxsd = sdlp::linprog<4>(c, A, b, x);
+        const double minmaxsd = sdlp::linprog<3>(c, A, b, x);
 
         return minmaxsd < -eps && !std::isinf(minmaxsd);
     }
 
-    struct filterLess
-    {
-        inline bool operator()(const Eigen::Vector3d &l,
-                               const Eigen::Vector3d &r) const
-        {
-            return l(0) < r(0) ||
-                   (l(0) == r(0) &&
-                    (l(1) < r(1) ||
-                     (l(1) == r(1) &&
-                      l(2) < r(2))));
+    struct filterLess {
+        bool operator()(const Eigen::Vector2d &l,
+                        const Eigen::Vector2d &r) const {
+            return l(0) < r(0) || (l(0) == r(0) && l(1) < r(1));
         }
     };
 
-    inline void filterVs(const Eigen::Matrix3Xd &rV,
+    inline void filterVs(const Eigen::Matrix2Xd &rV,
                          const double &epsilon,
-                         Eigen::Matrix3Xd &fV)
+                         Eigen::Matrix2Xd &fV)
     {
         const double mag = std::max(fabs(rV.maxCoeff()), fabs(rV.minCoeff()));
         const double res = mag * std::max(fabs(epsilon) / mag, DBL_EPSILON);
-        std::set<Eigen::Vector3d, filterLess> filter;
+        std::set<Eigen::Vector2d, filterLess> filter;
         fV = rV;
         int offset = 0;
-        Eigen::Vector3d quanti;
+        Eigen::Vector2d quanti;
         for (int i = 0; i < rV.cols(); i++)
         {
             quanti = (rV.col(i) / res).array().round();
@@ -124,44 +118,37 @@ namespace geo_utils
     // Each row of hPoly is defined by h0, h1, h2, h3 as
     // h0*x + h1*y + h2*z + h3 <= 0
     // proposed epsilon is 1.0e-6
-    inline void enumerateVs(const Eigen::MatrixX4d &hPoly,
-                            const Eigen::Vector3d &inner,
-                            Eigen::Matrix3Xd &vPoly,
-                            const double epsilon = 1.0e-6)
-    {
-        const Eigen::VectorXd b = -hPoly.rightCols<1>() - hPoly.leftCols<3>() * inner;
-        const Eigen::Matrix<double, 3, -1, Eigen::ColMajor> A =
-            (hPoly.leftCols<3>().array().colwise() / b.array()).transpose();
+    inline void enumerateVs(const Eigen::MatrixX3d &hPoly,
+                        const Eigen::Vector2d &inner,
+                        Eigen::Matrix2Xd &vPoly,
+                        const double epsilon = 1.0e-6)
+{
+    Eigen::VectorXd b = -hPoly.rightCols<1>() - hPoly.leftCols<2>() * inner;
+    Eigen::Matrix<double, 2, -1, Eigen::ColMajor> A =
+        (hPoly.leftCols<2>().array().colwise() / b.array()).transpose();
 
-        quickhull::QuickHull<double> qh;
-        const double qhullEps = std::min(epsilon, quickhull::defaultEps<double>());
-        // CCW is false because the normal in quickhull towards interior
-        const auto cvxHull = qh.getConvexHull(A.data(), A.cols(), false, true, qhullEps);
-        const auto &idBuffer = cvxHull.getIndexBuffer();
-        const int hNum = idBuffer.size() / 3;
-        Eigen::Matrix3Xd rV(3, hNum);
-        Eigen::Vector3d normal, point, edge0, edge1;
-        for (int i = 0; i < hNum; i++)
-        {
-            point = A.col(idBuffer[3 * i + 1]);
-            edge0 = point - A.col(idBuffer[3 * i]);
-            edge1 = A.col(idBuffer[3 * i + 2]) - point;
-            normal = edge0.cross(edge1); //cross in CW gives an outter normal
-            rV.col(i) = normal / normal.dot(point);
-        }
-        filterVs(rV, epsilon, vPoly);
-        vPoly = (vPoly.array().colwise() + inner.array()).eval();
-        return;
-    }
+    quickhull::QuickHull<double> qh;
+    const double qhullEps = std::min(epsilon, quickhull::defaultEps<double>());
+    auto cvxHull = qh.getConvexHull(A.data(), A.cols(), false, true, qhullEps);
+    const auto &idBuffer = cvxHull.getIndexBuffer();
+
+    const int hNum = idBuffer.size();
+    Eigen::Matrix2Xd rV(2, hNum);
+    for (int i = 0; i < hNum; ++i)
+        rV.col(i) = A.col(idBuffer[i]);
+
+    filterVs(rV, epsilon, vPoly);
+    vPoly = (vPoly.colwise() + inner).eval();
+}
 
     // Each row of hPoly is defined by h0, h1, h2, h3 as
     // h0*x + h1*y + h2*z + h3 <= 0
     // proposed epsilon is 1.0e-6
-    inline bool enumerateVs(const Eigen::MatrixX4d &hPoly,
-                            Eigen::Matrix3Xd &vPoly,
+    inline bool enumerateVs(const Eigen::MatrixX3d &hPoly,
+                            Eigen::Matrix2Xd &vPoly,
                             const double epsilon = 1.0e-6)
     {
-        Eigen::Vector3d inner;
+        Eigen::Vector2d inner;
         if (findInterior(hPoly, inner))
         {
             enumerateVs(hPoly, inner, vPoly, epsilon);

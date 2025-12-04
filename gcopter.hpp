@@ -42,8 +42,8 @@ namespace gcopter
     class GCOPTER_PolytopeSFC
     {
     public:
-        typedef Eigen::Matrix3Xd PolyhedronV;
-        typedef Eigen::MatrixX4d PolyhedronH;
+        typedef Eigen::Matrix2Xd PolyhedronV;
+        typedef Eigen::MatrixX3d PolyhedronH;
         typedef std::vector<PolyhedronV> PolyhedraV;
         typedef std::vector<PolyhedronH> PolyhedraH;
 
@@ -52,12 +52,12 @@ namespace gcopter
         flatness::FlatnessMap flatmap;
 
         double rho;
-        Eigen::Matrix3d headPVA;
-        Eigen::Matrix3d tailPVA;
+        Eigen::Matrix2d headPV;
+        Eigen::Matrix2d tailPV;
 
         PolyhedraV vPolytopes;
         PolyhedraH hPolytopes;
-        Eigen::Matrix3Xd shortPath;
+        Eigen::Matrix2Xd shortPath;
 
         Eigen::VectorXi pieceIdx;
         Eigen::VectorXi vPolyIdx;
@@ -78,11 +78,11 @@ namespace gcopter
 
         lbfgs::lbfgs_parameter_t lbfgs_params;
 
-        Eigen::Matrix3Xd points;
+        Eigen::Matrix2Xd points;
         Eigen::VectorXd times;
-        Eigen::Matrix3Xd gradByPoints;
+        Eigen::Matrix2Xd gradByPoints;
         Eigen::VectorXd gradByTimes;
-        Eigen::MatrixX3d partialGradByCoeffs;
+        Eigen::MatrixX2d partialGradByCoeffs;
         Eigen::VectorXd partialGradByTimes;
 
     private:
@@ -143,10 +143,10 @@ namespace gcopter
         static inline void forwardP(const Eigen::VectorXd &xi,
                                     const Eigen::VectorXi &vIdx,
                                     const PolyhedraV &vPolys,
-                                    Eigen::Matrix3Xd &P)
+                                    Eigen::Matrix2Xd &P)
         {
             const int sizeP = vIdx.size();
-            P.resize(3, sizeP);
+            P.resize(2, sizeP);
             Eigen::VectorXd q;
             for (int i = 0, j = 0, k, l; i < sizeP; i++, j += k)
             {
@@ -164,13 +164,13 @@ namespace gcopter
                                          Eigen::VectorXd &gradXi)
         {
             const int n = xi.size();
-            const Eigen::Matrix3Xd &ovPoly = *(Eigen::Matrix3Xd *)ptr;
+            const Eigen::Matrix2Xd &ovPoly = *(Eigen::Matrix2Xd *)ptr;
 
             const double sqrNormXi = xi.squaredNorm();
             const double invNormXi = 1.0 / sqrt(sqrNormXi);
             const Eigen::VectorXd unitXi = xi * invNormXi;
             const Eigen::VectorXd r = unitXi.head(n - 1);
-            const Eigen::Vector3d delta = ovPoly.rightCols(n - 1) * r.cwiseProduct(r) +
+            const Eigen::Vector2d delta = ovPoly.rightCols(n - 1) * r.cwiseProduct(r) +
                                           ovPoly.col(1) - ovPoly.col(0);
 
             double cost = delta.squaredNorm();
@@ -193,7 +193,7 @@ namespace gcopter
         }
 
         template <typename EIGENVEC>
-        static inline void backwardP(const Eigen::Matrix3Xd &P,
+        static inline void backwardP(const Eigen::Matrix2Xd &P,
                                      const Eigen::VectorXi &vIdx,
                                      const PolyhedraV &vPolys,
                                      EIGENVEC &xi)
@@ -207,13 +207,13 @@ namespace gcopter
             tiny_nls_params.g_epsilon = FLT_EPSILON;
             tiny_nls_params.max_iterations = 128;
 
-            Eigen::Matrix3Xd ovPoly;
+            Eigen::Matrix2Xd ovPoly;
             for (int i = 0, j = 0, k, l; i < sizeP; i++, j += k)
             {
                 l = vIdx(i);
                 k = vPolys[l].cols();
 
-                ovPoly.resize(3, k + 1);
+                ovPoly.resize(2, k + 1);
                 ovPoly.col(0) = P.col(i);
                 ovPoly.rightCols(k) = vPolys[l];
                 Eigen::VectorXd x(k);
@@ -236,7 +236,7 @@ namespace gcopter
         static inline void backwardGradP(const Eigen::VectorXd &xi,
                                          const Eigen::VectorXi &vIdx,
                                          const PolyhedraV &vPolys,
-                                         const Eigen::Matrix3Xd &gradP,
+                                         const Eigen::Matrix2Xd &gradP,
                                          EIGENVEC &gradXi)
         {
             const int sizeP = vIdx.size();
@@ -324,7 +324,7 @@ namespace gcopter
         // physicalParams = [vehicle_mass, gravitational_acceleration, horitonral_drag_coeff,
         //                   vertical_drag_coeff, parasitic_drag_coeff, speed_smooth_factor]^T
         static inline void attachPenaltyFunctional(const Eigen::VectorXd &T,
-                                                   const Eigen::MatrixX3d &coeffs,
+                                                   const Eigen::MatrixX2d &coeffs,
                                                    const Eigen::VectorXi &hIdx,
                                                    const PolyhedraH &hPolys,
                                                    const double &smoothFactor,
@@ -334,7 +334,7 @@ namespace gcopter
                                                    flatness::FlatnessMap &flatMap,
                                                    double &cost,
                                                    Eigen::VectorXd &gradT,
-                                                   Eigen::MatrixX3d &gradC)
+                                                   Eigen::MatrixX2d &gradC)
         {
             const double velSqrMax = magnitudeBounds(0) * magnitudeBounds(0);
             const double omgSqrMax = magnitudeBounds(1) * magnitudeBounds(1);
@@ -349,20 +349,20 @@ namespace gcopter
             const double weightTheta = penaltyWeights(3);
             const double weightThrust = penaltyWeights(4);
 
-            Eigen::Vector3d pos, vel, acc, jer, sna;
-            Eigen::Vector3d totalGradPos, totalGradVel, totalGradAcc, totalGradJer;
+            Eigen::Vector2d pos, vel, acc, jer, sna;
+            Eigen::Vector2d totalGradPos, totalGradVel, totalGradAcc, totalGradJer;
             double totalGradPsi, totalGradPsiD;
             double thr, cos_theta;
             Eigen::Vector4d quat;
-            Eigen::Vector3d omg;
+            Eigen::Vector3d omg, gradOmg;
             double gradThr;
             Eigen::Vector4d gradQuat;
-            Eigen::Vector3d gradPos, gradVel, gradOmg;
+            Eigen::Vector2d gradPos, gradVel;
 
             double step, alpha;
             double s1, s2, s3, s4, s5;
             Eigen::Matrix<double, 4, 1> beta0, beta1, beta2, beta3, beta4;
-            Eigen::Vector3d outerNormal;
+            Eigen::Vector2d outerNormal;
             int K, L;
             double violaPos, violaVel, violaOmg, violaTheta, violaThrust;
             double violaPosPenaD, violaVelPenaD, violaOmgPenaD, violaThetaPenaD, violaThrustPenaD;
@@ -373,7 +373,7 @@ namespace gcopter
             const double integralFrac = 1.0 / integralResolution;
             for (int i = 0; i < pieceNum; i++)
             {
-                const Eigen::Matrix<double, 4, 3> &c = coeffs.block<4, 3>(i * 4, 0);
+                const Eigen::Matrix<double, 4, 2> &c = coeffs.block<4, 2>(i * 4, 0);
                 step = T(i) * integralFrac;
                 for (int j = 0; j <= integralResolution; j++)
                 {
@@ -392,8 +392,8 @@ namespace gcopter
                     acc = c.transpose() * beta2;
                     jer = c.transpose() * beta3;
                     sna = c.transpose() * beta4;
-
-                    flatMap.forward(vel, acc, jer, 0.0, 0.0, thr, quat, omg);
+                    Eigen::Vector3d v3(vel(0), vel(1), 0.0), a3(acc(0), acc(1), 0.0), j3(jer(0), jer(1), 0.0);
+                    flatMap.forward(v3, a3, j3, 0.0, 0.0, thr, quat, omg);
 
                     violaVel = vel.squaredNorm() - velSqrMax;
                     violaOmg = omg.squaredNorm() - omgSqrMax;
@@ -410,8 +410,8 @@ namespace gcopter
                     K = hPolys[L].rows();
                     for (int k = 0; k < K; k++)
                     {
-                        outerNormal = hPolys[L].block<1, 3>(k, 0);
-                        violaPos = outerNormal.dot(pos) + hPolys[L](k, 3);
+                        outerNormal = hPolys[L].block<1, 2>(k, 0);
+                        violaPos = outerNormal.dot(pos) + hPolys[L](k, 2);
                         if (smoothedL1(violaPos, smoothFactor, violaPosPena, violaPosPenaD))
                         {
                             gradPos += weightPos * violaPosPenaD * outerNormal;
@@ -444,14 +444,22 @@ namespace gcopter
                         gradThr += weightThrust * violaThrustPenaD * 2.0 * (thr - thrustMean);
                         pena += weightThrust * violaThrustPena;
                     }
+                    Eigen::Vector3d gradPos3, gradVel3, totalGradPos3, totalGradVel3, totalGradJer3, totalGradAcc3;
+                    gradPos3 << gradPos(0), gradPos(1), 0.0;
+                    gradVel3 << gradVel(0), gradVel(1), 0.0;
 
-                    flatMap.backward(gradPos, gradVel, gradThr, gradQuat, gradOmg,
-                                     totalGradPos, totalGradVel, totalGradAcc, totalGradJer,
+                    flatMap.backward(gradPos3, gradVel3, gradThr, gradQuat, gradOmg,
+                                     totalGradPos3, totalGradVel3, totalGradAcc3, totalGradJer3,
                                      totalGradPsi, totalGradPsiD);
+
+                    totalGradPos << totalGradPos3(0), totalGradPos3(1);
+                    totalGradVel << totalGradVel3(0), totalGradVel3(1);
+                    totalGradAcc << totalGradAcc3(0), totalGradAcc3(1);
+                    totalGradJer << totalGradJer3(0), totalGradJer3(1);
 
                     node = (j == 0 || j == integralResolution) ? 0.5 : 1.0;
                     alpha = j * integralFrac;
-                    gradC.block<4, 3>(i * 4, 0) += (beta0 * totalGradPos.transpose() +
+                    gradC.block<4, 2>(i * 4, 0) += (beta0 * totalGradPos.transpose() +
                                                     beta1 * totalGradVel.transpose() +
                                                     beta2 * totalGradAcc.transpose() +
                                                     beta3 * totalGradJer.transpose()) *
@@ -516,15 +524,15 @@ namespace gcopter
         {
             void **dataPtrs = (void **)ptr;
             const double &dEps = *((const double *)(dataPtrs[0]));
-            const Eigen::Vector3d &ini = *((const Eigen::Vector3d *)(dataPtrs[1]));
-            const Eigen::Vector3d &fin = *((const Eigen::Vector3d *)(dataPtrs[2]));
+            const Eigen::Vector2d &ini = *((const Eigen::Vector2d *)(dataPtrs[1]));
+            const Eigen::Vector2d &fin = *((const Eigen::Vector2d *)(dataPtrs[2]));
             const PolyhedraV &vPolys = *((PolyhedraV *)(dataPtrs[3]));
 
             double cost = 0.0;
             const int overlaps = vPolys.size() / 2;
 
-            Eigen::Matrix3Xd gradP = Eigen::Matrix3Xd::Zero(3, overlaps);
-            Eigen::Vector3d a, b, d;
+            Eigen::Matrix2Xd gradP = Eigen::Matrix2Xd::Zero(2, overlaps);
+            Eigen::Vector2d a, b, d;
             Eigen::VectorXd r;
             double smoothedDistance;
             for (int i = 0, j = 0, k = 0; i <= overlaps; i++, j += k)
@@ -586,11 +594,11 @@ namespace gcopter
             return cost;
         }
 
-        static inline void getShortestPath(const Eigen::Vector3d &ini,
-                                           const Eigen::Vector3d &fin,
+        static inline void getShortestPath(const Eigen::Vector2d &ini,
+                                           const Eigen::Vector2d &fin,
                                            const PolyhedraV &vPolys,
                                            const double &smoothD,
-                                           Eigen::Matrix3Xd &path)
+                                           Eigen::Matrix2Xd &path)
         {
             const int overlaps = vPolys.size() / 2;
             Eigen::VectorXi vSizes(overlaps);
@@ -624,7 +632,7 @@ namespace gcopter
                                   dataPtrs,
                                   shortest_path_params);
 
-            path.resize(3, overlaps + 2);
+            path.resize(2, overlaps + 2);
             path.leftCols<1>() = ini;
             path.rightCols<1>() = fin;
             Eigen::VectorXd r;
@@ -658,12 +666,12 @@ namespace gcopter
                     return false;
                 }
                 nv = curIV.cols();
-                curIOB.resize(3, nv);
+                curIOB.resize(2, nv);
                 curIOB.col(0) = curIV.col(0);
                 curIOB.rightCols(nv - 1) = curIV.rightCols(nv - 1).colwise() - curIV.col(0);
                 vPs.push_back(curIOB);
 
-                curIH.resize(hPs[i].rows() + hPs[i + 1].rows(), 4);
+                curIH.resize(hPs[i].rows() + hPs[i + 1].rows(), 3);
                 curIH.topRows(hPs[i].rows()) = hPs[i];
                 curIH.bottomRows(hPs[i + 1].rows()) = hPs[i + 1];
                 if (!geo_utils::enumerateVs(curIH, curIV))
@@ -671,7 +679,7 @@ namespace gcopter
                     return false;
                 }
                 nv = curIV.cols();
-                curIOB.resize(3, nv);
+                curIOB.resize(2, nv);
                 curIOB.col(0) = curIV.col(0);
                 curIOB.rightCols(nv - 1) = curIV.rightCols(nv - 1).colwise() - curIV.col(0);
                 vPs.push_back(curIOB);
@@ -682,7 +690,7 @@ namespace gcopter
                 return false;
             }
             nv = curIV.cols();
-            curIOB.resize(3, nv);
+            curIOB.resize(2, nv);
             curIOB.col(0) = curIV.col(0);
             curIOB.rightCols(nv - 1) = curIV.rightCols(nv - 1).colwise() - curIV.col(0);
             vPs.push_back(curIOB);
@@ -690,18 +698,18 @@ namespace gcopter
             return true;
         }
 
-        static inline void setInitial(const Eigen::Matrix3Xd &path,
+        static inline void setInitial(const Eigen::Matrix2Xd &path,
                                       const double &speed,
                                       const Eigen::VectorXi &intervalNs,
-                                      Eigen::Matrix3Xd &innerPoints,
+                                      Eigen::Matrix2Xd &innerPoints,
                                       Eigen::VectorXd &timeAlloc)
         {
             const int sizeM = intervalNs.size();
             const int sizeN = intervalNs.sum();
-            innerPoints.resize(3, sizeN - 1);
+            innerPoints.resize(2, sizeN - 1);
             timeAlloc.resize(sizeN);
 
-            Eigen::Vector3d a, b, c;
+            Eigen::Vector2d a, b, c;
             for (int i = 0, j = 0, k = 0, l; i < sizeM; i++)
             {
                 l = intervalNs(i);
@@ -726,8 +734,8 @@ namespace gcopter
         // physicalParams = [vehicle_mass, gravitational_acceleration, horitonral_drag_coeff,
         //                   vertical_drag_coeff, parasitic_drag_coeff, speed_smooth_factor]^T
         inline bool setup(const double &timeWeight,
-                          const Eigen::Matrix3d &initialPVA,
-                          const Eigen::Matrix3d &terminalPVA,
+                          const Eigen::Matrix2d &initialPV,
+                          const Eigen::Matrix2d &terminalPV,
                           const PolyhedraH &safeCorridor,
                           const double &lengthPerPiece,
                           const double &smoothingFactor,
@@ -737,14 +745,14 @@ namespace gcopter
                           const Eigen::VectorXd &physicalParams)
         {
             rho = timeWeight;
-            headPVA = initialPVA;
-            tailPVA = terminalPVA;
+            headPV = initialPV;
+            tailPV = terminalPV;
 
             hPolytopes = safeCorridor;
             for (size_t i = 0; i < hPolytopes.size(); i++)
             {
                 const Eigen::ArrayXd norms =
-                    hPolytopes[i].leftCols<3>().rowwise().norm();
+                    hPolytopes[i].leftCols<2>().rowwise().norm();
                 hPolytopes[i].array().colwise() /= norms;
             }
             if (!processCorridor(hPolytopes, vPolytopes))
@@ -760,9 +768,9 @@ namespace gcopter
             physicalPm = physicalParams;
             allocSpeed = magnitudeBd(0) * 3.0;
 
-            getShortestPath(headPVA.col(0), tailPVA.col(0),
+            getShortestPath(headPV.col(0), tailPV.col(0),
                             vPolytopes, smoothEps, shortPath);
-            const Eigen::Matrix3Xd deltas = shortPath.rightCols(polyN) - shortPath.leftCols(polyN);
+            const Eigen::Matrix2Xd deltas = shortPath.rightCols(polyN) - shortPath.leftCols(polyN);
             pieceIdx = (deltas.colwise().norm() / lengthPerPiece).cast<int>().transpose();
             pieceIdx.array() += 1;
             pieceN = pieceIdx.sum();
@@ -791,16 +799,16 @@ namespace gcopter
             }
 
             // Setup for MINCO_S3NU, FlatnessMap, and L-BFGS solver
-            minco.setConditions(headPVA, tailPVA, pieceN);
+            minco.setConditions(headPV, tailPV, pieceN);
             flatmap.reset(physicalPm(0), physicalPm(1), physicalPm(2),
                           physicalPm(3), physicalPm(4), physicalPm(5));
 
             // Allocate temp variables
-            points.resize(3, pieceN - 1);
+            points.resize(2, pieceN - 1);
             times.resize(pieceN);
-            gradByPoints.resize(3, pieceN - 1);
+            gradByPoints.resize(2, pieceN - 1);
             gradByTimes.resize(pieceN);
-            partialGradByCoeffs.resize(4 * pieceN, 3);
+            partialGradByCoeffs.resize(4 * pieceN, 2);
             partialGradByTimes.resize(pieceN);
 
             return true;
