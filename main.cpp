@@ -92,7 +92,7 @@ double* return_acc(double time, const Eigen::Matrix<double, 2, 4> &coeff_matrix)
 
             Eigen::Vector2d half(1.5, 2.0); // corridor width/height (tune)
             Eigen::Matrix<double,4,3> H = boxToH(center, half);
-            std::cout << half << " " << center << " done" << std::endl;
+            //std::cout << half << " " << center << " done" << std::endl;
             safeCorridor.push_back(H);
         }
 

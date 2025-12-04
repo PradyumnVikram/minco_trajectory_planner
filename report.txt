@@ -1,0 +1,968 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 251  of event 'cpu_core/cycles/P'
+# Event count (approx.): 189254390
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                              
+# ........  ........  .......  ....................  ....................................................................................................................................................................................................................................................................
+#
+    26.88%     0.00%  main     [unknown]             [.] 0x00007fff7733e7a0
+            |
+            ---0x7fff7733e7a0
+               |          
+               |--3.00%--0x6492324defd4
+               |          
+               |--1.26%--__ieee754_acos_fma
+               |          
+               |--0.90%--0x6492324d572d
+               |          
+               |--0.89%--0x6492324defc6
+               |          
+               |--0.89%--0x6492324ded75
+               |          
+                --0.79%--0x6492324deb51
+
+    25.54%     0.00%  main     libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --24.33%--0x6492324d206e
+                          |          
+                          |--3.97%--0x6492324e39cb
+                          |          
+                          |--3.93%--0x6492324e3d55
+                          |          
+                          |--2.95%--0x6492324e3c30
+                          |          
+                          |--2.62%--0x6492324e39b8
+                          |          
+                          |--2.53%--0x6492324e3898
+                          |          
+                          |--1.30%--0x6492324e38c2
+                          |          
+                          |--1.23%--0x6492324e38af
+                          |          
+                          |--1.20%--0x6492324e3d40
+                          |          
+                           --0.82%--0x6492324e3c47
+
+    24.33%     0.00%  main     main                  [.] 0x00006492324d206e
+            |
+            ---0x6492324d206e
+               |          
+               |--3.97%--0x6492324e39cb
+               |          
+               |--3.93%--0x6492324e3d55
+               |          
+               |--2.95%--0x6492324e3c30
+               |          
+               |--2.62%--0x6492324e39b8
+               |          
+               |--2.53%--0x6492324e3898
+               |          
+               |--1.30%--0x6492324e38c2
+               |          
+               |--1.23%--0x6492324e38af
+               |          
+               |--1.20%--0x6492324e3d40
+               |          
+                --0.82%--0x6492324e3c47
+
+    14.50%     0.00%  main     [unknown]             [.] 0x00007fff7733eb30
+            |
+            ---0x7fff7733eb30
+               |          
+                --13.71%--__vfprintf_internal
+                          |          
+                          |--6.24%--__GI___printf_fp_l
+                          |          
+                          |--2.34%--__mpn_mul_1
+                          |          
+                          |--1.54%--hack_digit
+                          |          
+                          |--0.81%--__mpn_extract_double
+                          |          
+                           --0.80%--__mpn_lshift
+
+    14.09%     1.95%  main     libc.so.6             [.] __vfprintf_internal
+            |          
+            |--12.14%--__vfprintf_internal
+            |          |          
+            |          |--6.24%--__GI___printf_fp_l
+            |          |          
+            |          |--2.34%--__mpn_mul_1
+            |          |          
+            |          |--1.54%--hack_digit
+            |          |          
+            |          |--0.81%--__mpn_extract_double
+            |          |          
+            |           --0.80%--__mpn_lshift
+            |          
+             --1.95%--0x7fff7733eb30
+                       |          
+                        --1.57%--__vfprintf_internal
+
+     6.64%     6.24%  main     libc.so.6             [.] __GI___printf_fp_l
+            |          
+             --6.24%--0x7fff7733eb30
+                       __vfprintf_internal
+                       |          
+                        --5.84%--__GI___printf_fp_l
+
+     5.64%     0.00%  main     [unknown]             [.] 0x48e8580348fb8948
+            |
+            ---0x48e8580348fb8948
+               virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+               0x6
+               |          
+                --5.24%--std::ostream& std::ostream::_M_insert<double>(double)
+                          |          
+                          |--1.85%--std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          |          
+                           --0.76%--__memmove_avx_unaligned_erms
+
+     5.64%     0.76%  main     libstdc++.so.6.0.30   [.] std::ostream& std::ostream::_M_insert<double>(double)
+            |          
+            |--4.88%--std::ostream& std::ostream::_M_insert<double>(double)
+            |          |          
+            |          |--1.85%--std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+            |          |          
+            |           --0.76%--__memmove_avx_unaligned_erms
+            |          
+             --0.76%--0x48e8580348fb8948
+                       virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+                       0x6
+
+     5.64%     0.00%  main     libstdc++.so.6.0.30   [.] virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+            |
+            ---virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+               0x6
+               |          
+                --5.24%--std::ostream& std::ostream::_M_insert<double>(double)
+                          |          
+                          |--1.85%--std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          |          
+                           --0.76%--__memmove_avx_unaligned_erms
+
+     5.64%     0.00%  main     [unknown]             [.] 0x0000000000000006
+            |
+            ---0x6
+               |          
+                --5.24%--std::ostream& std::ostream::_M_insert<double>(double)
+                          |          
+                          |--1.85%--std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          |          
+                           --0.76%--__memmove_avx_unaligned_erms
+
+     3.97%     3.97%  main     main                  [.] 0x00000000000159c7
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e39cb
+
+     3.97%     0.00%  main     main                  [.] 0x00006492324e39cb
+            |
+            ---0x6492324e39cb
+
+     3.93%     3.93%  main     main                  [.] 0x0000000000015d50
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e3d55
+
+     3.93%     0.00%  main     main                  [.] 0x00006492324e3d55
+            |
+            ---0x6492324e3d55
+
+     3.56%     0.00%  main     [unknown]             [.] 0x00007fff7733e720
+            |
+            ---0x7fff7733e720
+               |          
+               |--1.53%--0x6492324de0cb
+               |          
+                --0.81%--0x6492324de656
+
+     3.12%     3.12%  main     libc.so.6             [.] __mpn_mul_1
+            |
+            ---0x7fff7733eb30
+               __vfprintf_internal
+               |          
+               |--2.34%--__mpn_mul_1
+               |          
+                --0.79%--hack_digit
+
+     3.00%     3.00%  main     main                  [.] 0x0000000000010fcb
+     3.00%     0.00%  main     main                  [.] 0x00006492324defd4
+            |
+            ---0x6492324defd4
+
+     2.95%     2.95%  main     main                  [.] 0x0000000000015c61
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e3c30
+
+     2.95%     0.00%  main     main                  [.] 0x00006492324e3c30
+            |
+            ---0x6492324e3c30
+
+     2.79%     2.02%  main     libc.so.6             [.] _int_malloc
+            |          
+             --2.03%--_int_malloc
+                       |          
+                        --0.77%--0xffffffff95200bc7
+                                  0xffffffff95022d93
+                                  0xffffffff93ed6d19
+                                  0xffffffff9422b2fd
+                                  0xffffffff9422afaf
+                                  0xffffffff9422a94b
+
+     2.62%     2.62%  main     main                  [.] 0x00000000000159d2
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e39b8
+
+     2.62%     0.00%  main     main                  [.] 0x00006492324e39b8
+            |
+            ---0x6492324e39b8
+
+     2.53%     2.53%  main     main                  [.] 0x00000000000158c9
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e3898
+
+     2.53%     0.00%  main     main                  [.] 0x00006492324e3898
+            |
+            ---0x6492324e3898
+
+     1.94%     1.16%  main     libc.so.6             [.] hack_digit
+            |          
+            |--1.16%--0x7fff7733eb30
+            |          __vfprintf_internal
+            |          |          
+            |           --0.76%--hack_digit
+            |          
+             --0.79%--hack_digit
+
+     1.85%     1.12%  main     libstdc++.so.6.0.30   [.] std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+            |          
+            |--1.12%--0x48e8580348fb8948
+            |          virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+            |          0x6
+            |          std::ostream& std::ostream::_M_insert<double>(double)
+            |          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+            |          
+             --0.74%--std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+
+     1.76%     1.76%  main     libm.so.6             [.] __ieee754_acos_fma
+     1.60%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff95200130
+            |
+            ---0xffffffff95200130
+               0xffffffff9501cb31
+               |          
+                --0.81%--0xffffffff93e0734e
+                          0xffffffff942edd3c
+                          0xffffffff942edc21
+                          0xffffffff942ed9d1
+                          0xffffffff942ec299
+                          0xffffffff943eb3ec
+                          0xffffffff943eaec0
+
+     1.60%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9501cb31
+            |
+            ---0xffffffff9501cb31
+               |          
+                --0.81%--0xffffffff93e0734e
+                          0xffffffff942edd3c
+                          0xffffffff942edc21
+                          0xffffffff942ed9d1
+                          0xffffffff942ec299
+                          0xffffffff943eb3ec
+                          0xffffffff943eaec0
+
+     1.59%     0.00%  main     [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+                --1.39%--0x7fff7733e7a0
+
+     1.57%     1.17%  main     libstdc++.so.6.0.30   [.] memcpy@plt
+            |          
+             --0.76%--0x48e8580348fb8948
+                       virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+                       0x6
+                       std::ostream& std::ostream::_M_insert<double>(double)
+                       __memmove_avx_unaligned_erms
+
+     1.57%     0.41%  main     libc.so.6             [.] __memmove_avx_unaligned_erms
+            |
+            ---__memmove_avx_unaligned_erms
+
+     1.57%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff95200bc7
+            |
+            ---0xffffffff95200bc7
+               0xffffffff95022d93
+               |          
+                --1.11%--0xffffffff93ed6d19
+                          0xffffffff9422b2fd
+                          0xffffffff9422afaf
+                          |          
+                           --0.77%--0xffffffff9422a94b
+
+     1.57%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff95022d93
+            |
+            ---0xffffffff95022d93
+               |          
+                --1.11%--0xffffffff93ed6d19
+                          0xffffffff9422b2fd
+                          0xffffffff9422afaf
+                          |          
+                           --0.77%--0xffffffff9422a94b
+
+     1.57%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422b2fd
+            |
+            ---0xffffffff9422b2fd
+               |          
+                --1.50%--0xffffffff9422afaf
+                          |          
+                          |--0.77%--0xffffffff9422a94b
+                          |          
+                           --0.73%--0xffffffff9422a894
+                                     0xffffffff942259c0
+
+     1.53%     1.53%  main     main                  [.] 0x00000000000100c6
+     1.53%     0.00%  main     main                  [.] 0x00006492324de0cb
+            |
+            ---0x6492324de0cb
+
+     1.50%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422afaf
+            |
+            ---0xffffffff9422afaf
+               |          
+               |--0.77%--0xffffffff9422a94b
+               |          
+                --0.73%--0xffffffff9422a894
+                          0xffffffff942259c0
+
+     1.40%     1.40%  main     libc.so.6             [.] cfree@GLIBC_2.2.5
+            |          
+             --0.90%--cfree@GLIBC_2.2.5
+
+     1.30%     1.30%  main     main                  [.] 0x00000000000158be
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e38c2
+
+     1.30%     0.00%  main     main                  [.] 0x00006492324e38c2
+            |
+            ---0x6492324e38c2
+
+     1.23%     1.23%  main     libc.so.6             [.] _int_free
+            |
+            ---_int_free
+
+     1.23%     1.23%  main     main                  [.] 0x00000000000158ab
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e38af
+
+     1.23%     0.00%  main     main                  [.] 0x00006492324e38af
+            |
+            ---0x6492324e38af
+
+     1.22%     0.00%  main     [unknown]             [.] 0x00007fff7733e760
+            |
+            ---0x7fff7733e760
+               |          
+                --0.81%--0x6492324de6ba
+
+     1.20%     1.20%  main     main                  [.] 0x0000000000015d5c
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e3d40
+
+     1.20%     0.00%  main     main                  [.] 0x00006492324e3d40
+            |
+            ---0x6492324e3d40
+
+     1.19%     0.00%  main     libc.so.6             [.] __GI___writev
+            |
+            ---__GI___writev
+               |          
+                --0.81%--0xffffffff95200130
+                          0xffffffff9501cb31
+                          0xffffffff93e0734e
+                          0xffffffff942edd3c
+                          0xffffffff942edc21
+                          0xffffffff942ed9d1
+                          0xffffffff942ec299
+                          0xffffffff943eb3ec
+                          0xffffffff943eaec0
+
+     1.16%     0.38%  main     libc.so.6             [.] __vsnprintf_internal
+            |          
+             --0.78%--__vsnprintf_internal
+
+     1.16%     1.16%  main     libstdc++.so.6.0.30   [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long)
+     1.13%     0.00%  main     libstdc++.so.6.0.30   [.] 0x000075fd0ab2b259
+            |
+            ---0x75fd0ab2b259
+               |          
+                --0.76%--__vsnprintf_internal
+
+     1.11%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93ed6d19
+            |
+            ---0xffffffff93ed6d19
+               0xffffffff9422b2fd
+               0xffffffff9422afaf
+               |          
+                --0.77%--0xffffffff9422a94b
+
+     1.06%     0.69%  main     libc.so.6             [.] malloc
+            |
+            ---malloc
+
+     0.90%     0.00%  main     [unknown]             [.] 0x000000000000002b
+            |
+            ---0x2b
+
+     0.90%     0.90%  main     main                  [.] 0x0000000000007729
+     0.90%     0.00%  main     main                  [.] 0x00006492324d572d
+            |
+            ---0x6492324d572d
+
+     0.89%     0.89%  main     main                  [.] 0x0000000000010fbd
+     0.89%     0.00%  main     main                  [.] 0x00006492324defc6
+            |
+            ---0x6492324defc6
+
+     0.89%     0.89%  main     main                  [.] 0x0000000000010d6b
+     0.89%     0.00%  main     main                  [.] 0x00006492324ded75
+            |
+            ---0x6492324ded75
+
+     0.83%     0.12%  main     ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               |          
+                --0.72%--dl_main
+
+     0.83%     0.00%  main     [unknown]             [.] 0x00007fff7733e740
+            |
+            ---0x7fff7733e740
+
+     0.82%     0.82%  main     main                  [.] 0x0000000000015c40
+            |
+            ---__libc_start_call_main
+               0x6492324d206e
+               0x6492324e3c47
+
+     0.82%     0.00%  main     main                  [.] 0x00006492324e3c47
+            |
+            ---0x6492324e3c47
+
+     0.81%     0.81%  main     main                  [.] 0x000000000001064d
+     0.81%     0.00%  main     main                  [.] 0x00006492324de656
+            |
+            ---0x6492324de656
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e0734e
+            |
+            ---0xffffffff93e0734e
+               0xffffffff942edd3c
+               0xffffffff942edc21
+               0xffffffff942ed9d1
+               0xffffffff942ec299
+               0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942edd3c
+            |
+            ---0xffffffff942edd3c
+               0xffffffff942edc21
+               0xffffffff942ed9d1
+               0xffffffff942ec299
+               0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942edc21
+            |
+            ---0xffffffff942edc21
+               0xffffffff942ed9d1
+               0xffffffff942ec299
+               0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942ed9d1
+            |
+            ---0xffffffff942ed9d1
+               0xffffffff942ec299
+               0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942ec299
+            |
+            ---0xffffffff942ec299
+               0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943eb3ec
+            |
+            ---0xffffffff943eb3ec
+               0xffffffff943eaec0
+
+     0.81%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943eaec0
+            |
+            ---0xffffffff943eaec0
+
+     0.81%     0.81%  main     libc.so.6             [.] __mpn_extract_double
+            |
+            ---0x7fff7733eb30
+               __vfprintf_internal
+               __mpn_extract_double
+
+     0.81%     0.81%  main     main                  [.] 0x00000000000106b1
+     0.81%     0.00%  main     main                  [.] 0x00006492324de6ba
+            |
+            ---0x6492324de6ba
+
+     0.80%     0.80%  main     libc.so.6             [.] __mpn_lshift
+            |
+            ---0x7fff7733eb30
+               __vfprintf_internal
+               __mpn_lshift
+
+     0.79%     0.79%  main     main                  [.] 0x0000000000010b4d
+     0.79%     0.00%  main     main                  [.] 0x00006492324deb51
+            |
+            ---0x6492324deb51
+
+     0.78%     0.78%  main     libstdc++.so.6.0.30   [.] std::basic_filebuf<char, std::char_traits<char> >::xsputn(char const*, long)
+            |
+            ---std::basic_filebuf<char, std::char_traits<char> >::xsputn(char const*, long)
+
+     0.77%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422a94b
+            |
+            ---0xffffffff9422a94b
+
+     0.76%     0.76%  main     libstdc++.so.6.0.30   [.] std::locale::facet::_S_get_c_locale()
+            |
+            ---0x48e8580348fb8948
+               virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+               0x6
+               std::ostream& std::ostream::_M_insert<double>(double)
+
+     0.73%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422a894
+            |
+            ---0xffffffff9422a894
+               0xffffffff942259c0
+
+     0.73%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942259c0
+            |
+            ---0xffffffff942259c0
+
+     0.73%     0.73%  main     libstdc++.so.6.0.30   [.] std::locale::id::_M_id() const
+            |
+            ---0x48e8580348fb8948
+               virtual thunk to std::basic_fstream<char, std::char_traits<char> >::~basic_fstream()
+               0x6
+               std::ostream& std::ostream::_M_insert<double>(double)
+
+     0.72%     0.00%  main     [unknown]             [k] 0x0000000000000040
+            |
+            ---0x40
+               _dl_sysdep_start
+               dl_main
+
+     0.72%     0.00%  main     ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+
+     0.50%     0.50%  main     main                  [.] 0x0000000000006da1
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff445fccb4acefe
+     0.50%     0.00%  main     main                  [.] 0x00006492324d4da6
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe874e2f4110a93
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff3aa14e096339c
+     0.50%     0.50%  main     main                  [.] 0x0000000000009967
+     0.50%     0.00%  main     main                  [.] 0x00006492324d796c
+     0.50%     0.50%  main     main                  [.] 0x000000000000a932
+     0.50%     0.00%  main     main                  [.] 0x00006492324d8936
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff3bd14e9fcaf29
+     0.50%     0.00%  main     [unknown]             [.] 0xa0b884c44645a1f3
+     0.50%     0.00%  main     main                  [.] 0x00006492324d90d5
+     0.50%     0.50%  main     main                  [.] 0x0000000000010d7d
+     0.50%     0.00%  main     main                  [.] 0x00006492324ded83
+     0.50%     0.50%  main     main                  [.] 0x0000000000010681
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff1c9d87d05b58e
+     0.50%     0.00%  main     main                  [.] 0x00006492324de68a
+     0.50%     0.50%  main     main                  [.] 0x0000000000014c40
+     0.50%     0.00%  main     main                  [.] 0x00006492324e2c30
+     0.50%     0.50%  main     main                  [.] 0x0000000000008f2a
+     0.50%     0.00%  main     main                  [.] 0x00006492324d6f2c
+     0.50%     0.50%  main     main                  [.] 0x0000000000008666
+     0.50%     0.00%  main     main                  [.] 0x00006492324d666f
+     0.50%     0.50%  main     main                  [.] 0x0000000000010853
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff3ebaa9c397151
+     0.50%     0.00%  main     main                  [.] 0x00006492324de858
+     0.50%     0.50%  main     main                  [.] 0x00000000000114e2
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe460234204604a
+     0.50%     0.00%  main     main                  [.] 0x00006492324df4e6
+     0.50%     0.00%  main     [unknown]             [.] 0x3ff480d023c8be70
+     0.50%     0.50%  main     main                  [.] 0x0000000000006fcd
+     0.50%     0.00%  main     [unknown]             [.] 0x3fef6701323fc91e
+     0.50%     0.00%  main     main                  [.] 0x00006492324d4fd1
+     0.50%     0.50%  main     main                  [.] 0x00000000000158a4
+     0.50%     0.00%  main     main                  [.] 0x00006492324e38ab
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe5914d3f99d496
+     0.50%     0.50%  main     main                  [.] 0x000000000000764e
+     0.50%     0.00%  main     [unknown]             [.] 0x3fefa3e14551d933
+     0.50%     0.00%  main     main                  [.] 0x00006492324d5653
+     0.50%     0.50%  main     main                  [.] 0x0000000000007474
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe8c567a0e0cfd0
+     0.50%     0.00%  main     main                  [.] 0x00006492324d5479
+     0.50%     0.50%  main     main                  [.] 0x0000000000014cf0
+     0.50%     0.00%  main     main                  [.] 0x00006492324e2ce0
+     0.50%     0.50%  main     main                  [.] 0x00000000000109bb
+     0.50%     0.00%  main     [unknown]             [.] 0x3fed167488f97d3b
+     0.50%     0.00%  main     main                  [.] 0x00006492324de9c0
+     0.50%     0.50%  main     main                  [.] 0x00000000000073f2
+     0.50%     0.00%  main     [unknown]             [.] 0x3feddda9461db336
+     0.50%     0.00%  main     main                  [.] 0x00006492324d53f7
+     0.50%     0.50%  main     main                  [.] 0x0000000000006e39
+     0.50%     0.00%  main     [unknown]             [.] 0x3febf96f1f21fdb8
+     0.50%     0.00%  main     main                  [.] 0x00006492324d4e3e
+     0.50%     0.50%  main     main                  [.] 0x0000000000010fdc
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe84ea87c60e174
+     0.50%     0.00%  main     main                  [.] 0x00006492324defe0
+     0.50%     0.50%  main     main                  [.] 0x000000000001095b
+     0.50%     0.00%  main     [unknown]             [.] 0x3fe86d4e78902363
+     0.50%     0.00%  main     main                  [.] 0x00006492324de960
+     0.49%     0.00%  main     main                  [.] 0x00006492324dee1f
+     0.49%     0.49%  main     main                  [.] 0x0000000000008bec
+     0.49%     0.00%  main     [unknown]             [.] 0x3fcb42a6b1bd136e
+     0.49%     0.00%  main     main                  [.] 0x00006492324d6bf3
+     0.49%     0.49%  main     main                  [.] 0x0000000000011df8
+     0.49%     0.00%  main     main                  [.] 0x00006492324dfdfd
+     0.49%     0.49%  main     main                  [.] 0x0000000000009419
+     0.49%     0.00%  main     main                  [.] 0x00006492324d7478
+     0.49%     0.49%  main     main                  [.] 0x0000000000010f18
+     0.49%     0.00%  main     [unknown]             [.] 0x3ff623e208e77934
+     0.49%     0.00%  main     main                  [.] 0x00006492324def1a
+     0.48%     0.00%  main     [unknown]             [.] 0x4002e8b8c21de311
+     0.48%     0.48%  main     main                  [.] 0x0000000000010c93
+     0.48%     0.00%  main     [unknown]             [.] 0x3ff5059c82ea3623
+     0.48%     0.00%  main     main                  [.] 0x00006492324dec98
+     0.48%     0.00%  main     [unknown]             [.] 0x3ff7b010a8b9b8ee
+     0.48%     0.48%  main     main                  [.] 0x0000000000007593
+     0.48%     0.00%  main     [unknown]             [.] 0x4001331cf4604794
+     0.48%     0.00%  main     main                  [.] 0x00006492324d5598
+     0.47%     0.47%  main     main                  [.] 0x0000000000006ce6
+     0.47%     0.00%  main     [unknown]             [.] 0x3ffb806f96f2e603
+     0.47%     0.00%  main     main                  [.] 0x00006492324d4cea
+     0.46%     0.46%  main     main                  [.] 0x00000000000085d8
+     0.46%     0.00%  main     main                  [.] 0x00006492324d65dd
+     0.46%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93ed6da9
+     0.45%     0.45%  main     [kernel.kallsyms]     [k] 0xffffffff9520128c
+     0.45%     0.00%  main     main                  [.] 0x00006492324db868
+     0.44%     0.44%  main     main                  [.] 0x0000000000015d4a
+     0.44%     0.00%  main     main                  [.] 0x00006492324d2001
+     0.44%     0.00%  main     main                  [.] 0x00006492324e473e
+     0.44%     0.00%  main     main                  [.] 0x00006492324e3d50
+     0.42%     0.42%  main     main                  [.] 0x000000000000dbb1
+     0.42%     0.00%  main     [unknown]             [.] 0x3fd76cf8863aa30f
+     0.42%     0.00%  main     main                  [.] 0x00006492324dbbb5
+     0.41%     0.41%  main     main                  [.] 0x00000000000158c2
+     0.41%     0.00%  main     main                  [.] 0x00006492324e38c6
+     0.41%     0.41%  main     main                  [.] 0x0000000000008f4c
+     0.41%     0.00%  main     main                  [.] 0x00006492324d6f51
+     0.41%     0.41%  main     main                  [.] 0x0000000000010d11
+     0.41%     0.00%  main     [unknown]             [.] 0x3feed15741e177b5
+     0.41%     0.00%  main     main                  [.] 0x00006492324ded15
+     0.41%     0.00%  main     [unknown]             [.] 0x3fead3ed61142bd2
+     0.41%     0.41%  main     main                  [.] 0x0000000000010550
+     0.41%     0.00%  main     [unknown]             [.] 0x3ff02d6523ca192b
+     0.41%     0.00%  main     main                  [.] 0x00006492324de558
+     0.41%     0.41%  main     main                  [.] 0x00000000000114d0
+     0.41%     0.00%  main     [unknown]             [.] 0x3fed8b44de408753
+     0.41%     0.00%  main     main                  [.] 0x00006492324df4d4
+     0.41%     0.41%  main     main                  [.] 0x0000000000007603
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe4a64882d2dd3c
+     0.41%     0.00%  main     [unknown]             [.] 0x3ff03b428cde6c12
+     0.41%     0.00%  main     main                  [.] 0x00006492324d5608
+     0.41%     0.41%  main     main                  [.] 0x000000000001050c
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe33cb400602c33
+     0.41%     0.00%  main     main                  [.] 0x00006492324de514
+     0.41%     0.00%  main     [unknown]             [.] 0x3feee1886e6da2be
+     0.41%     0.41%  main     main                  [.] 0x000000000001587c
+     0.41%     0.00%  main     main                  [.] 0x00006492324e3880
+     0.41%     0.00%  main     [unknown]             [.] 0x3fee0b3ddc61267f
+     0.41%     0.41%  main     main                  [.] 0x0000000000011429
+     0.41%     0.00%  main     [unknown]             [.] 0x3feeb6d0f7ded221
+     0.41%     0.00%  main     main                  [.] 0x00006492324df42d
+     0.41%     0.00%  main     [unknown]             [.] 0x3feef19d2b4d43ac
+     0.41%     0.41%  main     main                  [.] 0x0000000000010a33
+     0.41%     0.00%  main     [unknown]             [.] 0x3fef857f982196c1
+     0.41%     0.00%  main     main                  [.] 0x00006492324dea3c
+     0.41%     0.41%  main     main                  [.] 0x0000000000015bf7
+     0.41%     0.00%  main     main                  [.] 0x00006492324e3bfa
+     0.41%     0.41%  main     main                  [.] 0x00000000000100d8
+     0.41%     0.00%  main     [unknown]             [.] 0x3fecc50c02ad8534
+     0.41%     0.00%  main     main                  [.] 0x00006492324de0dc
+     0.41%     0.41%  main     main                  [.] 0x0000000000008f37
+     0.41%     0.00%  main     main                  [.] 0x00006492324d6f3b
+     0.41%     0.41%  main     main                  [.] 0x0000000000007684
+     0.41%     0.00%  main     [unknown]             [.] 0x3ff01593cbe46618
+     0.41%     0.00%  main     main                  [.] 0x00006492324d5689
+     0.41%     0.41%  main     main                  [.] 0x0000000000010661
+     0.41%     0.41%  main     main                  [.] 0x0000000000010fd4
+     0.41%     0.00%  main     [unknown]             [.] 0x3fd9be68e75d00a8
+     0.41%     0.00%  main     [unknown]             [.] 0x3feedd08d08c4708
+     0.41%     0.00%  main     main                  [.] 0x00006492324de669
+     0.41%     0.00%  main     main                  [.] 0x00006492324defd8
+     0.41%     0.00%  main     [unknown]             [.] 0x3fee4d0830879d31
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe1de7a87c82672
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe19097b9739c97
+     0.41%     0.41%  main     main                  [.] 0x0000000000008c16
+     0.41%     0.00%  main     [unknown]             [.] 0x3fd5157e36b45b30
+     0.41%     0.00%  main     main                  [.] 0x00006492324d6c1a
+     0.41%     0.41%  main     main                  [.] 0x00000000000100ec
+     0.41%     0.00%  main     [unknown]             [.] 0x3feed82fd20502ff
+     0.41%     0.00%  main     main                  [.] 0x00006492324de0f0
+     0.41%     0.00%  main     [unknown]             [.] 0x3feefe1df42abfb6
+     0.41%     0.41%  main     main                  [.] 0x0000000000011546
+     0.41%     0.00%  main     [unknown]             [.] 0x3feff7436d964980
+     0.41%     0.00%  main     main                  [.] 0x00006492324df54b
+     0.41%     0.41%  main     main                  [.] 0x0000000000010fe0
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe35a7fa84e4c22
+     0.41%     0.00%  main     main                  [.] 0x00006492324defe4
+     0.41%     0.41%  main     main                  [.] 0x00000000000076cf
+     0.41%     0.00%  main     [unknown]             [.] 0x3fee09be5f681a44
+     0.41%     0.00%  main     main                  [.] 0x00006492324d56d3
+     0.41%     0.41%  main     [kernel.kallsyms]     [k] 0xffffffff943e72b6
+     0.41%     0.00%  main     [unknown]             [k] 0x343439392e302c30
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941bd801
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94403149
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943f9839
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943fb41d
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943fb20d
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943e9a01
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff943e72bf
+     0.41%     0.41%  main     main                  [.] 0x0000000000007210
+     0.41%     0.00%  main     [unknown]             [.] 0x3fef674ebc64fb6e
+     0.41%     0.00%  main     main                  [.] 0x00006492324d5214
+     0.41%     0.00%  main     [unknown]             [.] 0x3ff02c0ab5c5caf1
+     0.41%     0.41%  main     main                  [.] 0x0000000000007628
+     0.41%     0.00%  main     [unknown]             [.] 0x3feb8b23164417dc
+     0.41%     0.00%  main     main                  [.] 0x00006492324d562c
+     0.41%     0.41%  main     main                  [.] 0x000000000000b338
+     0.41%     0.00%  main     [unknown]             [.] 0xbf150071fdf6e772
+     0.41%     0.00%  main     main                  [.] 0x00006492324d9340
+     0.41%     0.41%  main     main                  [.] 0x00000000000157e6
+     0.41%     0.00%  main     main                  [.] 0x00006492324e37e9
+     0.41%     0.41%  main     main                  [.] 0x0000000000010fe4
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe5f55754885d29
+     0.41%     0.00%  main     main                  [.] 0x00006492324defea
+     0.41%     0.41%  main     main                  [.] 0x0000000000010fef
+     0.41%     0.00%  main     [unknown]             [.] 0x3fe5b263d232c565
+     0.41%     0.00%  main     main                  [.] 0x00006492324def83
+     0.41%     0.41%  main     main                  [.] 0x00000000000110a0
+     0.41%     0.00%  main     [unknown]             [.] 0x3feb10435219bf85
+     0.41%     0.00%  main     main                  [.] 0x00006492324df0a4
+     0.41%     0.00%  main     [unknown]             [.] 0x3fea56a560435e92
+     0.41%     0.41%  main     [kernel.kallsyms]     [k] 0xffffffff942c0b58
+     0.41%     0.00%  main     [unknown]             [k] 0x3832312e312d2c36
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941bd885
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941cdb10
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941cda08
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941cce25
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942cde6f
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942c2696
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff940447b6
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94044581
+     0.41%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942c0b5d
+     0.41%     0.41%  main     main                  [.] 0x0000000000006f9c
+     0.41%     0.00%  main     [unknown]             [.] 0x3feb3473e38abd79
+     0.41%     0.00%  main     main                  [.] 0x00006492324d4fa1
+     0.41%     0.00%  main     libstdc++.so.6.0.30   [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const
+     0.41%     0.41%  main     libc.so.6             [.] _IO_setb
+     0.41%     0.41%  main     libstdc++.so.6.0.30   [.] 0x00000000000fb409
+     0.41%     0.00%  main     libstdc++.so.6.0.30   [.] 0x000075fd0aafb40b
+     0.41%     0.41%  main     libc.so.6             [.] __uselocale
+     0.41%     0.41%  main     main                  [.] 0x00000000000084cd
+     0.41%     0.00%  main     main                  [.] 0x00006492324d64d0
+     0.41%     0.41%  main     libc.so.6             [.] ___vsnprintf
+     0.41%     0.00%  main     libc.so.6             [.] __libc_alloca_cutoff
+     0.41%     0.41%  main     main                  [.] 0x00000000000100e4
+     0.41%     0.00%  main     [unknown]             [.] 0x3fee36a9a0534adb
+     0.41%     0.00%  main     main                  [.] 0x00006492324de0e8
+     0.41%     0.41%  main     libc.so.6             [.] _IO_old_init
+     0.40%     0.40%  main     main                  [.] 0x0000000000007311
+     0.40%     0.00%  main     [unknown]             [.] 0x3fe9ca6cbb81f21d
+     0.40%     0.00%  main     main                  [.] 0x00006492324d531a
+     0.40%     0.00%  main     [unknown]             [.] 0x3feb31bda36e14f1
+     0.40%     0.40%  main     [kernel.kallsyms]     [k] 0xffffffff942c01b0
+     0.40%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94229775
+     0.40%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942ce4d5
+     0.40%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942cb819
+     0.40%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942c01b5
+     0.40%     0.40%  main     main                  [.] 0x0000000000010fea
+     0.40%     0.00%  main     [unknown]             [.] 0x3feebff5a0bfa210
+     0.40%     0.00%  main     main                  [.] 0x00006492324defef
+     0.40%     0.40%  main     main                  [.] 0x00000000000107a7
+     0.40%     0.00%  main     [unknown]             [.] 0x3fe1148fc095978c
+     0.40%     0.00%  main     main                  [.] 0x00006492324de7ad
+     0.40%     0.00%  main     [unknown]             [.] 0x3fedfc6298740cd9
+     0.40%     0.40%  main     main                  [.] 0x00000000000076e0
+     0.40%     0.00%  main     [unknown]             [.] 0x3fe0e7126e34ff23
+     0.40%     0.00%  main     main                  [.] 0x00006492324d56e5
+     0.40%     0.40%  main     main                  [.] 0x000000000000869a
+     0.40%     0.00%  main     main                  [.] 0x00006492324d669e
+     0.39%     0.00%  main     [unknown]             [.] 0x3fe2dea38bdd3b3e
+     0.39%     0.00%  main     [unknown]             [.] 0x3fed9d4d30ff347a
+     0.39%     0.39%  main     [kernel.kallsyms]     [k] 0xffffffff93f11026
+     0.39%     0.00%  main     libc.so.6             [.] clock_gettime@@GLIBC_2.17
+     0.39%     0.00%  main     [vdso]                [.] 0x00007fff77346ae6
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94225693
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94224b0a
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422fcdb
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e07f05
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94226ff2
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94226f52
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93ee2024
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93ee0ced
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93ee0c6a
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f13302
+     0.39%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f1102f
+     0.39%     0.39%  main     main                  [.] 0x000000000000986a
+     0.39%     0.00%  main     main                  [.] 0x00006492324d786e
+     0.38%     0.38%  main     main                  [.] 0x00000000000109d1
+     0.38%     0.00%  main     [unknown]             [.] 0x3feaddc1405a7014
+     0.38%     0.00%  main     main                  [.] 0x00006492324de9da
+     0.38%     0.38%  main     libstdc++.so.6.0.30   [.] std::ctype<char> const& std::use_facet<std::ctype<char> >(std::locale const&)
+     0.38%     0.00%  main     [unknown]             [.] 0x3fe36599c0b54ef4
+     0.38%     0.00%  main     libc.so.6             [.] __printf_fp
+     0.38%     0.38%  main     libc.so.6             [.] _IO_str_init_static_internal
+     0.38%     0.00%  main     [unknown]             [.] 0x36302e302d2c3832
+     0.38%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff95200ba0
+     0.38%     0.38%  main     main                  [.] 0x0000000000011071
+     0.38%     0.00%  main     [unknown]             [.] 0x3fed02c593a55160
+     0.38%     0.00%  main     main                  [.] 0x00006492324df076
+     0.37%     0.37%  main     ld-linux-x86-64.so.2  [.] _dl_relocate_object
+     0.37%     0.37%  main     libc.so.6             [.] __memchr_avx2
+     0.37%     0.00%  main     [unknown]             [.] 0x3febcf90d6ec3a9d
+     0.36%     0.36%  main     [kernel.kallsyms]     [k] 0xffffffff942572cd
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422972f
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422952c
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942926a4
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94292331
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942572d0
+     0.36%     0.36%  main     [kernel.kallsyms]     [k] 0xffffffff94222d5a
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e078c1
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f0daf8
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f0da45
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f0d596
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f0d29e
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f012f1
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93f011b1
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942345da
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942248a5
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94224259
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94223f57
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942233d1
+     0.36%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942228b9
+     0.36%     0.36%  main     main                  [.] 0x0000000000007571
+     0.36%     0.00%  main     [unknown]             [.] 0x3fec0742ae50f5f5
+     0.36%     0.00%  main     main                  [.] 0x00006492324d5575
+     0.35%     0.35%  main     libstdc++.so.6.0.30   [.] 0x00000000000fb4d9
+     0.35%     0.35%  main     ld-linux-x86-64.so.2  [.] do_lookup_x
+     0.35%     0.35%  main     libstdc++.so.6.0.30   [.] 0x00000000000fb47f
+     0.35%     0.00%  main     libstdc++.so.6.0.30   [.] 0x000075fd0aafb482
+     0.35%     0.35%  main     main                  [.] 0x000000000000a764
+     0.35%     0.00%  main     main                  [.] 0x00006492324d8b20
+     0.34%     0.34%  main     [kernel.kallsyms]     [k] 0xffffffff94224fa5
+     0.34%     0.00%  main     libc.so.6             [.] __strnlen_ifunc
+     0.34%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94225667
+     0.34%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941c136c
+     0.34%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94224fac
+     0.34%     0.34%  main     main                  [.] 0x00000000000100c0
+     0.34%     0.00%  main     [unknown]             [.] 0x3fe293ed1ee7b1f1
+     0.34%     0.00%  main     main                  [.] 0x00006492324de0c6
+     0.32%     0.32%  main     main                  [.] 0x00000000000093b8
+     0.32%     0.00%  main     main                  [.] 0x00006492324d73bc
+     0.32%     0.32%  main     main                  [.] 0x00000000000072b6
+     0.32%     0.00%  main     [unknown]             [.] 0x3fef78e7d5c94720
+     0.32%     0.00%  main     main                  [.] 0x00006492324d52bb
+     0.31%     0.31%  main     main                  [.] 0x0000000000007575
+     0.31%     0.00%  main     [unknown]             [.] 0x3fea1d7f8f0a382a
+     0.31%     0.00%  main     main                  [.] 0x00006492324d5579
+     0.29%     0.29%  main     [kernel.kallsyms]     [k] 0xffffffff94267c5e
+     0.29%     0.00%  main     ld-linux-x86-64.so.2  [.] _dl_map_object
+     0.29%     0.00%  main     ld-linux-x86-64.so.2  [.] mmap64
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e072c7
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e60d83
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942332ec
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff941f73b3
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94236fc1
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94236b20
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9423637e
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f85811
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f812e0
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f810df
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94269eb7
+     0.29%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94267c61
+     0.27%     0.27%  main     main                  [.] 0x00000000000100d4
+     0.27%     0.00%  main     main                  [.] 0x00006492324de0d8
+     0.23%     0.23%  main     main                  [.] 0x0000000000015448
+     0.23%     0.00%  main     main                  [.] 0x00006492324e3428
+     0.21%     0.21%  main     [kernel.kallsyms]     [k] 0xffffffff952001cd
+     0.21%     0.00%  main     ld-linux-x86-64.so.2  [.] fstatat64
+     0.20%     0.00%  main     [unknown]             [.] 0x00007fff7733e780
+     0.13%     0.00%  main     [unknown]             [k] 0x00007be8d12eb08b
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e0724f
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942fc827
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942fc4cd
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942fa2e6
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942fa1fe
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942f9f19
+     0.13%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942f9987
+     0.11%     0.00%  main     [unknown]             [.] 0x3fec11d4133ca936
+     0.11%     0.00%  main     [unknown]             [.] 0x3feed70a917bf252
+     0.07%     0.07%  main     [kernel.kallsyms]     [k] 0xffffffff94f87466
+     0.07%     0.07%  main     [kernel.kallsyms]     [k] 0xffffffff942c80d0
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9438d1d4
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e08622
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff93e0818b
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9438ce07
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942377f5
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9438c212
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94234a59
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9423493a
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9423121f
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8f058
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422aff3
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8edc5
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9422647b
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8e70f
+     0.07%     0.07%  main     main                  [.] 0x0000000000011529
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff9421db7a
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8e485
+     0.07%     0.00%  main     [unknown]             [.] 0x3fe2f79f05dc5a20
+     0.07%     0.00%  main     [unknown]             [.] 0x3febe8653cc94617
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942c94fb
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8db88
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff942c80d5
+     0.07%     0.00%  main     [kernel.kallsyms]     [k] 0xffffffff94f8746a
+     0.07%     0.00%  main     main                  [.] 0x00006492324df454
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
