@@ -48,6 +48,10 @@ namespace gcopter
         typedef std::vector<PolyhedronH> PolyhedraH;
 
     private:
+        std::vector<Trajectory<3>> swarmOtherAgents;
+        mutable Eigen::VectorXd swarmPrefixTimes;
+        double swarmThreshold = 1.0;          // safety ellipsoid threshold
+        Eigen::Matrix3d swarmEllipsoid = Eigen::Matrix3d::Identity();
         minco::MINCO_S2NU minco;
         flatness::FlatnessMap flatmap;
 
@@ -468,6 +472,83 @@ namespace gcopter
 
             return;
         }
+        // Swarm obstacle avoidance penalty: Eq. (26)-(30)
+        static void attachSwarmPenaltyFunctional(
+            const Eigen::VectorXd &T,
+            const Eigen::MatrixX3d &coeffs,                 // trajectory coefficients
+            const Eigen::VectorXi &hIdx,                    // corridor indices
+            const PolyhedraH &hPolys,                       // safe corridor
+            double smoothFactor,
+            int integralResolution,
+            double swarmThreshold,                          // C_sw
+            Eigen::Matrix3d E,                              // ellipsoid matrix (usually diagonal)
+            const std::vector<Trajectory<3>> &otherAgents,  // all other agents' trajectories
+            double &cost,
+            Eigen::VectorXd &gradT,
+            Eigen::MatrixX3d &gradC
+        )
+        {
+            // High-resolution grid sampling
+            double sample_dt = 0.001;
+
+            int pieceNum = T.size();
+            double global_time = 0.0;
+            for (int i = 0; i < pieceNum; ++i)
+            {
+                const Eigen::Matrix<double, 4, 3> &c = coeffs.block<4, 3>(i * 4, 0);
+                double segT = T(i);
+
+                // Sample [0, segT] at 0.001 s intervals
+                int segSamples = std::max(int(segT / sample_dt), 1);
+
+                for (int j = 0; j <= segSamples; ++j)
+                {
+                    double alpha = double(j) / double(segSamples);          // [0,1]
+                    double t_rel = alpha * segT;                            // time in this segment
+                    double t_global = global_time + t_rel;                  // absolute time (for cross-agent sync)
+
+                    // Evaluate this agent position at t_rel for this segment
+                    Eigen::Vector4d beta0;
+                    beta0 << 1, t_rel, t_rel * t_rel, t_rel * t_rel * t_rel;
+                    Eigen::Vector3d my_pos = c.transpose() * beta0;
+
+                    // For each other agent, check avoidance
+                    for (const auto &other : otherAgents)
+                    {
+                        // For this t_global, sample the other's position
+                        Eigen::Vector3d other_pos = other.getPos(t_global);
+
+                        Eigen::Vector3d diff = my_pos - other_pos;
+                        double ellip_dist = std::sqrt((E * diff).dot(diff));
+
+                        if (ellip_dist < swarmThreshold) // Eq. (26)
+                        {
+                            // Penalty function: (C_sw^2 - ellip_dist^2)^2 if violated
+                            double violation = swarmThreshold * swarmThreshold - ellip_dist * ellip_dist;
+                            double penalty = violation * violation;
+
+                            cost += penalty;
+
+                            // Gradient wrt my_pos only, chain rule: ∇_ci penalty = -4*violation*ellip_dist*(E*diff) * ∂my_pos/∂ci
+                            // For cubic: my_pos = sum l=0..3 c(i,l) * t_rel^l    ∂my_pos/∂c(i,l) = t_rel^l
+                            // So gradC.block<4,3> (i*4,0) [for all four coeffs]:
+                            for (int l = 0; l < 4; ++l)
+                            {
+                                for (int d = 0; d < 3; ++d)
+                                {
+                                    double chain = std::pow(t_rel, l);
+                                    gradC(i * 4 + l, d) += -4.0 * violation * ellip_dist * (E(d,0) * diff(0) + E(d,1) * diff(1) + E(d,2) * diff(2)) * chain;
+                                }
+                            }
+                            // Gradient wrt segment duration T:
+                            // We take derivative wrt time scaling. (optional, for completeness):
+                            gradT(i) += /* approx penalty's effect wrt T: penalizes stretching time, modest effect */ -4.0 * violation * ellip_dist * diff.squaredNorm() * alpha;
+                        }
+                    }
+                }
+                global_time += segT;
+            }
+        }
 
         static inline double costFunctional(void *ptr,
                                             const Eigen::VectorXd &x,
@@ -496,6 +577,15 @@ namespace gcopter
                                     obj.smoothEps, obj.integralRes,
                                     obj.magnitudeBd, obj.penaltyWt, obj.flatmap,
                                     cost, obj.partialGradByTimes, obj.partialGradByCoeffs);
+            if (!obj.swarmOtherAgents.empty()) {
+                attachSwarmPenaltyFunctional(obj.times, obj.minco.getCoeffs(),
+                obj.hPolyIdx, obj.hPolytopes,
+                obj.smoothEps, obj.integralRes,
+                obj.swarmThreshold,
+                obj.swarmEllipsoid,
+                obj.swarmOtherAgents,
+                cost, obj.partialGradByTimes, obj.partialGradByCoeffs);
+            }
 
             obj.minco.propogateGrad(obj.partialGradByCoeffs, obj.partialGradByTimes,
                                     obj.gradByPoints, obj.gradByTimes);
@@ -725,6 +815,13 @@ namespace gcopter
         // penaltyWeights = [pos_weight, vel_weight, omg_weight, theta_weight, thrust_weight]^T
         // physicalParams = [vehicle_mass, gravitational_acceleration, horitonral_drag_coeff,
         //                   vertical_drag_coeff, parasitic_drag_coeff, speed_smooth_factor]^T
+        inline void setSwarmObstacleParams(const std::vector<Trajectory<3>> &otherAgents,
+                            double C_sw, const Eigen::Matrix3d &E_ellip) {
+            swarmOtherAgents = otherAgents;
+            swarmThreshold = C_sw;
+            swarmEllipsoid = E_ellip;
+        }
+
         inline bool setup(const double &timeWeight,
                           const Eigen::Matrix3d &initialPVA,
                           const Eigen::Matrix3d &terminalPVA,

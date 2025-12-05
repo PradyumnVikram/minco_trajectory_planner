@@ -11,6 +11,45 @@
     #include "minco.hpp"
     #include "lbfgs.hpp"
 
+    Eigen::MatrixXd readTrajectoryCSVPositions(const std::string& filename)
+    {
+        std::ifstream infile(filename);
+        if (!infile.is_open()) {
+            throw std::runtime_error("Unable to open file " + filename);
+        }
+
+        std::vector<Eigen::Vector3d> positions;
+        std::string line;
+        while (std::getline(infile, line)) {
+            if(line.empty()) continue;
+            std::stringstream ss(line);
+            std::string val;
+
+            // Read time (ignored)
+            std::getline(ss, val, ',');
+            // Read positions
+            double pos[3];
+            for(int i=0; i<3; ++i) {
+                if(!std::getline(ss, val, ',')) {
+                    // End of line
+                    throw std::runtime_error("Malformed CSV line: not enough values");
+                }
+                pos[i] = std::stod(val);
+            }
+            // Ignore the rest (velocity, acceleration)
+            positions.emplace_back(pos[0], pos[1], pos[2]);
+        }
+        infile.close();
+
+        // Copy into Eigen matrix
+        int N = static_cast<int>(positions.size());
+        Eigen::MatrixXd posMat(3, N);
+        for(int i=0; i<N; ++i) {
+            posMat.col(i) = positions[i];
+        }
+        return posMat;
+    }
+
 
     // Helper: construct an axis-aligned box as a 6x4 H-matrix.
     // Row format: [nx, ny, nz, d] representing nx*x + ny*y + d <= 0 for interior.
@@ -77,7 +116,7 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
         headPVA.setZero();
         tailPVA.setZero();
         headPVA.col(0) = Eigen::Vector3d(0.0, 0.0, 0.0);   // start pos
-        tailPVA.col(0) = Eigen::Vector3d(8.0, 0.0, 0.0);   // end pos
+        tailPVA.col(0) = Eigen::Vector3d(8.0, 1.0, 0.0);   // end pos
         Eigen::Vector3d shift(0.0, 1.5, 0.0);
 
         // build a chain of overlapping corridor boxes along straight line
@@ -132,7 +171,23 @@ double* return_acc(double time, const Eigen::Matrix<double, 3, 4> &coeff_matrix)
             std::cerr << "SFC setup failed (processCorridor may be unable to enumerate vertices). Exiting.\n";
             return 1;
         }
+        Eigen::MatrixXd otherPos = readTrajectoryCSVPositions("trajectory_extra.csv");
+        std::vector<Trajectory<3>> otherTrajs(1);  // Single other agent trajectory
+        std::vector<double> sampleTimes;
+        std::vector<Eigen::Matrix<double,3,4>> sampleCoeffs;
 
+        double dt = 0.001;
+        for(int i=0; i<otherPos.cols()-1; i++) {
+            sampleTimes.push_back(dt);
+            Eigen::Matrix<double,3,4> pieceCoeff; pieceCoeff.setZero();
+            pieceCoeff.col(3) = otherPos.col(i);  // Constant position piece
+            sampleCoeffs.push_back(pieceCoeff);
+        }
+
+        otherTrajs[0] = Trajectory<3>(sampleTimes, sampleCoeffs);
+        double C_sw = 1.5; // example safe separation
+        Eigen::Matrix3d ellipsoid = Eigen::Matrix3d::Identity(); // can tune per axis
+        sfc.setSwarmObstacleParams(otherTrajs, C_sw, ellipsoid);
         // Run the optimizer (internally uses lbfgs and attachPenaltyFunctional)
         Trajectory<3> traj;
         double relCostTol = 1e-4;
